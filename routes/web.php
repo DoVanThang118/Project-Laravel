@@ -28,3 +28,5 @@ Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edi
 Route::get('/payment-all', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
 
+Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');
+
