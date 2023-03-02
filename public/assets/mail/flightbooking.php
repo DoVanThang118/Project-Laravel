@@ -4,7 +4,7 @@
 
         # FIX: Replace this email with recipient email
         $mail_to = "support@rn53themes.net";
-        
+
         # Sender Data
         //$subject = trim($_POST["subject"]);
 		$subject = "Flight booking";
@@ -20,14 +20,14 @@
 		$minprice = trim($_POST["minprice"]);
 		$maxprice = trim($_POST["maxprice"]);
         //$message = trim($_POST["message"]);
-        
+
         if ( empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($phone)) {
             # Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Please complete the form and try again.";
             exit;
         }
-        
+
         # Mail Content
         $content = "Name: $name\n";
 		$content .= "Phone: $phone\n";
@@ -51,7 +51,7 @@
             # Set a 200 (okay) response code.
 			// Thank you message
             http_response_code(200);
-            echo "Thank You for booking a flight with us! Our team will contact you shortly!";
+            echo "Thank You for booking a hotel with us! Our team will contact you shortly!";
         } else {
             # Set a 500 (internal server error) response code.
             http_response_code(500);

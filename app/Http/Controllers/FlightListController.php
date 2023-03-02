@@ -8,6 +8,6 @@ class FlightListController extends Controller
 {
     public function index()
     {
-        return view('flight-list');
+        return view('hotel-list');
     }
 }
