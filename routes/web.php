@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get("/dashboard/layout",[\App\Http\Controllers\Admin\DashboardController::class,"dashboard"]);
+Route::get("/layout",[\App\Http\Controllers\Admin\DashboardController::class,"dashboard"]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index1'])->name('home');
 Route::get('/hotel-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('hotel-list');
 Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
