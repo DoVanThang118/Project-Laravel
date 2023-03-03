@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>All Hotel</h4>
+                            <h4>All Airplane</h4>
                             <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                             <ul id="dr-users" class="dropdown-content">

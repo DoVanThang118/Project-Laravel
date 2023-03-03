@@ -5,12 +5,12 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Edit Hotel</a>
+                <li class="active-bre"><a href="#"> Edit Airplane</a>
                 </li>
             </ul>
         </div>
         <div class="sb2-2-add-blog sb2-2-1">
-            <h2>Edit Hotel Details</h2>
+            <h2>Edit Airplane Details</h2>
             <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
 
             <ul class="nav nav-tabs tab-list">

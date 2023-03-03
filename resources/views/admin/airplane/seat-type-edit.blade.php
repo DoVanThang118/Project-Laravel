@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Edit Room Type</a>
+                <li class="active-bre"><a href="#"> Edit Seat Type</a>
                 </li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="list-title" type="text" value="" class="validate">
-                        <label for="list-title">Enter Room Type</label>
+                        <label for="list-title">Enter Seat Type</label>
                     </div>
                 </div>
                 <div class="row">

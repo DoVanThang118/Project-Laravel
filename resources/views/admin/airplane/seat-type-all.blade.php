@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Room Types</a>
+                <li class="active-bre"><a href="#"> Seat Types</a>
                 </li>
             </ul>
         </div>
