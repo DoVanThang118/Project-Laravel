@@ -1,21 +1,20 @@
-<!--== FAV ICON ==-->
-<link rel="shortcut icon" href="/admin/images/fav.ico">
-
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
-
-<!-- FONT-AWESOME ICON CSS -->
-<link rel="stylesheet" href="/admin/css/font-awesome.min.css">
-
-<!--== ALL CSS FILES ==-->
-<link rel="stylesheet" href="/admin/css/style.css">
-<link rel="stylesheet" href="/admin/css/mob.css">
-<link rel="stylesheet" href="/admin/css/bootstrap.css">
-<link rel="stylesheet" href="/admin/css/materialize.css" />
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="/admin/js/html5shiv.js"></script>
-<script src="/admin/js/respond.min.js"></script>
-<![endif]-->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet" href="/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- JQVMap -->
+<link rel="stylesheet" href="/admin/plugins/jqvmap/jqvmap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
