@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::middleware(["auth","admin"])->prefix("admin")->group(function (){
+    include_once("admin.php");
+});
 
 Auth::routes();
-Route::get("/layout",[\App\Http\Controllers\DashboardController::class,"dashboard"]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index1'])->name('home');
 Route::get('/hotel-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('hotel-list');
 Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
