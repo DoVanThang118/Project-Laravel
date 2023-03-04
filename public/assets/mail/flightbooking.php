@@ -51,7 +51,7 @@
             # Set a 200 (okay) response code.
 			// Thank you message
             http_response_code(200);
-            echo "Thank You for booking a hotel with us! Our team will contact you shortly!";
+            echo "Thank You for booking a airplane with us! Our team will contact you shortly!";
         } else {
             # Set a 500 (internal server error) response code.
             http_response_code(500);

@@ -5,18 +5,18 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Edit Room Type</a>
+                <li class="active-bre"><a href="#"> Add Seat Type</a>
                 </li>
             </ul>
         </div>
         <div class="sb2-2-add-blog sb2-2-1">
-            <h2>Edit Room Type</h2>
+            <h2>Add New Seat Type</h2>
             <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
             <form>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="list-title" type="text" value="" class="validate">
-                        <label for="list-title">Enter Room Type</label>
+                        <label for="list-title">Enter Seat Type</label>
                     </div>
                 </div>
                 <div class="row">

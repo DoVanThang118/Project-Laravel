@@ -42,10 +42,10 @@ Route::get("/admin/discount/discount-all",[App\Http\Controllers\Admin\DiscountCo
 Route::get("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountadd"]);
 Route::get("/admin/discount/discount-edit",[App\Http\Controllers\Admin\DiscountController::class,"discountedit"]);
 
-Route::get("/admin/hotel/hotel-all",[App\Http\Controllers\Admin\HotelController::class,"hotelall"]);
-Route::get("/admin/hotel/hotel-edit",[App\Http\Controllers\Admin\HotelController::class,"hoteledit"]);
-Route::get("/admin/hotel/hotel-add",[App\Http\Controllers\Admin\HotelController::class,"hoteladd"]);
-Route::get("/admin/hotel/hotel-room-type-all",[App\Http\Controllers\Admin\HotelController::class,"hotelroomtypeall"]);
-Route::get("/admin/hotel/hotel-room-type-add",[App\Http\Controllers\Admin\HotelController::class,"hotelroomtypeadd"]);
-Route::get("/admin/hotel/hotel-room-type-edit",[App\Http\Controllers\Admin\HotelController::class,"hotelroomtypeedit"]);
+Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
+Route::get("/admin/airplane/airplane-edit",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
+Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
+Route::get("/admin/airplane/seat-type-all",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeall"]);
+Route::get("/admin/airplane/seat-type-add",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeadd"]);
+Route::get("/admin/airplane/seat-type-edit",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeedit"]);
 
