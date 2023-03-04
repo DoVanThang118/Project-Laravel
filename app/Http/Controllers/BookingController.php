@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FlightListController extends Controller
+class BookingController extends Controller
 {
     public function index()
     {
-        return view('flight-list');
+        return view('booking');
     }
 }

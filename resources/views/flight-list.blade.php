@@ -9,11 +9,11 @@
 @endsection
 @section('content')
     <!--====== HOTELS LIST ==========-->
-    <section class="hot-page2-alp hot-page2-pa-sp-top">
+    <section class="hot-page2-alp hot-page2-pa-sp-top all-hot-bg">
         <div class="container">
             <div class="row inner_banner inner_banner_3 bg-none">
                 <div class="hot-page2-alp-tit">
-                    <h1>Top Travel Packages</h1>
+                    <h1>Hotel & Restaurants in Vancouver </h1>
                     <ul>
                         <li><a href="#inner-page-title">Home</a> </li>
                         <li><i class="fa fa-angle-right" aria-hidden="true"></i> </li>
@@ -28,52 +28,52 @@
                     <div class="col-md-3 hot-page2-alp-con-left">
                         <!--PART 1 : LEFT LISTINGS-->
                         <div class="hot-page2-alp-con-left-1">
-                            <h3>Suggesting Packages</h3> </div>
+                            <h3>Suggesting Hotels</h3> </div>
                         <!--PART 2 : LEFT LISTINGS-->
                         <div class="hot-page2-hom-pre hot-page2-alp-left-ner-notb">
                             <ul>
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
-                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/package/1.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/hotels/1.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>Bali, Indonesia</h5> <span>Bali is a living postcard</span> </div>
+                                            <h5>Taaj Club House</h5> <span>City: illunois, United States</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.2</span> </div>
                                     </a>
                                 </li>
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
-                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/package/2.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/hotels/2.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>London, United Kingdom</h5> <span>There's so much to see and do in London</span> </div>
+                                            <h5>Lake Palace view Hotel</h5> <span>City: Beijing,China</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
                                     </a>
                                 </li>
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
-                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/package/3.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/hotels/3.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>Paris, France</h5> <span>Everyone who visits Paris for the first time probably </span> </div>
+                                            <h5>First Class Grandd Hotel</h5> <span>City: Berlin,Germany</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>5.0</span> </div>
                                     </a>
                                 </li>
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
-                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/package/4.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/hotels/4.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>Rome, Italy</h5> <span>It’s nicknamed the Eternal City for a reason.</span> </div>
-                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
+                                            <h5>Barcelona Grand Pales</h5> <span>City: Chennai,India</span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>3.0</span> </div>
                                     </a>
                                 </li>
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
-                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/package/5.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="/assets/images/hotels/8.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>New York City, New York</h5> <span>The first time you go to New York</span> </div>
+                                            <h5>Universal luxury Grand Hotel</h5> <span>City: Rio,Brazil</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>3.4</span> </div>
                                     </a>
                                 </li>
@@ -81,89 +81,22 @@
                         </div>
                         <!--PART 7 : LEFT LISTINGS-->
                         <div class="hot-page2-alp-l3 hot-page2-alp-l-com">
-                            <h4><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Travel Available Check</h4>
+                            <h4><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Room Available Check</h4>
                             <div class="hot-page2-alp-l-com1 hot-room-ava-check">
-                                <form class="v2-search-form package-form">
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input type="text" id="select-city-1" class="autocomplete validate">
-                                            <label for="select-city-1">Select City or Place</label>
-                                        </div>
-                                        <div class="input-field col s12">
-                                            <select>
-                                                <option value="" disabled selected>Select your package</option>
-                                                <option value="1">Honeymoon Package</option>
-                                                <option value="2">Family Package</option>
-                                                <option value="3">Holiday Package</option>
-                                                <option value="1">Group Package</option>
-                                                <option value="1">Regular Package</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <input type="text" id="from" name="from">
-                                            <label for="from">Arrival Date</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <input type="text" id="to" name="to">
-                                            <label for="to">Departure Date</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select>
-                                                <option value="" disabled selected>No of adults</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="1">4</option>
-                                                <option value="1">5</option>
-                                                <option value="1">6</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select>
-                                                <option value="" disabled selected>No of childrens</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="1">4</option>
-                                                <option value="1">5</option>
-                                                <option value="1">6</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s6">
-                                            <select>
-                                                <option value="" disabled selected>Min Price</option>
-                                                <option value="1">$200</option>
-                                                <option value="2">$500</option>
-                                                <option value="3">$1000</option>
-                                                <option value="1">$5000</option>
-                                                <option value="1">$10,000</option>
-                                                <option value="1">$50,000</option>
-                                            </select>
-                                        </div>
-                                        <div class="input-field col s6">
-                                            <select>
-                                                <option value="" disabled selected>Max Price</option>
-                                                <option value="1">$200</option>
-                                                <option value="2">$500</option>
-                                                <option value="3">$1000</option>
-                                                <option value="1">$5000</option>
-                                                <option value="1">$10,000</option>
-                                                <option value="1">$50,000</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn v2-ser-btn">
-                                        </div>
-                                    </div>
+                                <form>
+                                    <ul>
+                                        <li>
+                                            <label>Enter Your City</label>
+                                            <input type="text" placeholder="Enter City"> </li>
+                                        <li>
+                                            <label>Depart Date</label>
+                                            <input type="date"> </li>
+                                        <li>
+                                            <label>Return Date</label>
+                                            <input type="date"> </li>
+                                        <li>
+                                            <input type="submit" value="SUBMIT"> </li>
+                                    </ul>
                                 </form>
                             </div>
                         </div>
@@ -299,7 +232,7 @@
                         <!--END PART 5 : LEFT LISTINGS-->
                         <!--PART 6 : LEFT LISTINGS-->
                         <div class="hot-page2-alp-l3 hot-page2-alp-l-com">
-                            <h4><i class="fa fa-heart-o" aria-hidden="true"></i> Travel Amenities</h4>
+                            <h4><i class="fa fa-heart-o" aria-hidden="true"></i> Hotel Amenities</h4>
                             <div class="hot-page2-alp-l-com1 hot-page2-alp-p5">
                                 <form>
                                     <ul>
@@ -349,70 +282,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/1.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l1.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
                                             <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/2.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -421,34 +307,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/3.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l3.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -456,143 +331,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/4.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l4.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
                                             <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/5.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/6.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/7.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -601,70 +357,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/1.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l5.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
                                             <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/2.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -673,34 +382,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/3.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l6.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -708,143 +406,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/4.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l9.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
                                             <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/5.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/6.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/7.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -853,34 +432,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/1.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l8.jpg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -888,35 +456,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/2.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l1.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -925,34 +482,23 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/3.jpg" alt=""> </div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l3.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -960,35 +506,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/4.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l4.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -996,35 +531,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/5.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l5.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -1032,35 +556,24 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/6.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">4.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l6.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->
@@ -1068,35 +581,224 @@
                                 <div class="hot-page2-alp-r-list">
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="/assets/images/package/7.jpg" alt=""> </div>
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l9.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
                                         </a>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
 											</span> </div>
                                     </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l8.jpg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
                                             <ul>
-                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
                                             </ul>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l1.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l3.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l4.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l5.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l6.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 18 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Taaj Club House</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">5.0</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l9.jpeg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 53 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Barcelona Grand Pales</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
+                                    </div>
+                                </div>
+                                <!--END LISTINGS-->
+                                <!--LISTINGS START-->
+                                <div class="hot-page2-alp-r-list">
+                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                        <a href="javascript:void(0);">
+                                            <div class="hotel-list-score">4.5</div>
+                                            <div class="hot-page2-hli-1"> <img src="/assets/images/hotels/l8.jpg" alt=""> </div>
+                                            <div class="hom-hot-av-tic hom-hot-av-tic-list"> Available Rooms: 42 </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="hot-page2-alp-ri-p2"> <a href="hotel-details.html"><h3>Universal luxury Grand Hotel</h3></a>
+                                            <ul>
+                                                <li>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</li>
+                                                <li>+101-1231-1231, +61 6541-4561-12</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="hot-page2-alp-ri-p3">
+                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Price Per Night</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
+												<a href="hotel-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+											</span> </div>
                                     </div>
                                 </div>
                                 <!--END LISTINGS-->

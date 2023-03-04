@@ -21,8 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/hotel-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('hotel-list');
+
+Route::get('/flight-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('flight-list');
+Route::get('/ticket-list', [App\Http\Controllers\TicketListController::class, 'index'])->name('ticket-list');
 Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
+Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
 Route::get('/payment-all', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
