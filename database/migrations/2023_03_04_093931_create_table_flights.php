@@ -18,6 +18,7 @@ class CreateTableFlights extends Migration
             $table->dateTime("takeoftime");
             $table->dateTime("landingtime");
             $table->text("description")->nullable();
+            $table->unsignedBigInteger("totalticket");
             $table->unsignedBigInteger("airplane_id");
             $table->unsignedBigInteger("airstrip_id");
             $table->timestamps();

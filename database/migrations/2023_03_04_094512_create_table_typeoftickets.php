@@ -21,7 +21,7 @@ class CreateTableTypeoftickets extends Migration
             $table->text("description")->nullable();
             $table->unsignedDecimal("price",12,3);
             $table->unsignedBigInteger("flight_id");
-            $table->unsignedBigInteger("typeofseat_id")->nullable();
+            $table->unsignedBigInteger("typeofseat_id");
             $table->timestamps();
             $table->foreign("flight_id")->references("id")->on("flights");
             $table->foreign("typeofseat_id")->references("id")->on("typeofseats");

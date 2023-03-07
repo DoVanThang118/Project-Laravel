@@ -18,6 +18,7 @@ class CreateTableTypeofseats extends Migration
             $table->string("name");
             $table->unsignedBigInteger("totalseat");
             $table->text("description")->nullable();
+            $table->unsignedBigInteger("airplane_id");
             $table->timestamps();
         });
     }
