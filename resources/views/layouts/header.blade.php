@@ -53,44 +53,92 @@
                     </div>
                     <div class="main-menu">
                         <ul>
-                            <li><a href="{{ url('/') }}">{{ config('app.name') }}</a>
-                            </li>
                             <li class="about-menu">
-                                <a href="family-package.html" class="mm-arr">Packages</a>
+                                <a href="#" class="mm-arr">Endow</a><!--các ưu đãi-->
                                 <!-- MEGA MENU 1 -->
                                 <div class="mm-pos">
                                     <div class="about-mm m-menu">
                                         <div class="m-menu-inn">
                                             <div class="mm1-com mm1-s1">
                                                 <div class="ed-course-in">
-                                                    <a class="course-overlay menu-about" href="all-package.html">
+                                                    <a class="course-overlay menu-about" href="#">
                                                         <img src="/assets/images/sight/5.jpg" alt="">
-                                                        <span>Popular Package</span>
+                                                        <span>Popular Flights</span>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="mm1-com mm1-s2">
-                                                <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
-                                                <a href="all-package.html" class="mm-r-m-btn">Read more</a>
+                                            <div class="mm1-com mm1-s3">
+                                                <h4>Best Fare Finder</h4><!--ưu đãi theo chuyến bay-->
+                                                <ul>
+                                                    <li><a href="#">Hanoi to Da Nang</a></li>
+                                                    <li><a href="#">Hanoi to Ho Chi Minh city</a></li>
+                                                    <li><a href="#">Ho Chi Minh city to Hanoi</a></li>
+                                                    <li><a href="#">Ho Chi Minh city to Da Nang</a></li>
+                                                    <li><a href="#">Da Nang to Ho Chi Minh city</a></li>
+                                                    <li><a href="#">All Routes</a></li>
+                                                </ul>
                                             </div>
                                             <div class="mm1-com mm1-s3">
+                                                <h4>Top Destinations</h4><!--những điểm đến hấp dẫn trong nước-->
                                                 <ul>
-                                                    <li><a href="booking-all.html">All Booking</a></li>
-                                                    <li><a href="booking-tour-package.html">Tour Package Booking</a></li>
-                                                    <li><a href="booking-hotel.html">Hotel Booking</a></li>
-                                                    <li><a href="booking-car-rentals.html">Car Rentals Booking</a></li>
-                                                    <li><a href="booking-flight.html">Flight Booking</a></li>
-                                                    <li><a href="booking-slider.html">Slider Booking</a></li>
+                                                    <li><a href="#">Hanoi</a></li>
+                                                    <li><a href="#">Ho Chi Minh city</a></li>
+                                                    <li><a href="#">Da Nang</a></li>
+                                                    <li><a href="#">Phu Quoc</a></li>
+                                                    <li><a href="#">Nha Trang</a></li>
+                                                    <li><a href="#">Explore all destinations</a></li>
                                                 </ul>
                                             </div>
                                             <div class="mm1-com mm1-s4">
+                                                <h4>Popular Countries</h4><!--các quốc gia phổ biến-->
                                                 <ul>
-                                                    <li><a href="all-package.html">All Package</a></li><li><a href="family-package.html">Family Package</a></li>
-                                                    <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
-                                                    <li><a href="group-package.html">Group Package</a></li>
-                                                    <li><a href="weekend-package.html">WeekEnd Package</a></li>
-                                                    <li><a href="regular-package.html">Regular Package</a></li>
-                                                    <li><a href="custom-package.html">Custom Package</a></li>
+                                                    <li><a href="#">Flights To Australia</a></li>
+                                                    <li><a href="#">Flights to Singapore</a></li>
+                                                    <li><a href="#">Flights to France</a></li>
+                                                    <li><a href="#">Flights to Japan</a></li>
+                                                    <li><a href="#">Flights to Korea</a></li>
+                                                    <li><a href="#">All Countries</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
+                            <li class="cour-menu">
+                                <a href="#" class="mm-arr">Booking information</a>
+                                <!-- MEGA MENU 1 -->
+                                <div class="mm-pos">
+                                    <div class="cour-mm m-menu">
+                                        <div class="m-menu-inn">
+                                            <div class="mm1-com mm1-s3">
+                                                <h4>Flight & Additional Services</h4>
+                                                <!--vé máy bay và dịch vụ bổ trợ-->
+                                                <ul>
+                                                    <li><a href="#">Fare Types & Rules</a></li><!--dịch vụ vé-->
+                                                    <li><a href="#">Additional Services</a></li><!--dịch vụ bổ trợ-->
+                                                </ul>
+                                            </div>
+                                            <div class="mm1-com mm1-s3">
+                                                <h4>The Experience</h4><!--các trải nghệm-->
+                                                <ul>
+                                                    <li><a href="#">Business Class</a></li><!--hạng thương gia-->
+                                                    <li><a href="#">Premium Economy Class</a></li><!--hạng phổ thông cao cấp-->
+                                                    <li><a href="#">Economy Class</a></li><!--hạng phổ thông-->
+                                                </ul>
+                                            </div>
+                                            <div class="mm1-com mm1-s3">
+                                                <h4>Timetable & Route Map</h4><!--Tra cứu lịch trình và thời gian chuyến bay-->
+                                                <ul>
+                                                    <li><a href="#">Timetable</a></li><!--lịch bay-->
+                                                    <li><a href="#">Worldwide Routemap</a></li><!--bản đồ đường bay thế giới-->
+                                                </ul>
+                                            </div>
+                                            <div class="mm1-com mm1-s4">
+                                                <h4>Affiliate Products</h4><!--Sản phẩm liên kết-->
+                                                <ul>
+                                                    <li><a href="#">Rail & Fly</a></li><!--máy bay kết hợp tàu-->
+                                                    <li><a href="#">Deals From Partners</a></li><!--dịch vụ của nhà tài trợ-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -98,150 +146,12 @@
                                 </div>
                             </li>
                             <li class="admi-menu">
-                                <a href="#" class="mm-arr">Seight Seeing</a>
-                                <!-- MEGA MENU 1 -->
-                                <div class="mm-pos">
-                                    <div class="admi-mm m-menu">
-                                        <div class="m-menu-inn">
-                                            <div class="mm2-com mm1-com mm1-s1">
-                                                <div class="ed-course-in">
-                                                    <a class="course-overlay" href="places.html">
-                                                        <img src="/assets/images/sight/1.jpg" alt="">
-                                                        <span>Seight Seeing - 1</span>
-                                                    </a>
-                                                </div>
-                                                <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                <a href="places.html" class="mm-r-m-btn">Read more</a>
-                                            </div>
-                                            <div class="mm2-com mm1-com mm1-s1">
-                                                <div class="ed-course-in">
-                                                    <a class="course-overlay" href="places-1.html">
-                                                        <img src="/assets/images/sight/2.jpg" alt="">
-                                                        <span>Seight Seeing - 2</span>
-                                                    </a>
-                                                </div>
-                                                <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                <a href="places-1.html" class="mm-r-m-btn">Read more</a>
-                                            </div>
-                                            <div class="mm2-com mm1-com mm1-s1">
-                                                <div class="ed-course-in">
-                                                    <a class="course-overlay" href="places-2.html">
-                                                        <img src="/assets/images/sight/3.jpg" alt="">
-                                                        <span>Seight Seeing - 3</span>
-                                                    </a>
-                                                </div>
-                                                <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                <a href="places-2.html" class="mm-r-m-btn">Read more</a>
-                                            </div>
-                                            <div class="mm2-com mm1-com mm1-s4">
-                                                <div class="ed-course-in">
-                                                    <a class="course-overlay" href="places-3.html">
-                                                        <img src="/assets/images/sight/4.jpg" alt="">
-                                                        <span>Seight Seeing - 4</span>
-                                                    </a>
-                                                </div>
-                                                <p>Donec lacus libero, rutrum ac sollicitudin sed, mattis non eros. Vestibulum congue nec eros quis lacinia. Mauris non tincidunt lectus. Nulla mollis, orci vitae accumsan rhoncus.</p>
-                                                <a href="places-3.html" class="mm-r-m-btn">Read more</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="#" class="mm-arr">Travel information</a><!--thông tin hành trình-->
                             </li>
-                            <li><a href="hotels-list.html">Hotels</a></li>
-                            <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
-                            <li class="cour-menu">
-                                <a href="#!" class="mm-arr">All Pages</a>
-                                <!-- MEGA MENU 1 -->
-                                <div class="mm-pos">
-                                    <div class="cour-mm m-menu">
-                                        <div class="m-menu-inn">
-                                            <div class="mm1-com mm1-cour-com mm1-s3">
-                                                <h4>Home pages</h4>
-                                                <ul>
-                                                    <li><a href="booking-all.html">Home page 1</a></li>
-                                                    <li><a href="booking-all.html">Home page 2</a></li>
-                                                    <li><a href="booking-tour-package.html">Home page 3</a></li>
-                                                    <li><a href="booking-hotel.html">Home page 4</a></li>
-                                                    <li><a href="booking-car-rentals.html">Home page 5</a></li>
-                                                    <li><a href="booking-flight.html">Home page 6</a></li>
-                                                    <li><a href="booking-slider.html">Home page 7</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="mm1-com mm1-cour-com mm1-s3">
-                                                <h4>Tour Packages</h4>
-                                                <ul>
-                                                    <li><a href="all-package.html">All Package</a></li><li><a href="family-package.html">Family Package</a></li>
-                                                    <li><a href="honeymoon-package.html">Honeymoon Package</a></li>
-                                                    <li><a href="group-package.html">Group Package</a></li>
-                                                    <li><a href="weekend-package.html">WeekEnd Package</a></li>
-                                                    <li><a href="regular-package.html">Regular Package</a></li>
-                                                    <li><a href="custom-package.html">Custom Package</a></li>
-                                                </ul>
-                                                <h4 class="ed-dr-men-mar-top">Sighe Seeings Pages</h4>
-                                                <ul>
-                                                    <li><a href="places.html">Seight Seeing 1</a></li>
-                                                    <li><a href="places-1.html">Seight Seeing 2</a></li>
-                                                    <li><a href="places-2.html">Seight Seeing 3</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="mm1-com mm1-cour-com mm1-s3">
-                                                <h4>User Dashboard</h4>
-                                                <ul>
-                                                    <li><a href="dashboard.html">My Bookings</a></li>
-                                                    <li><a href="db-my-profile.html">My Profile</a></li>
-                                                    <li><a href="db-my-profile-edit.html">My Profile edit</a></li>
-                                                    <li><a href="db-travel-booking.html">Tour Packages</a></li>
-                                                    <li><a href="db-hotel-booking.html">Hotel Bookings</a></li>
-                                                    <li><a href="db-event-booking.html">Event bookings</a></li>
-                                                    <li><a href="db-payment.html">Make Payment</a></li>
-                                                    <li><a href="db-refund.html">Cancel Bookings</a></li>
-                                                    <li><a href="db-all-payment.html">Prient E-Tickets</a></li>
-                                                    <li><a href="db-event-details.html">Event booking details</a></li>
-                                                    <li><a href="db-hotel-details.html">Hotel booking details</a></li>
-                                                    <li><a href="db-travel-details.html">Travel booking details</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="mm1-com mm1-cour-com mm1-s3">
-                                                <h4>Other pages:1</h4>
-                                                <ul>
-                                                    <li><a href="tour-details.html">Travel details</a></li>
-                                                    <li><a href="hotel-details.html">Hotel details</a></li>
-                                                    <li><a href="all-package.html">All package</a></li><li><a href="hotels-list.html">All hotels</a></li>
-                                                    <li><a href="booking.html">Booking page</a></li>
-                                                </ul>
-                                                <h4 class="ed-dr-men-mar-top">User login pages</h4>
-                                                <ul>
-                                                    <li><a href="register.html">Register</a></li>
-                                                    <li><a href="login.html">Login and Sign in</a></li>
-                                                    <li><a href="forgot-pass.html">Forgot pass</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="mm1-com mm1-cour-com mm1-s4">
-                                                <h4>Other pages:2</h4>
-                                                <ul>
-                                                    <li><a href="about.html">About Us</a></li>
-                                                    <li><a href="testimonials.html">Testimonials</a></li>
-                                                    <li><a href="events.html">Events</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="tips.html">Tips Before Travel</a></li>
-                                                    <li><a href="price-list.html">Price List</a></li>
-                                                    <li><a href="discount.html">Discount</a></li>
-                                                    <li><a href="faq.html">FAQ</a></li>
-                                                    <li><a href="sitemap.html">Site map</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
-                                                    <li><a href="contact.html">Contact Us</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </li>
-                            <li><a href="events.html">Events</a>
+                            <li><a href="{{url("/profile")}}">Profile</a>
                             </li>
-                            <li><a href="dashboard.html">Profile</a>
-                            </li>
-                            <li><a href="contact.html">Contact us</a>
+                            <li><a href="#">Contact us</a><!--thông tin thêm về công ty -->
                             </li>
                         </ul>
                     </div>
