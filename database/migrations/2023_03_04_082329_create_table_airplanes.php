@@ -19,7 +19,7 @@ class CreateTableAirplanes extends Migration
             $table->string("brand");
             $table->text("description")->nullable();
             $table->string("image")->nullable();
-
+            $table->unsignedBigInteger("totalseat");
             $table->timestamps();
         });
     }

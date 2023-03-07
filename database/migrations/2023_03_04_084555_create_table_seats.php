@@ -17,7 +17,6 @@ class CreateTableSeats extends Migration
             $table->id();
             $table->string("name");
             $table->text("description")->nullable();
-            $table->unsignedBigInteger("airplane_id");
             $table->unsignedBigInteger("typeofseat_id");
             $table->timestamps();
             $table->foreign("airplane_id")->references("id")->on("airplanes");
