@@ -9,7 +9,7 @@
 @endsection
 @section('content')
     <!--====== HOTELS LIST ==========-->
-    <section class="hot-page2-alp hot-page2-pa-sp-top all-hot-bg">
+    <section class="hot-page2-alp hot-page2-pa-sp-top">
         <div class="container">
             <div class="row inner_banner inner_banner_3 bg-none">
                 <div class="hot-page2-alp-tit">

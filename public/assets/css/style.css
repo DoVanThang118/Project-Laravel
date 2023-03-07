@@ -3312,10 +3312,12 @@
  .hot-page2-alp {
      background: url(../images/consul-bg-1.jpg) no-repeat center top #e6e6e6;
      background-attachment: fixed;
+     background-size: cover;
 }
  .all-hot-bg{
      background: url(../images/consul-bg-2.jpg) no-repeat center top #e6e6e6;
      background-attachment: fixed;
+     background-size: cover;
 }
  .hot-page2-alp::before {
      content: '';
