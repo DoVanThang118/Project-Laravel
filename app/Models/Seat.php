@@ -12,18 +12,31 @@ class Seat extends Model
     protected $fillable=[
         "name",
         "description",
-        "airplane_id",
         "typeofseat_id"
 
     ];
-    public function Airplane(){
-        return $this->belongsTo(Airplane::class);
-    }
     public function TypeOfSeat(){
-        return $this->belongsTo(TypeOfSeat::class);
+        return $this->belongsTo(TypeOfSeat::class,"typeofseat_id");
     }
     public function Tickets(){
         return $this->hasMany(Ticket::class);
     }
+    public function scopeTypeFilter($query,$typeofseat_id){
+        if($typeofseat_id && $typeofseat_id != 0){
+            return $query->where("typeofseat_id",$typeofseat_id);
+        }
+        return $query;
+    }
+
+    public function scopeTypeOfSeatFilter($query,$type){
+        foreach ($type as $t){
+            $query->orWhere("typeofseat_id",$t->id);
+        }
+        return $query;
+    }
+
+
+
+
 
 }

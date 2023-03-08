@@ -13,14 +13,16 @@ class Airplane extends Model
         "name",
         "brand",
         "description",
-        "image"
+        "image",
+        "totalseat"
 
     ];
-    public function Seats(){
-        return $this->hasMany(Seat::class);
+    public function TypeOfSeats(){
+        return $this->hasMany(TypeOfSeat::class);
     }
     public function Flights(){
         return $this->hasMany(Flight::class);
     }
+
 
 }

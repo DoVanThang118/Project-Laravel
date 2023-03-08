@@ -13,16 +13,23 @@ class Flight extends Model
         "takeoftime",
         "landingtime",
         "description",
+        "totalticket",
         "airplane_id",
         "airstrip_id"
     ];
-    public function AirStrip(){
-        return $this->belongsTo(AirStrip::class);
-    }
+   public function AirStrip(){
+       return $this->belongsTo(AirStrip::class,"airstrip_id");
+   }
     public function Airplane(){
-        return $this->belongsTo(Airplane::class);
+        return $this->belongsTo(Airplane::class,"airplane_id");
     }
     public function TypeOfTickets(){
         return $this->hasMany(TypeOfTicket::class);
+    }
+    public function scopeFlightAirplaneFilter($query,$airplane_id){
+        if($airplane_id && $airplane_id != 0){
+            return $query->where("airplane_id",$airplane_id);
+        }
+        return $query;
     }
 }

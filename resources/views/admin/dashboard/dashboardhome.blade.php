@@ -284,7 +284,7 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>User Details</h4>
+                            <h4>All Airplane</h4>
                             <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                             <ul id="dr-users" class="dropdown-content">
@@ -306,130 +306,54 @@
 
                         </div>
                         <div class="tab-inn">
-                            <div class="table-responsive table-desi">
+                            <a class="table-responsive table-desi">
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>User</th>
+                                        <th>#</th>
                                         <th>Name</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Country</th>
-                                        <th>Listings</th>
-                                        <th>Enquiry</th>
-                                        <th>Bookings</th>
-                                        <th>Reviews</th>
+                                        <th>Brand</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
+
+                                    @foreach($air as $item)
                                     <tr>
-                                        <td><span class="list-img"><img src="/admin/images/user/1.png" alt=""></span>
+
+                                        <td>{{$item->id}}</td>
+                                        <td><a href="#"><span class="list-enq-name">{{$item->name}}</span><span class="list-enq-city">Illunois, United States</span></a>
                                         </td>
-                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>+01 3214 6522</td>
-                                        <td>chadengle@dummy.com</td>
-                                        <td>Australia</td>
+                                        <td>{{$item->brand}}</td>
+                                        <td>{{$item->description}}</td>
+                                        <td>{{$item->image}}</td>
                                         <td>
-                                            <span class="label label-primary">02</span>
+                                            <a href="" class="icon-preview col s6 m3"><i class="material-icons dp48">mode_edit</i>
+                                            </a>
                                         </td>
-                                        <td>
-                                            <span class="label label-danger">12</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">24</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info">36</span>
-                                        </td>
+
                                     </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="/admin/images/user/2.png" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>+01 3214 6522</td>
-                                        <td>chadengle@dummy.com</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <span class="label label-primary">02</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">12</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">24</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info">36</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="/admin/images/user/3.png" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>+01 3214 6522</td>
-                                        <td>chadengle@dummy.com</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <span class="label label-primary">02</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">12</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">24</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info">36</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="/admin/images/user/4.png" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>+01 3214 6522</td>
-                                        <td>chadengle@dummy.com</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <span class="label label-primary">02</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">12</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">24</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info">36</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="/admin/images/user/5.png" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>+01 3214 6522</td>
-                                        <td>chadengle@dummy.com</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <span class="label label-primary">02</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">12</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">24</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-info">36</span>
-                                        </td>
-                                    </tr>
+                                    @endforeach
+
+
+
                                     </tbody>
                                 </table>
+                            </a>
+                            <div class="card-footer clearfix">
+                                {{--            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--            </ul>--}}
+                                {!! $air->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

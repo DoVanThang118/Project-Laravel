@@ -27,5 +27,10 @@ class TypeOfTicket extends Model
     public function Tickets(){
         return $this->hasMany(Ticket::class);
     }
-
+    public function scopeFlightFilter($query,$flight_id){
+        if($flight_id && $flight_id != 0){
+            return $query->where("flight_id",$flight_id);
+        }
+        return $query;
+    }
 }

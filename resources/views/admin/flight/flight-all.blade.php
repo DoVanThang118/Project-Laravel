@@ -14,21 +14,15 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>All Airplane</h4>
+                            <h4>All Flight</h4>
                             <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
                             <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                             <ul id="dr-users" class="dropdown-content">
-                                <li><a href="#!">Add New</a>
-                                </li>
-                                <li><a href="#!">Edit</a>
+                                <li><a href="{{url("admin/flight/flight-add")}}">Add New</a>
                                 </li>
                                 <li><a href="#!">Update</a>
                                 </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
+
                             </ul>
 
                             <!-- Dropdown Structure -->
@@ -39,31 +33,40 @@
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Brand</th>
+                                        <th>#</th>
+                                        <th>Takeof time</th>
+                                        <th>Landing time</th>
                                         <th>Description</th>
-                                        <th>Image</th>
-                                        <th>Total Seat</th>
+                                        <th>Total Ticket</th>
+                                        <th>Airplane Name</th>
+                                        <th>Take of city</th>
+                                        <th>Landing City</th>
                                         <th>View</th>
+                                        <th>Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $item)
-                                    <tr>
+                                        <tr>
 
                                             <td>{{$item->id}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->brand}}</td>
+                                            <td>{{$item->takeoftime}}</td>
+                                            <td>{{$item->landingtime}}</td>
                                             <td>{{$item->description}}</td>
-                                            <td>{{$item->image}}</td>
-                                           <td>{{$item->totalseat}}</td>
+                                            <td>{{$item->totalticket}}</td>
+                                            <td>{{$item->Airplane->name}}</td>
+                                            <td>{{$item->AirStrip->TakeofCity->name}}</td>
+                                            <td>{{$item->AirStrip->LandingCity->name}}</td>
+
 
                                             <td>
-                                            <a href="{{url("admin/airplane/airplane-view",["airplane"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a href="{{url("admin/flight/flight-view",["flight"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </td>
+                                            <td>
+                                                <a href="{{url("admin/flight/flight-edit",["flight"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             </td>
 
-                                    </tr>
+                                        </tr>
                                     @endforeach
 
                                     </tbody>
@@ -86,3 +89,4 @@
         </div>
     </div>
 @endsection
+
