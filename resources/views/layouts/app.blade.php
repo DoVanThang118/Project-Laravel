@@ -24,7 +24,6 @@
     @yield('content')
 
     <!--====== TIPS BEFORE TRAVEL ==========-->
-    @include("layouts.tip")
 
     <!--====== FOOTER ==========-->
     @include("layouts.footer")

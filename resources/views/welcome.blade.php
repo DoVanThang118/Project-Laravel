@@ -820,30 +820,6 @@
         </div>
     </section>
     <!--====== REQUEST A QUOTE ==========-->
-    <section>
-        <div class="foot-mob-sec tb-space">
-            <div class="rows container">
-                <!-- FAMILY IMAGE(YOU CAN USE ANY PNG IMAGE) -->
-                <div class="col-md-6 col-sm-6 col-xs-12 family"> <img src="/assets/images/mobile.png" alt="" /> </div>
-                <!-- REQUEST A QUOTE -->
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <!-- THANK YOU MESSAGE -->
-                    <div class="foot-mob-app">
-                        <h2>Have you tried our mobile app?</h2>
-                        <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Easy Hotel Booking</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Tour and Travel Packages</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Package Reviews and Ratings</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i> Manage your Bookings, Enquiry and Reviews</li>
-                        </ul>
-                        <a href="#"><img src="/assets/images/android.png" alt=""> </a>
-                        <a href="#"><img src="/assets/images/apple.png" alt=""> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!--====== REQUEST A QUOTE ==========-->
     <!--<section>
         <div class="form tb-space">
@@ -862,7 +838,7 @@
                     <form id="home_form" name="home_form" action="mail/send.php">
                         <ul>
                             <li>
-                                <input type="text" name="ename" value="" id="ename" placeholder="Name" required>
+<input type="text" name="ename" value="" id="ename" placeholder="Name" required>
                             </li>
                             <li>
                                 <input type="tel" name="emobile" value="" id="emobile" placeholder="Mobile" required>
