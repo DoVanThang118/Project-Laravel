@@ -32,5 +32,23 @@ class Ticket extends Model
         }
         return $query;
     }
+    public function scopeTicketFilter($query,$typeofticket_id){
+        if($typeofticket_id && $typeofticket_id != 0){
+            return $query->where("typeofticket_id",$typeofticket_id);
+        }
+        return $query;
+    }
+    public function scopeMaxPrice($query,$maxprice){
+        if($maxprice && $maxprice != ""){
+            return $query->where("price","<=",$maxprice);
+        }
+        return $query;
+    }
+    public function scopeMinPrice($query,$minprice){
+        if($minprice && $minprice != ""){
+            return $query->where("price",">=",$minprice);
+        }
+        return $query;
+    }
 
 }

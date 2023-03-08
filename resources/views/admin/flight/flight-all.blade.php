@@ -73,13 +73,13 @@
                                 </table>
                             </div>
                             <div class="card-footer clearfix">
-{{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
-{{--                                            </ul>--}}
+                                {{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--                                            </ul>--}}
                                 {!! $data->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>
@@ -89,4 +89,3 @@
         </div>
     </div>
 @endsection
-

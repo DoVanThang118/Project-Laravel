@@ -13,6 +13,7 @@ use App\Models\TypeOfSeat;
 use App\Models\TypeOfTicket;
 use Illuminate\Http\Request;
 
+
 class FlightController extends Controller
 {
     public function flightall(){
@@ -25,20 +26,37 @@ class FlightController extends Controller
         ]);
     }
 
-    public function flightview(Flight $flight){
+    public function flightview(Flight $flight,Request $request){
+        $typeofticket_id=$request->get("typeofticket_id");
+        $maxprice=$request->get("maxprice");
+        $minprice=$request->get("minprice");
         $type=TypeOfTicket::with("Flight")
             ->FlightFilter($flight->id)
             ->get();
-        $data = Ticket::with("TypeOfTicket")
+        if($typeofticket_id!=0){
+            $data=Ticket::with("TypeOfTicket")
+                ->TicketFilter($typeofticket_id)
+                ->MaxPrice($maxprice)
+                ->MinPrice($minprice)
+                ->paginate(20);
+        }else{
+            $data = Ticket::with("TypeOfTicket")
                 ->TypeOfTicketFilter($type)
+                ->MaxPrice($maxprice)
+                ->MinPrice($minprice)
                 ->orderBy("id","desc")
                 ->paginate(20);
+        }
+
 
         return view("admin.flight.flight-view",[
-            "typeofticket" => $type,
-            "data"=>$data
+            "type" => $type,
+            "data"=>$data,
+            "flight"=>$flight
         ]);
     }
+
+
 
     public function flightedit(Flight $flight){
         $airplane= Airplane::orderBy("id","desc")
