@@ -18,10 +18,10 @@ class Order extends Model
         "discount_id"
     ];
     public function Customer(){
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class,"customer_id");
     }
     public function Discount(){
-        return $this->belongsTo(Discount::class);
+        return $this->belongsTo(Discount::class,"discount_id");
     }
     public function Tickets(){
         return $this->hasMany(Ticket::class);
