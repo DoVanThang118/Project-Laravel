@@ -47,38 +47,10 @@ class DatabaseSeeder extends Seeder
 
         //B4:tao city
 //       City::factory(36)->create();
-        AirStrip::factory(4)->create();
+
         //B5 tao airstrip
-//        AirStrip::factory(50)->create();
-        //B6 tao flight
-//        Flight::factory(20)->create();
-        //B7 tao type of ticket
-//        TypeOfTicket::factory(20)->create();
-        //B8 tao ticket
-//        Ticket::factory(2000)->create();
-        //B9 cap nhat lai gia ve
-//        for($i=1;$i<=2000;$i++){
-//            $type = TypeOfTicket::all();
-//            $tot =Ticket::find($i);
-//            foreach ($type as $t){
-//                if($t->id==$tot->typeofticket_id){
-//                    $tot->update(["price"=>$t->price]);
-//                }
-//            }
-//
-//        }
-        //B10 cap nhat lai so luong typeofticket
-//        for($i=1;$i<=20;$i++){
-//            $ticket = Ticket::all();
-//            $totalticket=0;
-//            foreach ($ticket as $t){
-//                if($t->typeofticket_id==$i){
-//                    $totalticket+=1;
-//                }
-//            }
-//            TypeOfTicket::find($i)->update(["totalticket"=>$totalticket]);
-//
-//        }
+//        AirStrip::factory(4)->create();
+
 
 
     }

@@ -142,7 +142,7 @@ class FlightController extends Controller
                     "totalticket"=>$typeofseat[$i]->totalseat,
                     "image"=>null,
                     "description"=>null,
-                    "price"=>300,
+                    "price"=>$request->get("vip"),
                     "flight_id"=>$flight->id,
                     "typeofseat_id"=>$typeofseat[$i]->id
                 ]);
@@ -153,7 +153,7 @@ class FlightController extends Controller
                         "totalticket"=>$typeofseat[$i]->totalseat,
                         "image"=>null,
                         "description"=>null,
-                        "price"=>200,
+                        "price"=>$request->get("normal"),
                         "flight_id"=>$flight->id,
                         "typeofseat_id"=>$typeofseat[$i]->id
                     ]);
@@ -164,7 +164,7 @@ class FlightController extends Controller
                         "totalticket"=>$typeofseat[$i]->totalseat,
                         "image"=>null,
                         "description"=>null,
-                        "price"=>100,
+                        "price"=>$request->get("cheap"),
                         "flight_id"=>$flight->id,
                         "typeofseat_id"=>$typeofseat[$i]->id
                     ]);

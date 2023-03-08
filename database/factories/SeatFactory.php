@@ -16,7 +16,7 @@ class SeatFactory extends Factory
         return [
             "name"=>$this->faker->name,
             "description"=>$this->faker->address,
-            "typeofseat_id"=>64,
+            "typeofseat_id"=>65,
         ];
     }
 }

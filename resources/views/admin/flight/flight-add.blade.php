@@ -44,6 +44,24 @@
                                     "key"=>"landingtime",
                                     "type"=>"datetime-local",
                                     "required"=>false])
+                                    @include("admin.html.form.input",[
+                                    "label"=>"",
+                                    "title"=>"Input Price Of VIP Ticket",
+                                    "key"=>"vip",
+                                    "type"=>"number",
+                                    "required"=>true])
+                                    @include("admin.html.form.input",[
+                                   "label"=>"",
+                                   "title"=>"Input Price Of NORMAL Ticket",
+                                   "key"=>"normal",
+                                   "type"=>"number",
+                                   "required"=>true])
+                                    @include("admin.html.form.input",[
+                                   "label"=>"",
+                                   "title"=>"Input Price Of CHEAP Ticket",
+                                   "key"=>"cheap",
+                                   "type"=>"number",
+                                   "required"=>true])
 
                                 </div>
                                 <div class="row">
