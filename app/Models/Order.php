@@ -14,16 +14,22 @@ class Order extends Model
         "qty",
         "totalmoney",
         "status",
-        "customer_id",
+        "user_id",
         "discount_id"
     ];
-    public function Customer(){
-        return $this->belongsTo(Customer::class,"customer_id");
+    public function User(){
+        return $this->belongsTo(User::class,"user_id");
     }
     public function Discount(){
         return $this->belongsTo(Discount::class,"discount_id");
     }
     public function Tickets(){
         return $this->hasMany(Ticket::class);
+    }
+    public function scopeUserFilte($query,$user_id){
+        if($user_id && $user_id != 0){
+            return $query->where("user_id",$user_id);
+        }
+        return $query;
     }
 }
