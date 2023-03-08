@@ -14,11 +14,14 @@ class AirStrip extends Model
         "landingcity_id",
         "takeofcity_id"
     ];
-    public function Cities(){
-        return $this->belongsToMany(City::class);
+    public function LandingCity(){
+        return $this->belongsTo(City::class,"landingcity_id");
     }
+    public function TakeofCity(){
+        return $this->belongsTo(City::class,"takeofcity_id");
+    }
+
     public function Flights(){
         return $this->hasMany(Flight::class);
     }
-
 }
