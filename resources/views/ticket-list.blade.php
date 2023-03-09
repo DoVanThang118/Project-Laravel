@@ -33,15 +33,12 @@
                             <div class="row">
                                 <!--LISTINGS START-->
                                 <div class="sb2-2-add-blog sb2-2-1">
-                                    <h2>Ticket</h2>
-                                    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
-
                                     <ul class="nav nav-tabs tab-list">
-                                        <li class="active"><a data-toggle="tab" href="#home"><span>Detail</span></a>
+                                        <li class="active"><a data-toggle="tab" href="#home"><span style="font-size: 25px; color: #d7a307">Business class</span></a>
                                         </li>
-                                        <li><a data-toggle="tab" href="#menu1"><span>Room Type</span></a>
+                                        <li><a data-toggle="tab" href="#menu1"><span style="font-size: 25px; color: #1aa5d8">Economy class</span></a>
                                         </li>
-                                        <li><a data-toggle="tab" href="#menu2"><span>Photo Gallery</span></a>
+                                        <li><a data-toggle="tab" href="#menu2"><span style="font-size: 25px; color: #33ac33">Cheap class</span></a>
                                         </li>
                                     </ul>
 
@@ -49,41 +46,64 @@
                                         <div id="home" class="tab-pane fade in active">
                                             <div class="box-inn-sp">
                                                 <div class="inn-title">
-                                                    <h4>Listing Information</h4>
-                                                    <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                                    <h3 class="hot-list-p3-2">3.690 VND</h3>
+                                                    <ul>
+                                                        <li>Hand baggage: 14kg for routes to Australia, Kazakhstan; 10kg for the remaining routes and 01 small bag not exceeding 02kg.</li>
+                                                        <li>Checked baggage: 50kg for routes between Australia and Kazakhstan; 30kg for remaining routes and 01 golf kit (if any)</li>
+                                                        <li>Luxury lounge (not applicable on Thai domestic flights, and at airports where standard lounge service is not available)</li>
+                                                        <li>Priority at check-in</li>
+                                                        <li>Baggage handling service privilege</li>
+                                                        <li>Priority at security checkpoints (depending on airport conditions and facilities)</li>
+                                                        <li>Private car service between departure or arrival gate and the aircraft (in the event that there is no access to airbridge for the flight)</li>
+                                                        <li>Priority for seat selection</li>
+                                                        <li>Complimentary food & beverage served onboard</li>
+                                                        <li>3-in-1 amenities</li>
+                                                        <li>Complimentary SkyBoss Flight Care (not eligible for flights operated by Thai Vietjet)</li>
+                                                        <li>Passengers entitled to credit shell (open ticket) valid for up to 24 months for unused tickets or in case of no-show</li>
+                                                    </ul>
                                                 </div>
                                                 <div class="bor">
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                            <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
                                                         </div>
-
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div id="menu1" class="tab-pane fade">
                                             <div class="inn-title">
-                                                <h4>Hotel Room Details</h4>
-                                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                                <h3 class="hot-list-p3-2">1.093 VND</h3>
+                                                <ul>
+                                                    <li>7kg or 10kg (Australia/Kazakhstan routes) carry-on baggage and 01 small bag not exceeding 02 Kg</li>
+                                                    <li>40kg (Australia/Kazakhstan routes) of checked baggage; 20kg for the rest of the routes.</li>
+                                                    <li>Food & beverage (applicable on routes Australia/Kazakhstan)</li>
+                                                    <li>Seat selection (upon availability, excluding SkyBoss and SkyBoss Business seats)</li>
+                                                    <li>Change of flight, date or route are all permitted (fare difference applied, if any)</li>
+                                                    <li>Complimentary Deluxe Flight Care (not eligible for flights operated by Thai Vietjet)</li>
+                                                </ul>
                                             </div>
                                             <div class="bor">
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
+                                                        <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div id="menu2" class="tab-pane fade">
                                             <div class="inn-title">
-                                                <h4>Hotel Room Details</h4>
-                                                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                                                <h3 class="hot-list-p3-2">890 VND</h3>
+                                                <ul>
+                                                    <li>7kg or 10kg (Australia/Kazakhstan routes) carry-on baggage and 01 small bag not exceeding 02 Kg</li>
+                                                    <li>40kg (Australia/Kazakhstan routes) of checked baggage; 20kg for the rest of the routes.</li>
+                                                    <li>Food & beverage (applicable on routes Australia/Kazakhstan)</li>
+                                                </ul>
                                             </div>
                                             <div class="bor">
                                                 <div class="row">
                                                     <div class="input-field col s12">
-                                                        <input type="submit" class="waves-effect waves-light btn-large" value="Submit">
+                                                        <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
                                                     </div>
                                                 </div>
                                             </div>

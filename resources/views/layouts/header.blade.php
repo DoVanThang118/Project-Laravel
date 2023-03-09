@@ -146,10 +146,10 @@
                                 </div>
                             </li>
                             <li class="admi-menu">
-                                <a href="#" class="mm-arr">Travel information</a><!--thông tin hành trình-->
+                                <a href="{{url("/all-booking")}}" class="mm-arr">All booking</a>
                             </li>
-                            </li>
-                            <li><a href="{{url("/profile")}}">Profile</a>
+                            <li>
+                                <a href="{{url("/profile")}}">Profile</a>
                             </li>
                             <li><a href="#">Contact us</a><!--thông tin thêm về công ty -->
                             </li>
@@ -173,7 +173,7 @@
                             </div>
                             <div class="input-field">
                                 <input type="text" id="select-search" class="autocomplete">
-                                <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
+                                <label for="select-search" class="search-hotel-type">Search.....</label>
                             </div>
                             <div class="input-field">
                                 <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn"> </div>

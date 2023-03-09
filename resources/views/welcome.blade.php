@@ -18,64 +18,49 @@
                             <h5>World's leading tour and travels template</h5>
                             <h1>Flight Booking to your travel!</h1>
                             <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
-                            <div class="tourz-hom-ser v2-hom-ser">
-                                <ul>
-                                    <li>
-                                        <a href="booking-tour-package.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn"><img src="/assets/images/icon/2.png" alt=""> Tour</a>
-                                    </li>
-                                    <li>
-                                        <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn"><img src="/assets/images/icon/31.png" alt=""> Flight</a>
-                                    </li>
-                                    <li>
-                                        <a href="booking-car-rentals.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn"><img src="/assets/images/icon/30.png" alt=""> Car Rentals</a>
-                                    </li>
-                                    <li>
-                                        <a href="booking-hotel.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn"><img src="/assets/images/icon/1.png" alt=""> Hotel</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <form class="contact__form v2-search-form" method="post" action="mail/flightbooking.php">
+                            <form class="contact__form v2-search-form" method="post" action="{{url("/flight-list")}}">
                                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                                     Thank you message
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input type="text"  class="validate" name="name" required>
-                                        <label>Enter your name</label>
+                                        <select name="noofadults">
+                                            <option value="" disabled selected>Return</option>
+                                            <option value="1">One-way</option>
+                                            <option value="2">Return</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field col s6">
-                                        <input type="number"  class="validate" name="phone" required>
-                                        <label>Enter your phone</label>
+                                    <div class="input-field col s8">
+                                        <select name="city">
+                                            <option value="0">From</option>
+                                            @foreach($city as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
-                                    <div class="input-field col s6">
-                                        <input type="email"  class="validate" name="email" required>
-                                        <label>Enter your email</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input type="text" id="select-city" class="autocomplete" name="flyingfrom">
-                                        <label for="select-city">Flying From</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <input type="text" id="select-city" class="autocomplete" name="flyingto">
-                                        <label for="select-city">Flying To</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
+                                    <div class="input-field col s4">
                                         <input type="text" id="from" name="arrivaldate">
-                                        <label for="from">Arrival Date</label>
+                                        <label for="from">Departure date</label>
                                     </div>
-                                    <div class="input-field col s6">
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s8">
+                                        <select name="city">
+                                            <option value="0">To</option>
+                                            @foreach($city as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="input-field col s4">
                                         <input type="text" id="to" name="departuredate">
-                                        <label for="to">Departure Date</label>
+                                        <label for="to">Return date</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -103,33 +88,33 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <select name="minprice">
-                                            <option value="" disabled selected>Min Price</option>
-                                            <option value="$200">$200</option>
-                                            <option value="$500">$500</option>
-                                            <option value="$1000">$1000</option>
-                                            <option value="$5000">$5000</option>
-                                            <option value="$10,000">$10,000</option>
-                                            <option value="$50,000">$50,000</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <select name="maxprice">
-                                            <option value="" disabled selected>Max Price</option>
-                                            <option value="$200">$200</option>
-                                            <option value="$500">$500</option>
-                                            <option value="$1000">$1000</option>
-                                            <option value="$5000">$5000</option>
-                                            <option value="$10,000">$10,000</option>
-                                            <option value="$50,000">$50,000</option>
-                                        </select>
-                                    </div>
-                                </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="input-field col s6">--}}
+{{--                                        <select name="minprice">--}}
+{{--                                            <option value="" disabled selected>Min Price</option>--}}
+{{--                                            <option value="$200">$200</option>--}}
+{{--                                            <option value="$500">$500</option>--}}
+{{--                                            <option value="$1000">$1000</option>--}}
+{{--                                            <option value="$5000">$5000</option>--}}
+{{--                                            <option value="$10,000">$10,000</option>--}}
+{{--                                            <option value="$50,000">$50,000</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="input-field col s6">--}}
+{{--                                        <select name="maxprice">--}}
+{{--                                            <option value="" disabled selected>Max Price</option>--}}
+{{--                                            <option value="$200">$200</option>--}}
+{{--                                            <option value="$500">$500</option>--}}
+{{--                                            <option value="$1000">$1000</option>--}}
+{{--                                            <option value="$5000">$5000</option>--}}
+{{--                                            <option value="$10,000">$10,000</option>--}}
+{{--                                            <option value="$50,000">$50,000</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input type="submit" value="Book Now" class="waves-effect waves-light tourz-sear-btn v2-ser-btn">
+                                        <input type="submit" value="Let's go" class="waves-effect waves-light tourz-sear-btn v2-ser-btn">
                                     </div>
                                 </div>
                             </form>

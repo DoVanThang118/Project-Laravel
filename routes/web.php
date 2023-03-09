@@ -14,12 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/flight-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('flight-list');

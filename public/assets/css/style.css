@@ -1,7 +1,7 @@
 /*----------------------------------------- [MASTER STYLE SHEET] * Project: The Travel * Version: v2.0 * Copyright 2016-2020 rn53themes * V1.0: 03/09/2016 * V2.0: 24/08/2017 * Author: RN53 Themes * Email: rn53themes@gmail.com * Website: http://www.rn53themes.net -----------------------------------------------*/
 /*------------------------------------------------- = TABLE OF CSS 1.COMMON CSS 2.HEADER(LOG0 & HELP LINE) 3.NAVIGATION MENU 4.SLIDER & INNER PAGE BANNER 5.SLIDER ENQUIRY 6.TOUR PLACES 6.1 HOTELS 7.FREE CONSULTANT 8.EVENTS 9.POPULAR TOUR PLACES 10.REQUEST A QUOTE 11.TIPS BEFORE TRAVEL 11.1 TIPS BEFORE TRAVEL 11.2 CUSTOMER TESTIMONIALS 11.3 ARRANGEMENTS & HELPS 12.FOOTER 1 12.1 OFFERS 12.2 MOST POPULAR VACATIONS 13.FOOTER 2 13.1 ADDRESS 13.2 SUBSCRIBE 13.2 FAQ 13.2 LOCATION 13.5 SOCIAL MEDIA 14.COPY RIGHTS 15.INNER PAGE 15.1 COMMON BANNER 15.2 ALL INNER PAGE STYLES 16.PRE LOADING 17.REVIEWS 18.TOP TRENDINGS 19.INNER PAGE LISTING 20.LISTING 21.LISTING SOCIAL SHARE 22.ROOM AVAILABILITY CHECK 23.SOCIAL MEDIA SHARE 24.MY ACCOUNT DROP DOWN -------------------------------------------------*/
 /*-------------------------------------------------------*/
-/* 1.COMMON CSS 
+/* 1.COMMON CSS
 /*-------------------------------------------------------*/
  body {
      font-family: 'Poppins', sans-serif;
@@ -116,7 +116,7 @@
      color: #909;
 }
 /*-------------------------------------------------------*/
-/* 2.HEADER(LOG0 & HELP LINE) 
+/* 2.HEADER(LOG0 & HELP LINE)
 /*-------------------------------------------------------*/
  .head {
      background: #ffffff;
@@ -262,7 +262,7 @@
      background: #eee;
 }
 /*-------------------------------------------------------*/
-/* 3.NAVIGATION MENU(NOTE:OTHER NAVIGATION CSS FILES FIND ON BOOTSTRAP.CSS ) 
+/* 3.NAVIGATION MENU(NOTE:OTHER NAVIGATION CSS FILES FIND ON BOOTSTRAP.CSS )
 /*-------------------------------------------------------*/
  .menu_book {
      float: right;
@@ -317,7 +317,7 @@
      padding-left: 25px;
 }
 /*-------------------------------------------------------*/
-/* 4.SLIDER & INNER PAGE BANNER 
+/* 4.SLIDER & INNER PAGE BANNER
 /*-------------------------------------------------------*/
  section.c3 {
      position: relative;
@@ -420,7 +420,7 @@
      padding: 40px 0px;
 }
 /*-------------------------------------------------------*/
-/* 5.SLIDER ENQUIRY 
+/* 5.SLIDER ENQUIRY
 /*-------------------------------------------------------*/
  .home_form {
 }
@@ -470,7 +470,7 @@
      text-align: center;
 }
 /*-------------------------------------------------------*/
-/* 6.TOUR PLACES 
+/* 6.TOUR PLACES
 /*-------------------------------------------------------*/
  .b_pack {
      position: relative;
@@ -645,7 +645,7 @@
      border: 0px;
 }
 /*-------------------------------------------------------*/
-/* 6.1.HOTELS 
+/* 6.1.HOTELS
 /*-------------------------------------------------------*/
  .to-ho-hotel-con {
      position: relative;
@@ -820,7 +820,7 @@
      font-size: 13px;
 }
 /*-------------------------------------------------------*/
-/* ROOMS: HOTEL BOOKING 
+/* ROOMS: HOTEL BOOKING
 /*-------------------------------------------------------*/
  .hotel-book-room {
      margin-bottom: 105px;
@@ -879,7 +879,7 @@
      margin-bottom: 15px;
 }
 /*-------------------------------------------------------*/
-/* 7.FREE CONSULTANT 
+/* 7.FREE CONSULTANT
 /*-------------------------------------------------------*/
  .tour-consul {
      background: url(../images/consul-bg.jpeg) no-repeat #00BCD4;
@@ -983,7 +983,7 @@
      width: 100%;
 }
 /*-------------------------------------------------------*/
-/* 8.EVENTS 
+/* 8.EVENTS
 /*-------------------------------------------------------*/
  .events table {
      width: 100%;
@@ -1098,7 +1098,7 @@
      background: none;
 }
 /*-------------------------------------------------------*/
-/* 9.POPULAR TOUR PLACES 
+/* 9.POPULAR TOUR PLACES
 /*-------------------------------------------------------*/
  .place {
      margin-bottom: 30px;
@@ -1182,7 +1182,7 @@
      color: #00BCD4;
 }
 /*-------------------------------------------------------*/
-/* 10.REQUEST A QUOTE 
+/* 10.REQUEST A QUOTE
 /*-------------------------------------------------------*/
  .form_1 ul {
      padding: 0px;
@@ -1272,7 +1272,7 @@
      width: 100%;
 }
 /*-------------------------------------------------------*/
-/* 10.REQUEST A QUOTE: FAMILY IMAGE 
+/* 10.REQUEST A QUOTE: FAMILY IMAGE
 /*-------------------------------------------------------*/
  .family {
 }
@@ -1281,7 +1281,7 @@
      margin-bottom: -45px;
 }
 /*-------------------------------------------------------*/
-/* 11.TIPS BEFORE TRAVEL 
+/* 11.TIPS BEFORE TRAVEL
 /*-------------------------------------------------------*/
  .tips {
      background: url('../images/tipsbg.jpg') no-repeat center center #f0f2f2;
@@ -1301,7 +1301,7 @@
      margin-top: 0px;
 }
 /*-------------------------------------------------------*/
-/* 11.1 TIPS BEFORE TRAVEL 
+/* 11.1 TIPS BEFORE TRAVEL
 /*-------------------------------------------------------*/
  .tips h3 {
      background: #2ea5d3;
@@ -1342,7 +1342,7 @@
      margin-bottom: 12px;
 }
 /*-------------------------------------------------------*/
-/* 11.2 CUSTOMER TESTIMONIALS 
+/* 11.2 CUSTOMER TESTIMONIALS
 /*-------------------------------------------------------*/
  .testi {
      background: url('../images/testi_img.png') no-repeat left top;
@@ -1399,7 +1399,7 @@
      font-weight: 600;
 }
 /*-------------------------------------------------------*/
-/* 11.3 ARRANGEMENTS & HELPS 
+/* 11.3 ARRANGEMENTS & HELPS
 /*-------------------------------------------------------*/
  .arrange {
      padding-top: 12px;
@@ -1424,7 +1424,7 @@
      width: 100%;
 }
 /*-------------------------------------------------------*/
-/* 12.FOOTER 1 
+/* 12.FOOTER 1
 /*-------------------------------------------------------*/
  .footer {
      background: #000000;
@@ -1503,7 +1503,7 @@
      color: #616161;
 }
 /*-------------------------------------------------------*/
-/* 13.5 SOCIAL MEDIA 
+/* 13.5 SOCIAL MEDIA
 /*-------------------------------------------------------*/
  .footer_social {
 }
@@ -1546,7 +1546,7 @@
      pointer-events: auto;
 }
 /*-------------------------------------------------------*/
-/* 13.2 SUBSCRIBE 
+/* 13.2 SUBSCRIBE
 /*-------------------------------------------------------*/
  .footer_sub {
 }
@@ -1575,7 +1575,7 @@
      margin-bottom: 45px;
 }
 /*-------------------------------------------------------*/
-/* 13.2 FAQ 
+/* 13.2 FAQ
 /*-------------------------------------------------------*/
  .footer_faq {
 }
@@ -1599,7 +1599,7 @@
      display: none;
 }
 /*-------------------------------------------------------*/
-/* 12.1 OFFERS & DISCOUNTS 
+/* 12.1 OFFERS & DISCOUNTS
 /*-------------------------------------------------------*/
  .disco {
      background: url('../images/f1.png') no-repeat center center;
@@ -1653,7 +1653,7 @@
      color: #fff;
 }
 /*-------------------------------------------------------*/
-/* 12.2 MOST POPULAR VACATIONS 
+/* 12.2 MOST POPULAR VACATIONS
 /*-------------------------------------------------------*/
  .footer1 {
      background: #000000;
@@ -1697,7 +1697,7 @@
      background: #126164;
 }
 /*-------------------------------------------------------*/
-/* 14.COPY RIGHTS 
+/* 14.COPY RIGHTS
 /*-------------------------------------------------------*/
  .copy {
      background: #fff;
@@ -1716,10 +1716,10 @@
      transition: background-color 0.3s ease 0s, border 0s ease 0s, color 0.3s ease 0s, opacity 0.3s ease-in-out 0s;
 }
 /*-------------------------------------------------------*/
-/* 15.INNER PAGE 
+/* 15.INNER PAGE
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/
-/* 15.1 COMMON BANNER 
+/* 15.1 COMMON BANNER
 /*-------------------------------------------------------*/
  .inner_banner {
      background: url('../images/list-p-bg.jpg') no-repeat center center;
@@ -1803,7 +1803,7 @@
      background: none;
 }
 /*-------------------------------------------------------*/
-/* TOUR PLACES 
+/* TOUR PLACES
 /*-------------------------------------------------------*/
  .p2_2 {
      position: relative;
@@ -1841,7 +1841,7 @@
      font-size: 16px;
 }
 /*-------------------------------------------------------*/
-/* TICKETS 
+/* TICKETS
 /*-------------------------------------------------------*/
  .ticket {
 }
@@ -1863,7 +1863,7 @@
      color: #253d52;
 }
 /*-------------------------------------------------------*/
-/* FEATURES 
+/* FEATURES
 /*-------------------------------------------------------*/
  .featur {
      position: relative;
@@ -1892,7 +1892,7 @@
      font-weight: 600;
 }
 /*-------------------------------------------------------*/
-/* BOOKING 
+/* BOOKING
 /*-------------------------------------------------------*/
  .p2_book {
 }
@@ -1994,7 +1994,7 @@
  .dl4 {
 }
 /*-------------------------------------------------------*/
-/* PAGE: BLOG POSTS 
+/* PAGE: BLOG POSTS
 /*-------------------------------------------------------*/
  .posts {
      position: relative;
@@ -2046,7 +2046,7 @@
      font-size: 13px;
 }
 /*-------------------------------------------------------*/
-/* PAGE: TOUR DETAIL 
+/* PAGE: TOUR DETAIL
 /*-------------------------------------------------------*/
  .tour_font {
      margin-bottom: 50px;
@@ -2288,7 +2288,7 @@
      position: relative;
 }
 /*-------------------------------------------------------*/
-/* PAGE: DETAIL PAGE - SOCIAL MEDIA 
+/* PAGE: DETAIL PAGE - SOCIAL MEDIA
 /*-------------------------------------------------------*/
  .tour_social {
 }
@@ -2323,7 +2323,7 @@
      padding-right: 7px;
 }
 /*-------------------------------------------------------*/
-/* PAGE: DETAIL PAGE - PACKAGE HELP 
+/* PAGE: DETAIL PAGE - PACKAGE HELP
 /*-------------------------------------------------------*/
  .tour_help {
 }
@@ -2342,7 +2342,7 @@
      margin-top: 0px;
 }
 /*-------------------------------------------------------*/
-/* RELATED PACKAGES 
+/* RELATED PACKAGES
 /*-------------------------------------------------------*/
  .tour_rela_1 {
      position: relative;
@@ -2391,7 +2391,7 @@
      color: #464646;
 }
 /*-------------------------------------------------------*/
-/* PAGE: ABOUT 
+/* PAGE: ABOUT
 /*-------------------------------------------------------*/
  .tourb2-ab-p-2 {
      padding-top: 100px;
@@ -2574,7 +2574,7 @@
      color: #b5b5b5;
 }
 /*-------------------------------------------------------*/
-/* PAGE: TESTIMONIALS 
+/* PAGE: TESTIMONIALS
 /*-------------------------------------------------------*/
  .p_testi {
 }
@@ -2615,7 +2615,7 @@
      padding-bottom: 5px;
 }
 /*-------------------------------------------------------*/
-/* PAGE: TIPS BEFORE TRAVEL 
+/* PAGE: TIPS BEFORE TRAVEL
 /*-------------------------------------------------------*/
  .tips_travel {
 }
@@ -2713,7 +2713,7 @@
      font-weight: 400;
 }
 /*-------------------------------------------------------*/
-/* PAGE: TOUR PACKAGE 
+/* PAGE: TOUR PACKAGE
 /*-------------------------------------------------------*/
  .pack_title {
      background: url('../images/book-bg.png') no-repeat center center;
@@ -2740,7 +2740,7 @@
      font-size: 29px;
 }
 /*-------------------------------------------------------*/
-/* PAGE: DISCOUNT PRICE TABLE 
+/* PAGE: DISCOUNT PRICE TABLE
 /*-------------------------------------------------------*/
  .pack_price {
      background: rgba(237, 237, 237, 0.32);
@@ -2795,7 +2795,7 @@
      padding-bottom: 35px;
 }
 /*-------------------------------------------------------*/
-/* PAGE: SITE MAP 
+/* PAGE: SITE MAP
 /*-------------------------------------------------------*/
  .site_map {
      padding: 0px 15px;
@@ -2866,7 +2866,7 @@
      position: absolute;
 }
 /*-------------------------------------------------------*/
-/* PAGE: CONTACT US 
+/* PAGE: CONTACT US
 /*-------------------------------------------------------*/
  .footer_social_1 {
      position: relative;
@@ -2949,7 +2949,7 @@
      text-decoration: line-through;
 }
  .n-td-1 {
-     color: #bebebe 
+     color: #bebebe
 }
  .n-dis-pack {
 }
@@ -2958,7 +2958,7 @@
      */
 }
 /*-------------------------------------------------*/
-/* PRE LOADING 
+/* PRE LOADING
 /*-------------------------------------------------*/
  #preloader {
      position: fixed;
@@ -2987,7 +2987,7 @@
     /* is width and height divided by two */
 }
 /*-------------------------------------------------*/
-/* REVIEWS 
+/* REVIEWS
 /*-------------------------------------------------*/
  .dir-rat {
      position: relative;
@@ -3147,7 +3147,7 @@
  .dir-rat-title p {
 }
 /*-------------------------------------------------*/
-/* TOP TRENDINGS 
+/* TOP TRENDINGS
 /*-------------------------------------------------*/
  .hot-page2-hom-pre {
      position: relative;
@@ -3301,7 +3301,7 @@
      z-index: 9;
 }
 /*-------------------------------------------------*/
-/* INNER PAGE LISTING 
+/* INNER PAGE LISTING
 /*-------------------------------------------------*/
  .hot-page2-il-top-fix {
      opacity: 1 !important;
@@ -3312,12 +3312,10 @@
  .hot-page2-alp {
      background: url(../images/consul-bg-1.jpg) no-repeat center top #e6e6e6;
      background-attachment: fixed;
-     background-size: cover;
 }
  .all-hot-bg{
      background: url(../images/consul-bg-2.jpg) no-repeat center top #e6e6e6;
      background-attachment: fixed;
-     background-size: cover;
 }
  .hot-page2-alp::before {
      content: '';
@@ -3531,7 +3529,7 @@
      display: none;
 }
 /*-------------------------------------------------*/
-/* LISTING 
+/* LISTING
 /*-------------------------------------------------*/
  .hot-page2-lp-rat {
      padding: 6px 6px 15px 8px;
@@ -3908,7 +3906,7 @@
      border-radius: 2px;
 }
 /*-------------------------------------------------*/
-/* ROOM AVAILABILITY CHECK 
+/* ROOM AVAILABILITY CHECK
 /*-------------------------------------------------*/
  .hot-room-ava-check {
 }
@@ -3980,7 +3978,7 @@
      top: 15px;
 }
 /*-------------------------------------------------*/
-/* SOCIAL MEDIA SHARE 
+/* SOCIAL MEDIA SHARE
 /*-------------------------------------------------*/
  .icon-float {
      position: fixed;
@@ -4046,13 +4044,13 @@
      border-bottom-right-radius: 5px;
 }
 /*-------------------------------------------------*/
-/* MY ACCOUNT DROP DOWN 
+/* MY ACCOUNT DROP DOWN
 /*-------------------------------------------------*/
  .top-menu {
      min-width: 200px;
 }
 /*-------------------------------------------------*/
-/* SECTION AND DIV - TOP AND BOTTOM EXTRA SPACING 
+/* SECTION AND DIV - TOP AND BOTTOM EXTRA SPACING
 /*-------------------------------------------------*/
  .pad-bot-redu {
      padding-bottom: 70px;
@@ -4070,7 +4068,7 @@
      padding-top: 0px;
 }
 /*-------------------------------------------------*/
-/* HOME PAGE CITY HOTELS 
+/* HOME PAGE CITY HOTELS
 /*-------------------------------------------------*/
  .tour-mig-like {
 }
@@ -4151,7 +4149,7 @@
      color: #eee;
 }
 /*-------------------------------------------------*/
-/* HOME PAGE FOOTER APP 
+/* HOME PAGE FOOTER APP
 /*-------------------------------------------------*/
  .foot-mob-app {
 }
@@ -4203,7 +4201,7 @@
      width: 100%;
 }
 /*-------------------------------------------------*/
-/* HOME PAGE SEARCH BOX 
+/* HOME PAGE SEARCH BOX
 /*-------------------------------------------------*/
  .tourz-search {
      background: url(../images/consul-bg.jpg) no-repeat;
@@ -4393,7 +4391,7 @@
  .autocomplete-content li {
 }
 /*-------------------------------------------------*/
-/* MOBILE MENU 
+/* MOBILE MENU
 /*-------------------------------------------------*/
  .mob-menu-icon {
      display: inline-block;
@@ -4495,7 +4493,7 @@
      text-align: center;
 }
 /*-------------------------------------------------------*/
-/* DASHBOARD 
+/* DASHBOARD
 /*-------------------------------------------------------*/
  .db {
      position: relative;
@@ -4907,7 +4905,7 @@
      color: #333;
 }
 /*-------------------------------------------------------*/
-/* REGISTER AND LOGIN 
+/* REGISTER AND LOGIN
 /*-------------------------------------------------------*/
  .tr-register {
      background: url(../images/face.jpg) #e6e6e6;
@@ -5020,7 +5018,7 @@
      padding-right: 5px;
 }
 /*-------------------------------------------------------*/
-/* VERSION 2: HOME SEARCH BOX 
+/* VERSION 2: HOME SEARCH BOX
 /*-------------------------------------------------------*/
  .v2-ho-se-ri {
 }
@@ -5097,7 +5095,7 @@
      margin: inherit;
 }
 /*-------------------------------------------------*/
-/* = DATE PICKER 
+/* = DATE PICKER
 /*-------------------------------------------------*/
  .ui-state-disabled {
      cursor: default !important;
@@ -5330,7 +5328,7 @@
      color: #333333;
 }
 /* Interaction states ----------------------------------*/
- .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, 
+ .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button,
 /* We use html here because we need a greater specificity to make sure disabled works properly when clicked or hovered */
  html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
      border: 0px solid #b4b4b4;
@@ -5381,7 +5379,7 @@
      color: #aaaaaa !important;
 }
 /*-------------------------------------------------*/
-/* = v2.0 MENU 
+/* = v2.0 MENU
 /*-------------------------------------------------*/
  .main-menu-v2 {
      padding: 8px 0px;
@@ -5500,7 +5498,7 @@
  .v2_head_right li a {
 }
 /*-------------------------------------------------------*/
-/* SOCIAL SHARE 
+/* SOCIAL SHARE
 /*-------------------------------------------------------*/
  .post-btn {
      margin-top: 5px;
@@ -5550,7 +5548,7 @@
 .alert-success {
     text-align: center;
     font-size: 18px;
-}	
+}
 /*--======================================================================--*/
  .wed-logo{
      float: left;
@@ -5664,7 +5662,7 @@
      border-radius: 50px;
 }
 /*-------------------------------------------------*/
-/* = 2.MAIN MENU 
+/* = 2.MAIN MENU
 /*-------------------------------------------------*/
  .main-menu{
      float: right;
@@ -5766,7 +5764,7 @@
  .caption a{
 }
 /*-------------------------------------------------*/
-/* = 7.SEARCH BOX 
+/* = 7.SEARCH BOX
 /*-------------------------------------------------*/
  .search-top{
      background: #002147;
@@ -5860,7 +5858,7 @@
      background: linear-gradient(to top, #de592a, #f36b3b);
 }
 /*-------------------------------------------------*/
-/* = 8.SLIDER 
+/* = 8.SLIDER
 /*-------------------------------------------------*/
  .slider-arr{
      color: #fff;
@@ -5995,7 +5993,7 @@
  .pop-close{
 }
 /*-------------------------------------------------*/
-/* = 9.HOME PAGE: QUICK LINK 
+/* = 9.HOME PAGE: QUICK LINK
 /*-------------------------------------------------*/
  .wed-hom-ser{
     /* position: absolute;
@@ -6067,7 +6065,7 @@
      letter-spacing: 2px;
 }
 /*-------------------------------------------------*/
-/* = 16.REGISTER LOGIN POPUPS 
+/* = 16.REGISTER LOGIN POPUPS
 /*-------------------------------------------------*/
  .log-in-pop {
      position: relative;
@@ -6226,7 +6224,7 @@
  .log-ch-bx p input {
 }
 /*-------------------------------------------------*/
-/* = 17.REGISTER LOGIN POPUPS 
+/* = 17.REGISTER LOGIN POPUPS
 /*-------------------------------------------------*/
  .in2-top-logo{
      background: #002147;
@@ -6315,7 +6313,7 @@
      font-family: 'Open Sans', sans-serif;
 }
 /*-------------------------------------------------*/
-/* = 21.MEGA MENU 
+/* = 21.MEGA MENU
 /*-------------------------------------------------*/
  .mm-pos{
      position: absolute;
@@ -6453,7 +6451,7 @@
     padding:0px;
 }
 /*-------------------------------------------------*/
-/* = 30.MOBILE MANU 
+/* = 30.MOBILE MANU
 /*-------------------------------------------------*/
  .ed-mob-menu{
      position:fixed;
@@ -6966,7 +6964,7 @@
      display: block;
 }
 /*-------------------------------------------------------*/
-/* 2.LEFT MENU 
+/* 2.LEFT MENU
 /*-------------------------------------------------------*/
  .left-sub-menu {
      padding: 0px;
@@ -7032,7 +7030,7 @@
      background: #4b5a61 !important;
 }
 /*-------------------------------------------------------*/
-/* 7.DROPDOWN 
+/* 7.DROPDOWN
 /*-------------------------------------------------------*/
  .drop-down-meta {
      position: absolute;
@@ -7056,7 +7054,7 @@
      */
 }
 /*-------------------------------------------------------*/
-/* 8. TAB AND SEARCH 
+/* 8. TAB AND SEARCH
 /*-------------------------------------------------------*/
  .tab-inn {
      padding: 25px;
@@ -7128,7 +7126,7 @@
      color: #000;
 }
 /*-------------------------------------------------------*/
-/* 10. TOP BAR 
+/* 10. TOP BAR
 /*-------------------------------------------------------*/
  .btn-noti span {
      position: absolute;
@@ -7343,7 +7341,7 @@
     margin-bottom:20px;
 }
 /*-------------------------------------------------*/
-/* = 2.COLLEGE 
+/* = 2.COLLEGE
 /*-------------------------------------------------*/
  .ed-home{
 }
@@ -7391,7 +7389,7 @@
      background: #2d5d73;
 }
 /*-------------------------------------------------*/
-/* = 6.HOME PAGE: TAB AND ENQUIRY 
+/* = 6.HOME PAGE: TAB AND ENQUIRY
 /*-------------------------------------------------*/
  .ed-com-t1-social{
      position: relative;
@@ -7419,7 +7417,7 @@
      */
 }
 /*-------------------------------------------------*/
-/* = HOME PAGE OFFER 
+/* = HOME PAGE OFFER
 /*-------------------------------------------------*/
  .offer {
      background: url(../images/placebg.jpg) no-repeat;

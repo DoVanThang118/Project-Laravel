@@ -19,22 +19,16 @@
                 <div class="db-l-2">
                     <ul>
                         <li>
-                            <a href="dashboard.html"><img src="/assets/images/icon/dbl1.png" alt="" /> All Bookings</a>
+                            <a href="{{url("/all-booking")}}"><img src="/assets/images/icon/dbl1.png" alt="" /> All Bookings</a>
                         </li>
                         <li>
                             <a href="db-travel-booking.html"><img src="/assets/images/icon/dbl2.png" alt="" /> Travel Bookings</a>
                         </li>
                         <li>
-                            <a href="db-hotel-booking.html"><img src="/assets/images/icon/dbl3.png" alt="" /> Hotel Bookings</a>
+                            <a href="{{url("/profile")}}"><img src="/assets/images/icon/dbl6.png" alt="" /> My Profile</a>
                         </li>
                         <li>
-                            <a href="db-event-booking.html"><img src="/assets/images/icon/dbl4.png" alt="" /> Event Bookings</a>
-                        </li>
-                        <li>
-                            <a href="db-my-profile.html"><img src="/assets/images/icon/dbl6.png" alt="" /> My Profile</a>
-                        </li>
-                        <li>
-                            <a href="db-all-payment.html"><img src="/assets/images/icon/dbl9.png" alt="" /> Payments</a>
+                            <a href="{{url("/payment-all")}}"><img src="/assets/images/icon/dbl9.png" alt="" /> Payments</a>
                         </li>
                         <li>
                             <a href="db-refund.html"><img src="/assets/images/icon/dbl7.png" alt="" /> Claim & Refund</a>
