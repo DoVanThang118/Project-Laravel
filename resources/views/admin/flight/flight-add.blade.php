@@ -40,7 +40,7 @@
 
                                     @include("admin.html.form.input",[
                                     "label"=>"",
-                                    "title"=>"Choose Takeof Time",
+                                    "title"=>"Choose Landing Time",
                                     "key"=>"landingtime",
                                     "type"=>"datetime-local",
                                     "required"=>false])

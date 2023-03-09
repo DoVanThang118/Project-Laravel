@@ -22,27 +22,46 @@
                                 </li>
                                 <li><a href="{{url("admin/flight/flight-all")}}">Update</a>
                                 </li>
-
                             </ul>
                             <form action="{{url("admin/flight/flight-all")}}" method="get">
-                                <div  style="width: 150px;">
+
+                                <div style="width: 150px;">
                                     <select  name="takeofcity_id">
                                         <option value="0">Choose Take Of City</option>
-                                        @foreach($cities as $item)
-                                            <option @if(app("request")->input("takeofcity_id")==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                        @foreach($airstrip as $item)
+                                            <option @if(app("request")->input("takeofcity_id")==$item->TakeofCity->id) selected @endif value="{{$item->TakeofCity->id}}">{{$item->TakeofCity->name}}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
-                                <div  style="width: 150px;">
+
+                                <div style="width: 150px;">
                                     <select  name="landingcity_id">
                                         <option value="0">Choose Landing City</option>
-                                        @foreach($cities as $item)
-                                            <option @if(app("request")->input("landingcity_id")==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                        @foreach($airstrip as $item)
+                                            <option @if(app("request")->input("landingcity_id")==$item->LandingCity->id) selected @endif value="{{$item->LandingCity->id}}">{{$item->LandingCity->name}}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
+                                <div  style="width: 150px;">
+
+                                @include("admin.html.form.input",[
+                                  "label"=>"",
+                                  "title"=>"Choose Takeof Time",
+                                  "key"=>"takeoftime",
+                                  "type"=>"date",
+                                  "required"=>false])
+                                </div>
+
+                                <div  style="width: 150px;">
+
+                                @include("admin.html.form.input",[
+                                 "label"=>"",
+                                 "title"=>"Choose Landing Time",
+                                 "key"=>"landingtime",
+                                 "type"=>"date",
+                                 "required"=>false])
+                                </div>
+
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default">Search</button>
                                 </div>

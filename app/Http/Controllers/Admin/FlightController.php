@@ -17,22 +17,32 @@ use Illuminate\Http\Request;
 class FlightController extends Controller
 {
     public function flightall(Request $request){
+
         $airstrip=AirStrip::all();
+
+        $takeoftime=$request->get("takeoftime");
+        $landingtime=$request->get("landingtime");
+
         $cities= City::orderBy("id","asc")
         ->get();
         $takeofcity_id=$request->get("takeofcity_id");
         $landingcity_id=$request->get("landingcity_id");
+
         if($takeofcity_id!=0&&$landingcity_id!=0){
             $asflight = AirStrip::AirStripFilter($landingcity_id,$takeofcity_id)
-                ->get();
+                ->pluck("id")->toArray();
+
             $data=Flight::FlightAirStripFilter($asflight)
+                ->LandingTimeFilter($landingtime)
+                ->TakeofTimeFilter($takeoftime)
                 ->orderBy("id","desc")
                 ->paginate(20);
         }else{
-            $data=Flight::orderBy("id","desc")
+            $data=Flight::LandingTimeFilter($landingtime)
+                ->TakeofTimeFilter($takeoftime)
+                ->orderBy("id","desc")
                 ->paginate(20);
         }
-
 
         return view("admin.flight.flight-all",[
             "data"=>$data,
