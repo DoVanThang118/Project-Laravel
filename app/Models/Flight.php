@@ -32,4 +32,29 @@ class Flight extends Model
         }
         return $query;
     }
+    public function scopeAirStripFilter($query, $airstrip_id){
+        if($airstrip_id && $airstrip_id != 0){
+            return $query->where("airstrip_id",$airstrip_id);
+        }
+        return $query;
+    }
+    public function scopeTakeofTimeFilter($query, $landingtime){
+        if($landingtime && $landingtime != 0){
+            return $query->where("landingtime",$landingtime);
+        }
+        return $query;
+    }
+    public function scopeLandingTimeFilter($query, $takeoftime){
+        if($takeoftime && $takeoftime != 0){
+            return $query->where("takeoftime",$takeoftime);
+        }
+        return $query;
+    }
+
+         public function scopeFlightAirStripFilter($query,$airstrip){
+             foreach ($airstrip as $t){
+                 $query->orWhere("airstrip_id",$t->id);
+             }
+             return $query;
+         }
 }

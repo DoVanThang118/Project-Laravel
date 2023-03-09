@@ -1,4 +1,3 @@
-
 @extends("admin.layout")
 @section("content")
     <div class="sb2-2">
@@ -15,22 +14,31 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>All Airplane</h4>
-                            <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
-                            <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
-                            <ul id="dr-users" class="dropdown-content">
-                                <li><a href="#!">Add New</a>
-                                </li>
-                                <li><a href="#!">Edit</a>
-                                </li>
-                                <li><a href="#!">Update</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
-                            </ul>
+                            <h4>Flight No {{$flight->id}}</h4>
+                            <p>Flight from {{$flight->AirStrip->TakeofCity->name}} to {{$flight->AirStrip->LandingCity->name}}</p>
+                            <form action="{{url("admin/flight/flight-view",["flight"=>$flight->id])}}" method="get">
+
+                                <div  style="width: 150px;">
+                                    <select  name="typeofticket_id">
+                                        <option value="0">Type Ticket</option>
+                                        @foreach($type as $item)
+                                            <option @if(app("request")->input("typeofticket_id")==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                                <div  style="width: 150px;">
+                                    <input value="{{app("request")->input("maxprice")}}" type="number" name="maxprice" class="form-control float-right" placeholder="MaxPrice">
+
+                                </div>
+                                <div  style="width: 150px;">
+                                    <input value="{{app("request")->input("minprice")}}" type="number" name="minprice" class="form-control float-right" placeholder="MinPrice">
+
+                                </div>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default">Search</button>
+                                </div>
+                            </form>
 
                             <!-- Dropdown Structure -->
 
@@ -58,9 +66,9 @@
                                             <td>{{$item->order_id}}</td>
                                             <td>{{$item->seat_id}}</td>
 
-{{--                                                                                <td>--}}
-{{--                                                                                    <a href="{{url("admin/airplane/airplane-view",["airplane"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>--}}
-{{--                                                                                </td>--}}
+                                            {{--                                                                                <td>--}}
+                                            {{--                                                                                    <a href="{{url("admin/airplane/airplane-view",["airplane"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>--}}
+                                            {{--                                                                                </td>--}}
 
                                         </tr>
                                     @endforeach
@@ -69,13 +77,13 @@
                                 </table>
                             </div>
                             <div class="card-footer clearfix">
-{{--                                --}}{{--            <ul class="pagination pagination-sm m-0 float-right">--}}
-{{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
-{{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
-{{--                                --}}{{--            </ul>--}}
+                                {{--                                --}}{{--            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                                --}}{{--                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--                                --}}{{--            </ul>--}}
                                 {!! $data->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>

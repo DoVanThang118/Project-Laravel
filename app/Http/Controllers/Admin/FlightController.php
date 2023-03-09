@@ -13,32 +13,66 @@ use App\Models\TypeOfSeat;
 use App\Models\TypeOfTicket;
 use Illuminate\Http\Request;
 
+
 class FlightController extends Controller
 {
-    public function flightall(){
+    public function flightall(Request $request){
+        $airstrip=AirStrip::all();
+        $cities= City::orderBy("id","asc")
+        ->get();
+        $takeofcity_id=$request->get("takeofcity_id");
+        $landingcity_id=$request->get("landingcity_id");
+        if($takeofcity_id!=0&&$landingcity_id!=0){
+            $asflight = AirStrip::AirStripFilter($landingcity_id,$takeofcity_id)
+                ->get();
+            $data=Flight::FlightAirStripFilter($asflight)
+                ->orderBy("id","desc")
+                ->paginate(20);
+        }else{
+            $data=Flight::orderBy("id","desc")
+                ->paginate(20);
+        }
 
-        $data=Flight::orderBy("id","desc")
-            ->paginate(20);
 
         return view("admin.flight.flight-all",[
-            "data"=>$data
+            "data"=>$data,
+            "cities"=>$cities,
+            "airstrip"=>$airstrip
         ]);
     }
 
-    public function flightview(Flight $flight){
+    public function flightview(Flight $flight,Request $request){
+
+        $typeofticket_id=$request->get("typeofticket_id");
+        $maxprice=$request->get("maxprice");
+        $minprice=$request->get("minprice");
         $type=TypeOfTicket::with("Flight")
             ->FlightFilter($flight->id)
             ->get();
-        $data = Ticket::with("TypeOfTicket")
+        if($typeofticket_id!=0){
+            $data=Ticket::with("TypeOfTicket")
+                ->TicketFilter($typeofticket_id)
+                ->MaxPrice($maxprice)
+                ->MinPrice($minprice)
+                ->paginate(20);
+        }else{
+            $data = Ticket::with("TypeOfTicket")
                 ->TypeOfTicketFilter($type)
+                ->MaxPrice($maxprice)
+                ->MinPrice($minprice)
                 ->orderBy("id","desc")
                 ->paginate(20);
+        }
+
 
         return view("admin.flight.flight-view",[
-            "typeofticket" => $type,
-            "data"=>$data
+            "type" => $type,
+            "data"=>$data,
+            "flight"=>$flight
         ]);
     }
+
+
 
     public function flightedit(Flight $flight){
         $airplane= Airplane::orderBy("id","desc")

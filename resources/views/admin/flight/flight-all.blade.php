@@ -20,10 +20,33 @@
                             <ul id="dr-users" class="dropdown-content">
                                 <li><a href="{{url("admin/flight/flight-add")}}">Add New</a>
                                 </li>
-                                <li><a href="#!">Update</a>
+                                <li><a href="{{url("admin/flight/flight-all")}}">Update</a>
                                 </li>
 
                             </ul>
+                            <form action="{{url("admin/flight/flight-all")}}" method="get">
+                                <div  style="width: 150px;">
+                                    <select  name="takeofcity_id">
+                                        <option value="0">Choose Take Of City</option>
+                                        @foreach($cities as $item)
+                                            <option @if(app("request")->input("takeofcity_id")==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                                <div  style="width: 150px;">
+                                    <select  name="landingcity_id">
+                                        <option value="0">Choose Landing City</option>
+                                        @foreach($cities as $item)
+                                            <option @if(app("request")->input("landingcity_id")==$item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default">Search</button>
+                                </div>
+                            </form>
 
                             <!-- Dropdown Structure -->
 
@@ -73,13 +96,13 @@
                                 </table>
                             </div>
                             <div class="card-footer clearfix">
-{{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
-{{--                                            </ul>--}}
+                                {{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--                                            </ul>--}}
                                 {!! $data->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>
@@ -89,4 +112,3 @@
         </div>
     </div>
 @endsection
-
