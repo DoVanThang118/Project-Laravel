@@ -24,15 +24,11 @@ class AirStrip extends Model
     public function Flights(){
         return $this->hasMany(Flight::class);
     }
-    public function scopeAirStripTakeofFilter($query,$takeofcity_id){
-        if($takeofcity_id && $takeofcity_id != 0){
-            return $query->where("takeofcity_id",$takeofcity_id);
-        }
-        return $query;
-    }
-    public function scopeAirStripLandingFilter($query,$landingcity_id){
-        if($landingcity_id && $landingcity_id != 0){
-            return $query->where("landingcity_id",$landingcity_id);
+
+    public function scopeAirStripFilter($query,$landingcity_id,$takeofcity_id){
+        if($landingcity_id && $landingcity_id != 0 && $takeofcity_id && $takeofcity_id!=0){
+            return $query->where("landingcity_id",$landingcity_id)
+                ->where("takeofcity_id",$takeofcity_id);
         }
         return $query;
     }

@@ -18,17 +18,21 @@ class FlightController extends Controller
 {
     public function flightall(Request $request){
         $airstrip=AirStrip::all();
-        $cities= City::all();
+        $cities= City::orderBy("id","asc")
+        ->get();
         $takeofcity_id=$request->get("takeofcity_id");
         $landingcity_id=$request->get("landingcity_id");
-        $asflight = AirStrip::AirStripTakeofFilter($takeofcity_id)
-            ->AirStripLandingFilter($landingcity_id)
-            ->get();
-//        dd($asflight);
+        if($takeofcity_id!=0&&$landingcity_id!=0){
+            $asflight = AirStrip::AirStripFilter($landingcity_id,$takeofcity_id)
+                ->get();
+            $data=Flight::FlightAirStripFilter($asflight)
+                ->orderBy("id","desc")
+                ->paginate(20);
+        }else{
+            $data=Flight::orderBy("id","desc")
+                ->paginate(20);
+        }
 
-        $data=Flight::FlightAirStripFilter($asflight)
-            ->orderBy("id","desc")
-            ->paginate(20);
 
         return view("admin.flight.flight-all",[
             "data"=>$data,
