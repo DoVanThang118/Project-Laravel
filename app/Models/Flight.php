@@ -32,4 +32,17 @@ class Flight extends Model
         }
         return $query;
     }
+    public function scopeAirStripFilter($query, $airstrip_id){
+        if($airstrip_id && $airstrip_id != 0){
+            return $query->where("airstrip_id",$airstrip_id);
+        }
+        return $query;
+    }
+
+         public function scopeFlightAirStripFilter($query,$airstrip){
+             foreach ($airstrip as $t){
+                 $query->orWhere("airstrip_id",$t->id);
+             }
+             return $query;
+         }
 }

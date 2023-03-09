@@ -36,7 +36,7 @@
 
                                 </div>
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default">SEND</button>
+                                    <button type="submit" class="btn btn-default">Search</button>
                                 </div>
                             </form>
 

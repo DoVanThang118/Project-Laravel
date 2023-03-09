@@ -16,17 +16,29 @@ use Illuminate\Http\Request;
 
 class FlightController extends Controller
 {
-    public function flightall(){
+    public function flightall(Request $request){
+        $airstrip=AirStrip::all();
+        $cities= City::all();
+        $takeofcity_id=$request->get("takeofcity_id");
+        $landingcity_id=$request->get("landingcity_id");
+        $asflight = AirStrip::AirStripTakeofFilter($takeofcity_id)
+            ->AirStripLandingFilter($landingcity_id)
+            ->get();
+//        dd($asflight);
 
-        $data=Flight::orderBy("id","desc")
+        $data=Flight::FlightAirStripFilter($asflight)
+            ->orderBy("id","desc")
             ->paginate(20);
 
         return view("admin.flight.flight-all",[
-            "data"=>$data
+            "data"=>$data,
+            "cities"=>$cities,
+            "airstrip"=>$airstrip
         ]);
     }
 
     public function flightview(Flight $flight,Request $request){
+
         $typeofticket_id=$request->get("typeofticket_id");
         $maxprice=$request->get("maxprice");
         $minprice=$request->get("minprice");
