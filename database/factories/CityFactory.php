@@ -15,9 +15,11 @@ class CityFactory extends Factory
     {
         return [
             "name"=>$this->faker->unique()->city,
+
             "national"=>"VN",
-            "description"=>$this->faker->address,
-            "image"=>$this->faker->imageUrl(),
+
+            "description"=>null,
+            "image"=>null,
         ];
     }
 }

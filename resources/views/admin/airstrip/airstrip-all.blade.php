@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Ui Form</a>
+                <li class="active-bre"><a href="#"> All AirStrip</a>
                 </li>
             </ul>
         </div>
@@ -14,9 +14,16 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>All Seat Type {{$type[0]->name}} Of Airplane {{$type[0]->Airplane->name}} </h4>
-                            <div class="page-back"><a href="{{url("admin/airplane/airplane-view",["airplane"=>$type[0]->Airplane->id])}}"><i class="fa fa-backward" aria-hidden="true"></i> Back</a></div>
+                            <h4>All AirStrip</h4>
+                            <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
+                            <ul id="dr-users" class="dropdown-content">
+                                <li><a href="{{url("admin/airplane/airstrip-add")}}">Add New</a>
+                                </li>
 
+                                <li><a href="#!">Update</a>
+                                </li>
+
+                            </ul>
 
                             <!-- Dropdown Structure -->
 
@@ -26,24 +33,23 @@
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>ID</th>
                                         <th>Name</th>
-                                        <th>Description</th>
-                                        <th>TypeOfSeat</th>
+                                        <th>Takeof City</th>
+                                        <th>Landing City</th>
+                                        <th>Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($seat as $item)
+                                    @foreach($data as $item)
                                         <tr>
-
                                             <td>{{$item->id}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->description}}</td>
-                                            <td>{{$item->TypeOfSeat->name}}</td>
-
-                                            {{--                                    <td>--}}
-                                            {{--                                        <a href="{{url("admin/airplane/airplane-view",["airplane"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>--}}
-                                            {{--                                    </td>--}}
+                                            <td>{{$item->TakeofCity->name}}</td>
+                                            <td>{{$item->LandingCity->name}}</td>
+                                            <td>
+                                                <a href="{{url("admin/airplane/airstrip-edit",["airstrip"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            </td>
 
                                         </tr>
                                     @endforeach
@@ -52,14 +58,14 @@
                                 </table>
                             </div>
                             <div class="card-footer clearfix">
-                                {{--                                        <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
                                 {{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
                                 {{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
                                 {{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
                                 {{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
                                 {{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
                                 {{--                                            </ul>--}}
-                                {!! $seat->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
+                                {!! $data->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>
                     </div>

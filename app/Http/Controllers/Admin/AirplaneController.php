@@ -131,7 +131,7 @@ class AirplaneController extends Controller
                 ]);
             }
 
-            return redirect()->to("admin/airplane/airplane-all")->with("success","Them san pham thanh cong");
+            return redirect()->to("admin/airplane/airplane-all")->with("success","Them airplane thanh cong");
         }catch (\Exception $e){
             return redirect()->back()->with("error",$e->getMessage());
        }
@@ -139,8 +139,37 @@ class AirplaneController extends Controller
     }
 
 
-    public function airplaneedit(){
-        return view("admin.airplane.airplane-edit");
+    public function airplaneedit(Airplane $airplane){
+
+        return view("admin.airplane.airplane-edit",[
+            "airplane"=>$airplane
+        ]);
+    }
+    public function airplaneupdate(Airplane $airplane,Request $request){
+        $request->validate([
+            "name"=>"required|string|min:3",
+            "brand"=>"required|string|min:3",
+            "description"=>"required|string|min:3",
+
+
+        ],[
+            "required"=>"Vui lòng nhập thông tin",
+            "string"=> "Phải nhập vào là một chuỗi văn bản",
+            "min"=> "Phải nhập :attribute  tối thiểu :min",
+            "mimes"=>"Vui lòng nhập đúng định dạng ảnh"
+        ]);
+        try{
+            $airplane->update([
+                "name"=>$request->get("name"),
+                "brand"=>$request->get("brand"),
+                "description"=>$request->get("description"),
+            ]);
+
+            return redirect()->to("admin/airplane/airplane-all")->with("success","Sua airplane thanh cong");
+
+        }catch (\Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
     }
     public function seattypeadd(){
         return view("admin.airplane.seat-type-add");

@@ -16,8 +16,8 @@ class CreateTableAirstrips extends Migration
         Schema::create('airstrips', function (Blueprint $table) {
             $table->id();
             $table->string("name")->nullable();
-            $table->unsignedBigInteger("landingcity_id")->unique();
-            $table->unsignedBigInteger("takeofcity_id")->unique();
+            $table->unsignedBigInteger("landingcity_id");
+            $table->unsignedBigInteger("takeofcity_id");
             $table->timestamps();
             $table->foreign("landingcity_id")->references("id")->on("cities");
             $table->foreign("takeofcity_id")->references("id")->on("cities");

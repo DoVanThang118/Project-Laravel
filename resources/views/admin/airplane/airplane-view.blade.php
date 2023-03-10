@@ -5,7 +5,7 @@
         <ul>
             <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
-            <li class="active-bre"><a href="#"> Ui Form</a>
+            <li class="active-bre"><a href="#"> Airplane View</a>
             </li>
         </ul>
     </div>

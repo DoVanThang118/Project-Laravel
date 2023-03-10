@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="{{url("admin/airplane/airplane-all")}}">All Airplanes</a>
                         </li>
-                        <li><a href="user-add.html">Add New Airplanes</a>
+                        <li><a href="{{url("admin/airplane/airplane-add")}}">Add New Airplanes</a>
                         </li>
                     </ul>
                 </div>
@@ -36,12 +36,12 @@
                 </div>
             </li>
 
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-picture-o" aria-hidden="true"></i> Sight Seeings</a>
+            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-picture-o" aria-hidden="true"></i> AirStrip</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="sight-see-all.html">All Sight Seeings</a>
+                        <li><a href="sight-see-all.html">All AirStrip</a>
                         </li>
-                        <li><a href="sight-see-add.html">Add New Sight Seeing</a>
+                        <li><a href="sight-see-add.html">Add New AirStrip</a>
                         </li>
                     </ul>
                 </div>

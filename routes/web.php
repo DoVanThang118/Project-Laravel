@@ -42,15 +42,18 @@ Route::get("/admin/discount/discount-edit",[App\Http\Controllers\Admin\DiscountC
 
 Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
 Route::get("/admin/airplane/airplane-view/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneview"]);
-Route::get("/admin/airplane/airplane-view-type",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneviewtype"]);
 
-Route::get("/admin/airplane/airplane-edit",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
+
+Route::get("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
+Route::post("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneupdate"]);
 Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
 Route::post("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplanecreate"]);
 
-Route::get("/admin/airplane/seat-type-all",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeall"]);
-Route::get("/admin/airplane/seat-type-add",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeadd"]);
-Route::get("/admin/airplane/seat-type-edit",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeedit"]);
+Route::get("/admin/airstrip/airstrip-all",[App\Http\Controllers\Admin\AirStripController::class,"airstripall"]);
+Route::get("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripadd"]);
+Route::post("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripcreate"]);
+
+
 
 Route::get("/admin/flight/flight-all",[App\Http\Controllers\Admin\FlightController::class,"flightall"]);
 Route::get("/admin/flight/flight-add",[App\Http\Controllers\Admin\FlightController::class,"flightadd"]);

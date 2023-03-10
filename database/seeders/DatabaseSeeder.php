@@ -51,6 +51,8 @@ class DatabaseSeeder extends Seeder
         //B5 tao airstrip
 //        AirStrip::factory(4)->create();
 
+        City::factory(1)->create();
+
 
 
     }
