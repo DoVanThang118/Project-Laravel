@@ -13,7 +13,7 @@ class Airplane extends Model
         "name",
         "brand",
         "description",
-        "image",
+        "thumbnail",
         "totalseat"
 
     ];

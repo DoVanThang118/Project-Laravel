@@ -46,6 +46,8 @@ Route::get("/admin/airplane/airplane-view-type",[App\Http\Controllers\Admin\Airp
 
 Route::get("/admin/airplane/airplane-edit",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
 Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
+Route::post("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplanecreate"]);
+
 Route::get("/admin/airplane/seat-type-all",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeall"]);
 Route::get("/admin/airplane/seat-type-add",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeadd"]);
 Route::get("/admin/airplane/seat-type-edit",[App\Http\Controllers\Admin\AirplaneController::class,"seattypeedit"]);

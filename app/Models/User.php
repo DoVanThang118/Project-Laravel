@@ -23,7 +23,7 @@ class User extends Authenticatable
         "address",
         "sex",
         "birthday",
-        "image",
+        "thumbnail",
         'password',
     ];
     public function Orders(){

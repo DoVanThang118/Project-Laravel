@@ -17,7 +17,7 @@ class AirplaneFactory extends Factory
             "name"=>$this->faker->unique()->name,
             "brand"=>$this->faker->name,
             "description"=>$this->faker->address,
-            "image"=>$this->faker->imageUrl(),
+            "thumbnail"=>$this->faker->imageUrl(),
             "totalseat"=>90
         ];
     }

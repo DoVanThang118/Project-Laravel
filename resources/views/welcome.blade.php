@@ -39,9 +39,9 @@
                                     <div class="input-field col s8">
                                         <select name="city">
                                             <option value="0">From</option>
-                                            @foreach($city as $item)
-                                                <option value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
+{{--                                            @foreach($city as $item)--}}
+{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
+{{--                                            @endforeach--}}
                                         </select>
                                     </div>
                                     <div class="input-field col s4">
@@ -53,9 +53,9 @@
                                     <div class="input-field col s8">
                                         <select name="city">
                                             <option value="0">To</option>
-                                            @foreach($city as $item)
-                                                <option value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
+{{--                                            @foreach($city as $item)--}}
+{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
+{{--                                            @endforeach--}}
                                         </select>
                                     </div>
                                     <div class="input-field col s4">

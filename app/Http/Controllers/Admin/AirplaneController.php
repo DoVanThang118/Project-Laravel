@@ -56,8 +56,61 @@ class AirplaneController extends Controller
     }
 
     public function airplaneadd(){
+
         return view("admin.airplane.airplane-add");
     }
+    public function airplanecreate(Request $request){
+
+        $request->validate([
+            "name"=>"required|string|min:3",
+            "brand"=>"required|string|min:3",
+            "thumbnail"=>"required|image|mimes:jpg,png,jpeg,gif",
+            "description"=>"required|string|min:3",
+            "vip"=>"required|numeric|min:10",
+            "normal"=>"required|numeric|min:10",
+            "cheap"=>"required|numeric|min:10",
+
+        ],[
+            "required"=>"Vui lòng nhập thông tin",
+            "string"=> "Phải nhập vào là một chuỗi văn bản",
+            "min"=> "Phải nhập :attribute  tối thiểu :min",
+            "mimes"=>"Vui lòng nhập đúng định dạng ảnh"
+        ]);
+
+        try{
+            $thumbnail = null;
+            if($request->hasFile("thumbnail")){
+                $file = $request->file("thumbnail");
+                $fileName = time().$file->getClientOriginalName();
+//            $ext = $file->getClientOriginalExtension();
+//            $fileName = time().".".$ext;
+                $path = public_path("uploads");
+                $file->move($path,$fileName);
+                $thumbnail = "uploads/".$fileName;
+        }
+
+            $qtyvip=$request->get("vip");
+            $qtynormal=$request->get("normal");
+            $qtycheap=$request->get("cheap");
+            $qty=$qtyvip+$qtynormal+$qtycheap;
+
+            $airplane = Airplane::create([
+                "name"=>$request->get("name"),
+                "brand"=>$request->get("brand"),
+                "desciption"=>$request->get("description"),
+                "thumbnail"=>$thumbnail,
+                "totalseat"=>$qty
+
+            ]);
+
+            return redirect()->to("admin/airplane/airplane-all")->with("success","Them san pham thanh cong");
+        }catch (\Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+       }
+
+    }
+
+
     public function airplaneedit(){
         return view("admin.airplane.airplane-edit");
     }
