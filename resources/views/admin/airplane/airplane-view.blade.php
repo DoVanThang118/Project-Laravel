@@ -17,7 +17,7 @@
                         <h4>Airplane No {{$airplane->id}}</h4>
                         <p>Airplane Name {{$airplane->name}}</p>
 
-                        <form action="{{url("admin/airplane/airplane-view-type")}}" method="get">
+                        <form action="{{url("admin/airplane/airplane-view",["airplane"=>$airplane->id])}}" method="get">
 
                         <div  style="width: 150px;">
                             <select  name="typeofseat_id">

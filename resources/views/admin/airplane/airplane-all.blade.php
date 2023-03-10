@@ -56,7 +56,7 @@
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->brand}}</td>
                                             <td>{{$item->description}}</td>
-                                            <td>{{$item->thumbnail}}</td>
+                                        <td><img width="75" src="{{$item->thumbnail}}" /></td>
                                            <td>{{$item->totalseat}}</td>
 
                                             <td>

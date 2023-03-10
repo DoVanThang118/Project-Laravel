@@ -19,38 +19,29 @@ class AirplaneController extends Controller
             "data"=>$data
         ]);
     }
-    public function airplaneview(Airplane $airplane){
+    public function airplaneview(Airplane $airplane,Request $request){
 
         $type = TypeOfSeat::with("Airplane")
             ->AirplaneFilter($airplane->id)
             ->get();
+        $typeofseat_id=$request->get("typeofseat_id");
 
-        $seat=Seat::with("TypeOfSeat")
-            ->TypeOfSeatFilter($type)
-            ->orderBy("typeofseat_id","desc")
-            ->paginate(20);
+        if($typeofseat_id!=0){
+            $seat=Seat::with("TypeOfSeat")
+                ->TypeFilter($typeofseat_id)
+                ->orderBy("id","desc")
+                ->paginate(40);
+        }else{
+            $seat=Seat::with("TypeOfSeat")
+                ->TypeOfSeatFilter($type)
+                ->orderBy("typeofseat_id","desc")
+                ->paginate(40);
+        }
 
         return view("admin.airplane.airplane-view",[
             "seat"=>$seat,
             "type"=>$type,
             "airplane"=>$airplane
-        ]);
-
-    }
-    public function airplaneviewtype(Request $request){
-
-        $typeofseat_id=$request->get("typeofseat_id");
-        $type=TypeOfSeat::where("id",$typeofseat_id)->get();
-
-
-        $seat=Seat::with("TypeOfSeat")
-            ->TypeFilter($typeofseat_id)
-            ->orderBy("id","desc")
-            ->paginate(20);
-
-        return view("admin.airplane.airplane-view-type",[
-            "seat"=>$seat,
-            "type"=>$type
         ]);
 
     }
@@ -82,8 +73,6 @@ class AirplaneController extends Controller
             if($request->hasFile("thumbnail")){
                 $file = $request->file("thumbnail");
                 $fileName = time().$file->getClientOriginalName();
-//            $ext = $file->getClientOriginalExtension();
-//            $fileName = time().".".$ext;
                 $path = public_path("uploads");
                 $file->move($path,$fileName);
                 $thumbnail = "uploads/".$fileName;
@@ -102,6 +91,45 @@ class AirplaneController extends Controller
                 "totalseat"=>$qty
 
             ]);
+            $typeofseatVIP=TypeOfSeat::create([
+                "name"=>"VIP",
+                "totalseat"=>$qtyvip,
+                "description"=>null,
+                "airplane_id"=>$airplane->id
+            ]);
+            $typeofseatNORMAL=TypeOfSeat::create([
+                "name"=>"NORMAL",
+                "totalseat"=>$qtynormal,
+                "description"=>null,
+                "airplane_id"=>$airplane->id
+            ]);
+            $typeofseatCHEAP=TypeOfSeat::create([
+                "name"=>"CHEAP",
+                "totalseat"=>$qtycheap,
+                "description"=>null,
+                "airplane_id"=>$airplane->id
+            ]);
+            for($i=0;$i<$typeofseatVIP->totalseat;$i++){
+                Seat::create([
+                    "name"=>"VIP".$i,
+                    "description"=>null,
+                    "typeofseat_id"=>$typeofseatVIP->id
+                ]);
+            }
+            for($i=0;$i<$typeofseatNORMAL->totalseat;$i++){
+                Seat::create([
+                    "name"=>"NORMAL".$i,
+                    "description"=>null,
+                    "typeofseat_id"=>$typeofseatNORMAL->id
+                ]);
+            }
+            for($i=0;$i<$typeofseatCHEAP->totalseat;$i++){
+                Seat::create([
+                    "name"=>"CHEAP".$i,
+                    "description"=>null,
+                    "typeofseat_id"=>$typeofseatCHEAP->id
+                ]);
+            }
 
             return redirect()->to("admin/airplane/airplane-all")->with("success","Them san pham thanh cong");
         }catch (\Exception $e){
