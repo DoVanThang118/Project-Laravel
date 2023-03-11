@@ -56,5 +56,11 @@ class Ticket extends Model
         }
         return $query;
     }
+    public function scopeTicketTypeFilter($query,$type){
+        if(is_array($type)){
+            return $query ->whereIn("typeofticket_id",$type);
+        }
+        return $query;
+    }
 
 }

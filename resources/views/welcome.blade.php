@@ -68,16 +68,18 @@
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <p>Adults</p>
-                                        @include("user.form.input",[
+                                        @include("admin.html.form.input",[
                                           "label"=>"",
+                                          "title"=>"",
                                           "key"=>"adults",
                                           "type"=>"number",
                                           "required"=>false])
                                     </div>
                                     <div class="input-field col s6">
                                         <p>Children</p>
-                                        @include("user.form.input",[
+                                        @include("admin.html.form.input",[
                                          "label"=>"",
+                                         "title"=>"",
                                          "key"=>"children",
                                          "type"=>"number",
                                          "required"=>false])
