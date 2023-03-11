@@ -1,12 +1,5 @@
 @extends('layouts.app')
 @section("title","Trang Chủ")
-@section("custom_css")
-
-@endsection
-@section("custom_js")
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script src="/assets/js/mail.js"></script>
-@endsection
 @section('content')
     <!--HEADER SECTION-->
     <section>
@@ -22,7 +15,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <form class="contact__form v2-search-form" method="post" action="{{url("/flight-list")}}">
+                            <form class="contact__form v2-search-form" method="post" action="{{url("/")}}"  role="form" enctype="multipart/form-data">
+                                @csrf
                                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                                     Thank you message
                                 </div>
@@ -37,81 +31,58 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
-                                        <select name="city">
+                                        <select name="takeofcity_id">
                                             <option value="0">From</option>
-{{--                                            @foreach($city as $item)--}}
-{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($city as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input type="text" id="from" name="arrivaldate">
-                                        <label for="from">Departure date</label>
+                                        @include("admin.html.form.input",[
+                                  "label"=>"",
+                                  "title"=>"Takeof Time",
+                                  "key"=>"takeoftime",
+                                  "type"=>"date",
+                                  "required"=>false])
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
-                                        <select name="city">
+                                        <select name="landingcity_id">
                                             <option value="0">To</option>
-{{--                                            @foreach($city as $item)--}}
-{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($city as $item)
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input type="text" id="to" name="departuredate">
-                                        <label for="to">Return date</label>
+                                        @include("admin.html.form.input",[
+                                  "label"=>"",
+                                  "title"=>"Landing Time",
+                                  "key"=>"landingtime",
+                                  "type"=>"date",
+                                  "required"=>false])
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <select name="noofadults">
-                                            <option value="" disabled selected>No of adults</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        <p>Adults</p>
+                                        @include("user.form.input",[
+                                          "label"=>"",
+                                          "key"=>"adults",
+                                          "type"=>"number",
+                                          "required"=>false])
                                     </div>
                                     <div class="input-field col s6">
-                                        <select name="noofchildrens">
-                                            <option value="" disabled selected>No of childrens</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        <p>Children</p>
+                                        @include("user.form.input",[
+                                         "label"=>"",
+                                         "key"=>"children",
+                                         "type"=>"number",
+                                         "required"=>false])
                                     </div>
                                 </div>
-
-{{--                                <div class="row">--}}
-{{--                                    <div class="input-field col s6">--}}
-{{--                                        <select name="minprice">--}}
-{{--                                            <option value="" disabled selected>Min Price</option>--}}
-{{--                                            <option value="$200">$200</option>--}}
-{{--                                            <option value="$500">$500</option>--}}
-{{--                                            <option value="$1000">$1000</option>--}}
-{{--                                            <option value="$5000">$5000</option>--}}
-{{--                                            <option value="$10,000">$10,000</option>--}}
-{{--                                            <option value="$50,000">$50,000</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="input-field col s6">--}}
-{{--                                        <select name="maxprice">--}}
-{{--                                            <option value="" disabled selected>Max Price</option>--}}
-{{--                                            <option value="$200">$200</option>--}}
-{{--                                            <option value="$500">$500</option>--}}
-{{--                                            <option value="$1000">$1000</option>--}}
-{{--                                            <option value="$5000">$5000</option>--}}
-{{--                                            <option value="$10,000">$10,000</option>--}}
-{{--                                            <option value="$50,000">$50,000</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input type="submit" value="Let's go" class="waves-effect waves-light tourz-sear-btn v2-ser-btn">

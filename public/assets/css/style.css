@@ -3731,7 +3731,7 @@
      background: #fff;
      position: relative;
      overflow: hidden;
-     margin: 15px 15px 15px 0px;
+     margin: 15px 15px 15px 15px;
      transition: all 0.5s ease;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
