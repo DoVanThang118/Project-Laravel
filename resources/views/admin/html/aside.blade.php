@@ -1,13 +1,14 @@
 <div class="sb2-1">
     <!--== USER INFO ==-->
-    <div class="sb2-12">
+    <div class="sb2-12" >
         <ul>
             <li><img src="/admin/images/placeholder.jpg" alt="">
             </li>
             <li>
                 <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
             </li>
-            <li></li>
+
+
         </ul>
     </div>
     <!--== LEFT MENU ==-->
@@ -58,33 +59,9 @@
                 </div>
             </li>
 
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-ticket" aria-hidden="true"></i> Booking & Enquiry</a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="hotel-booking-all.html">Hotel</a>
-                        </li>
-                        <li><a href="package-booking-all.html">Package</a>
-                        </li>
-                        <li><a href="sight-see-booking-all.html">Sight Seeings</a>
-                        </li>
-                        <li><a href="event-booking-all.html">Events</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-rss" aria-hidden="true"></i> Blog & Articals</a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="blog-all.html">All Blogs</a>
-                        </li>
-                        <li><a href="blog-add.html">Add Blog</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
 
-            <li><a href="login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-            </li>
+{{--            <li><a href="login.html" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>--}}
+{{--            </li>--}}
         </ul>
     </div>
 </div>
