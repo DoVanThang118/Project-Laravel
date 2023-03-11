@@ -13,19 +13,16 @@
                         </ul>
                     </div>
                     <div class="ed-com-t1-right">
-                        <ul>
-                            @if (Route::has('login'))
-                                <li>
-                                    <a href="{{ route('login') }}">{{ __('Sign In') }}</a>
-                                </li>
-                            @endif
+                        @guest
+                            <a href="{{route("login")}}" class="btn btn-default">Login</a>
+                        @endguest
 
-                            @if (Route::has('register'))
-                                <li>
-                                    <a href="{{ route('register') }}">{{ __('Sign Up') }}</a>
-                                </li>
-                            @endif
-                        </ul>
+                        @auth
+                            <form action="{{route("logout")}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-default">Logout</button>
+                            </form>
+                        @endauth
                     </div>
                     <div class="ed-com-t1-social">
                         <ul>
