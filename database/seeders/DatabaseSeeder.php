@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use App\Models\Airplane;
 use App\Models\AirStrip;
 use App\Models\City;
@@ -11,6 +12,7 @@ use App\Models\Seat;
 use App\Models\Ticket;
 use App\Models\TypeOfSeat;
 use App\Models\TypeOfTicket;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +24,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $admin = User::create([
+            "name"=>"admin",
+            "email"=>"admin@localhost",
+            "phone"=>"888888888",
+            "password"=> bcrypt("admin")
+        ]);
+        Admin::create([
+            "user_id"=>$admin->id,
+            "role"=>"ADMIN"
+        ]);
         // \App\Models\User::factory(10)->create();
         //B1: Tạo airplane và typeofseat
 //        Airplane::factory(30)->create();
@@ -51,7 +63,7 @@ class DatabaseSeeder extends Seeder
         //B5 tao airstrip
 //        AirStrip::factory(4)->create();
 
-        City::factory(1)->create();
+//        City::factory(1)->create();
 
 
 

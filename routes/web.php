@@ -30,43 +30,43 @@ Route::get('/payment-all', [App\Http\Controllers\PaymentController::class, 'inde
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
 
-Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');
+Route::middleware(["auth","admin"])->group(function (){
+    Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');
 
-Route::get("/admin/member/user-all",[App\Http\Controllers\Admin\MemberController::class,"userall"]);
-Route::get("/admin/member/user-add",[App\Http\Controllers\Admin\MemberController::class,"useradd"]);
-Route::get("/admin/member/user-edit",[App\Http\Controllers\Admin\MemberController::class,"useredit"]);
-Route::get("/admin/member/user-view",[App\Http\Controllers\Admin\MemberController::class,"userview"]);
+    Route::get("/admin/member/user-all",[App\Http\Controllers\Admin\MemberController::class,"userall"]);
+    Route::get("/admin/member/user-add",[App\Http\Controllers\Admin\MemberController::class,"useradd"]);
+    Route::get("/admin/member/user-edit",[App\Http\Controllers\Admin\MemberController::class,"useredit"]);
+    Route::get("/admin/member/user-view",[App\Http\Controllers\Admin\MemberController::class,"userview"]);
 
-Route::get("/admin/discount/discount-all",[App\Http\Controllers\Admin\DiscountController::class,"discountall"]);
-Route::get("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountadd"]);
-Route::post("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountcreate"]);
+    Route::get("/admin/discount/discount-all",[App\Http\Controllers\Admin\DiscountController::class,"discountall"]);
+    Route::get("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountadd"]);
+    Route::post("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountcreate"]);
 
-Route::get("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountedit"]);
-Route::post("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountupdate"]);
+    Route::get("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountedit"]);
+    Route::post("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountupdate"]);
 
-Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
-Route::get("/admin/airplane/airplane-view/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneview"]);
-
-
-Route::get("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
-Route::post("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneupdate"]);
-Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
-Route::post("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplanecreate"]);
-
-Route::get("/admin/airstrip/airstrip-all",[App\Http\Controllers\Admin\AirStripController::class,"airstripall"]);
-Route::get("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripadd"]);
-Route::post("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripcreate"]);
-
-Route::get("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripedit"]);
-Route::post("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripupdate"]);
+    Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
+    Route::get("/admin/airplane/airplane-view/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneview"]);
 
 
+    Route::get("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
+    Route::post("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneupdate"]);
+    Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
+    Route::post("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplanecreate"]);
 
-Route::get("/admin/flight/flight-all",[App\Http\Controllers\Admin\FlightController::class,"flightall"]);
-Route::get("/admin/flight/flight-add",[App\Http\Controllers\Admin\FlightController::class,"flightadd"]);
-Route::post("/admin/flight/flight-add",[App\Http\Controllers\Admin\FlightController::class,"flightcreate"]);
-Route::get("/admin/flight/flight-view/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightview"]);
-Route::get("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightedit"]);
-Route::post("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightupdate"]);
+    Route::get("/admin/airstrip/airstrip-all",[App\Http\Controllers\Admin\AirStripController::class,"airstripall"]);
+    Route::get("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripadd"]);
+    Route::post("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripcreate"]);
 
+    Route::get("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripedit"]);
+    Route::post("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripupdate"]);
+
+    Route::get("/admin/flight/flight-all",[App\Http\Controllers\Admin\FlightController::class,"flightall"]);
+    Route::get("/admin/flight/flight-add",[App\Http\Controllers\Admin\FlightController::class,"flightadd"]);
+    Route::post("/admin/flight/flight-add",[App\Http\Controllers\Admin\FlightController::class,"flightcreate"]);
+    Route::get("/admin/flight/flight-view/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightview"]);
+    Route::get("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightedit"]);
+    Route::post("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightupdate"]);
+
+});
 
