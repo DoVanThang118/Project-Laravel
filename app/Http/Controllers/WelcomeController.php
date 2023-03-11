@@ -45,15 +45,14 @@ class WelcomeController extends Controller
                 $type[$i]=TypeOfTicket::with("Flight")
                     ->FlightFilter($flight[$i]->id)
                     ->pluck("id")->toArray();
-                $ticket[$i] = Ticket::with("TypeOfTicket")
-                        ->TicketTypeFilter($type[$i])
-                        ->TicketInStock(null)
+                $ticket[$i] = Ticket::
+                        TicketTypeFilter($type[$i])
+                        ->TicketInStock()
                         ->get();
                 if($ticket[$i]->count()>=$adults){
                     $data[]=$flight[$i];
                 }
             }
-
 
 
             if(isset($data)){
