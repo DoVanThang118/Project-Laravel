@@ -16,8 +16,9 @@ class CreateTableDiscounts extends Migration
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->date("expirationdate");
             $table->text("description")->nullable();
-            $table->unsignedInteger("%discount");
+            $table->unsignedInteger("discount");
             $table->timestamps();
         });
     }

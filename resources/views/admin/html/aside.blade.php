@@ -39,19 +39,9 @@
             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-picture-o" aria-hidden="true"></i> AirStrip</a>
                 <div class="collapsible-body left-sub-menu">
                     <ul>
-                        <li><a href="sight-see-all.html">All AirStrip</a>
+                        <li><a href="{{url("admin/airstrip/airstrip-all")}}">All AirStrip</a>
                         </li>
-                        <li><a href="sight-see-add.html">Add New AirStrip</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-calendar-o" aria-hidden="true"></i> Events</a>
-                <div class="collapsible-body left-sub-menu">
-                    <ul>
-                        <li><a href="event-all.html">All Events</a>
-                        </li>
-                        <li><a href="event-add.html">Add New Event</a>
+                        <li><a href="{{url("admin/airstrip/airstrip-add")}}">Add New AirStrip</a>
                         </li>
                     </ul>
                 </div>

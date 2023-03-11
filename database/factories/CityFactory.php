@@ -14,7 +14,7 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            "name"=>$this->faker->unique()->city,
+            "name"=>"QUANGBINH",
 
             "national"=>"VN",
 

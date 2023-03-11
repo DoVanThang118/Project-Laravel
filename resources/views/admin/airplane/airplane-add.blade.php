@@ -61,21 +61,21 @@
 
                                     @include("admin.html.form.input",[
                                     "label"=>"",
-                                    "title"=>"Input Quantity Of VIP Ticket",
+                                    "title"=>"Input Quantity Of VIP Seat",
                                     "key"=>"vip",
                                     "type"=>"number",
                                     "required"=>true])
 
                                     @include("admin.html.form.input",[
                                    "label"=>"",
-                                   "title"=>"Input Quantity Of NORMAL Ticket",
+                                   "title"=>"Input Quantity Of NORMAL Seat",
                                    "key"=>"normal",
                                    "type"=>"number",
                                    "required"=>true])
 
                                     @include("admin.html.form.input",[
                                    "label"=>"",
-                                   "title"=>"Input Quantity Of CHEAP Ticket",
+                                   "title"=>"Input Quantity Of CHEAP Seat",
                                    "key"=>"cheap",
                                    "type"=>"number",
                                    "required"=>true])
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input type="submit" class="waves-effect waves-light btn-large">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>

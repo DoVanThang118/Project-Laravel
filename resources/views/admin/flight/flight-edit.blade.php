@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input type="submit" class="waves-effect waves-light btn-large">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
                             </form>

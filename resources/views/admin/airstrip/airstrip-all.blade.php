@@ -17,7 +17,7 @@
                             <h4>All AirStrip</h4>
                             <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                             <ul id="dr-users" class="dropdown-content">
-                                <li><a href="{{url("admin/airplane/airstrip-add")}}">Add New</a>
+                                <li><a href="{{url("admin/airstrip/airstrip-add")}}">Add New</a>
                                 </li>
 
                                 <li><a href="#!">Update</a>
@@ -48,7 +48,8 @@
                                             <td>{{$item->TakeofCity->name}}</td>
                                             <td>{{$item->LandingCity->name}}</td>
                                             <td>
-                                                <a href="{{url("admin/airplane/airstrip-edit",["airstrip"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                <a href="{{url("admin/airstrip/airstrip-edit",["airstrip"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
                                             </td>
 
                                         </tr>

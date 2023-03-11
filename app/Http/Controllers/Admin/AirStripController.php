@@ -55,5 +55,34 @@ class AirStripController extends Controller
         return redirect()->back();
 
     }
+    public function airstripedit(AirStrip $airstrip)
+    {
+        return view("admin.airstrip.airstrip-edit", [
+            "airstrip" => $airstrip
+        ]);
+    }
+    public function airstripupdate(AirStrip $airstrip,Request $request)
+    {
+        $request->validate([
+            "name" => "required|string|min:3",
+        ], [
+            "required" => "Vui lòng nhập thông tin",
+            "string" => "Phải nhập vào là một chuỗi văn bản",
+            "min" => "Phải nhập :attribute  tối thiểu :min",
+            "mimes" => "Vui lòng nhập đúng định dạng ảnh"
+        ]);
+
+        try{
+            $airstrip->update([
+                "name"=>$request->get("name"),
+            ]);
+
+            return redirect()->to("admin/airstrip/airstrip-all")->with("success","Sua airstrip thanh cong");
+
+        }catch (\Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
+
+    }
 
 }

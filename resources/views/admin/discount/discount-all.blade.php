@@ -5,7 +5,7 @@
             <ul>
                 <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                 </li>
-                <li class="active-bre"><a href="#"> Ui Form</a>
+                <li class="active-bre"><a href="#"> All Discount</a>
                 </li>
             </ul>
         </div>
@@ -14,21 +14,15 @@
                 <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>All Discounts</h4>
-                            <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+                            <h4>All Discount</h4>
                             <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                             <ul id="dr-users" class="dropdown-content">
-                                <li><a href="#!">Add New</a>
+                                <li><a href="{{url("admin/discount/discount-add")}}">Add New</a>
                                 </li>
-                                <li><a href="#!">Edit</a>
-                                </li>
+
                                 <li><a href="#!">Update</a>
                                 </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
+
                             </ul>
 
                             <!-- Dropdown Structure -->
@@ -39,198 +33,41 @@
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>User</th>
-                                        <th>event</th>
-                                        <th>Offers</th>
-                                        <th>Date</th>
-                                        <th>Country</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Expiration date</th>
+                                        <th>Discount %</th>
                                         <th>Edit</th>
-                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="list-img"><img src="images/listing/1.jpeg" alt=""></span>
-                                        </td>
-                                        <td><a href="#"><span class="list-enq-name">Domestic Help Services</span><span class="list-enq-city">Illunois, United States</span></a>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>18 may, 2018</td>
-                                        <td>Australia</td>
-                                        <td>
-                                            <a href="discount-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                        </td>
-                                    </tr>
+                                    @foreach($data as $item)
+                                        <tr>
+
+                                            <td>{{$item->id}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->expirationdate}}</td>
+                                            <td>{{$item->discount}}</td>
+
+                                            <td>
+                                                <a href="{{url("admin/discount/discount-edit",["discount"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="card-footer clearfix">
+                                {{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--                                            </ul>--}}
+                                {!! $data->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>
                     </div>

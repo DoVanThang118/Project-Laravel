@@ -38,7 +38,10 @@ Route::get("/admin/member/user-view",[App\Http\Controllers\Admin\MemberControlle
 
 Route::get("/admin/discount/discount-all",[App\Http\Controllers\Admin\DiscountController::class,"discountall"]);
 Route::get("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountadd"]);
-Route::get("/admin/discount/discount-edit",[App\Http\Controllers\Admin\DiscountController::class,"discountedit"]);
+Route::post("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountcreate"]);
+
+Route::get("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountedit"]);
+Route::post("/admin/discount/discount-edit/{discount}",[App\Http\Controllers\Admin\DiscountController::class,"discountupdate"]);
 
 Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
 Route::get("/admin/airplane/airplane-view/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneview"]);
@@ -52,6 +55,9 @@ Route::post("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneC
 Route::get("/admin/airstrip/airstrip-all",[App\Http\Controllers\Admin\AirStripController::class,"airstripall"]);
 Route::get("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripadd"]);
 Route::post("/admin/airstrip/airstrip-add",[App\Http\Controllers\Admin\AirStripController::class,"airstripcreate"]);
+
+Route::get("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripedit"]);
+Route::post("/admin/airstrip/airstrip-edit/{airstrip}",[App\Http\Controllers\Admin\AirStripController::class,"airstripupdate"]);
 
 
 

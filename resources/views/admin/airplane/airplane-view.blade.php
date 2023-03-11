@@ -34,18 +34,9 @@
 
                         <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
                         <ul id="dr-users" class="dropdown-content">
-                            <li><a href="#!">Add New</a>
+                            <li><a href="{{url("/admin/airplane/airplane-all")}}">All Airplane</a>
                             </li>
-                            <li><a href="#!">Edit</a>
-                            </li>
-                            <li><a href="#!">Update</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                            </li>
-                            <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                            </li>
-                        </ul>
+
 
                         <!-- Dropdown Structure -->
 
