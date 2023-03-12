@@ -36,7 +36,6 @@ class WelcomeController extends Controller
                 ->pluck("id")->toArray();
 
             $flight = Flight::FlightAirStripFilter($asflight)
-                ->LandingTimeFilter($landingtime)
                 ->TakeofTimeFilter($takeoftime)
                 ->orderBy("id", "desc")
                 ->paginate(20);
@@ -58,9 +57,34 @@ class WelcomeController extends Controller
             if(isset($data)){
                 return view("flight-list", [
                     "data"=>$data,
-                ]);
+                ])->with("success","Success");;
+
             }else{
-                return redirect()->back();
+
+                $flight = Flight::FlightAirStripFilter($asflight)
+                    ->orderBy("id", "desc")
+                    ->paginate(20);
+                for($i=0;$i<$flight->count();$i++){
+                    $type[$i]=TypeOfTicket::with("Flight")
+                        ->FlightFilter($flight[$i]->id)
+                        ->pluck("id")->toArray();
+                    $ticket[$i] = Ticket::
+                    TicketTypeFilter($type[$i])
+                        ->TicketInStock()
+                        ->get();
+                    if($ticket[$i]->count()>=$adults){
+                        $data[]=$flight[$i];
+                    }
+                }
+                if(isset($data)){
+                    return view("flight-list", [
+                        "data"=>$data,
+
+                    ])->with("success","The entered time could not be found. We recommend some similar flights");
+                }else{
+                    return redirect()->back();
+                }
+
             }
 
 
