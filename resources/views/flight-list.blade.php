@@ -27,6 +27,7 @@
                     <!--RIGHT LISTINGS-->
                     <div class="hot-page2-alp-con-right">
                         <div class="hot-page2-alp-con-right-1">
+                            <h4></h4>
                             <!--LISTINGS-->
 
                                 <!--LISTINGS START-->

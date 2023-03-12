@@ -22,10 +22,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="noofadults">
-                                            <option value="" disabled selected>Return</option>
+                                        <select name="direction">
+{{--                                            <option value="" disabled selected>Return</option>--}}
                                             <option value="1">One-way</option>
-                                            <option value="2">Return</option>
+                                            <option value="2">Round-trip</option>
                                         </select>
                                     </div>
                                 </div>
