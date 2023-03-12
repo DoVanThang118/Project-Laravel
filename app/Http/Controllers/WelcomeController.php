@@ -28,10 +28,10 @@ class WelcomeController extends Controller
         $landingtime = $request->get("landingtime");
         $adults = $request->get("adults");
         $children = $request->get("children");
+        $direction=$request->get("direction");
 
 
-
-        if ($takeofcity_id != 0 && $landingcity_id != 0) {
+        if ($takeofcity_id != 0 && $landingcity_id != 0 && $direction==1) {
             $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                 ->pluck("id")->toArray();
 
@@ -88,8 +88,9 @@ class WelcomeController extends Controller
             }
 
 
+        }
 
-
+        if($takeofcity_id != 0 && $landingcity_id != 0 && $direction==2){
 
         }
     }
