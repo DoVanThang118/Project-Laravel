@@ -23,7 +23,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select name="direction">
-                                            <option value="" disabled selected>Return</option>
+{{--                                            <option value="" disabled selected>Return</option>--}}
                                             <option value="1">One-way</option>
                                             <option value="2">Return</option>
                                         </select>
