@@ -18,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
+Route::post('/', [App\Http\Controllers\WelcomeController::class, 'filter']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/flight-list', [App\Http\Controllers\FlightListController::class, 'index'])->name('flight-list');
-Route::get('/ticket-list', [App\Http\Controllers\TicketListController::class, 'index'])->name('ticket-list');
+Route::get('/flight-list/', [App\Http\Controllers\FlightListController::class, 'index'])->name('flight-list');
+Route::get('/ticket-list/{flight}', [App\Http\Controllers\TicketListController::class, 'index'])->name('ticket-list');
 Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
 Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');

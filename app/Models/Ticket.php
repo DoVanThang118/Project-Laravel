@@ -50,9 +50,14 @@ class Ticket extends Model
         }
         return $query;
     }
-    public function scopeTicketInStock($query,$order_id){
-        if($order_id && $order_id != 0){
-            return $query->where("order_id",$order_id);
+    public function scopeTicketInStock($query){
+
+            return $query->where("order_id",null);
+
+    }
+    public function scopeTicketTypeFilter($query,$type){
+        if(is_array($type)){
+            return $query ->whereIn("typeofticket_id",$type);
         }
         return $query;
     }
