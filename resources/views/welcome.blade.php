@@ -8,10 +8,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="v2-ho-se-ri">
-                            <h1>Flight with The Travel</h1>
-                            <h2><i><span>Going place together</span></i></h2>
+
+                            <h1>Flight Booking to your travel!</h1>
                             <br>
-                            <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
+                            <p>Experience the various exciting tour and travel packages, find vacation packages, search cheap flight and events</p>
                         </div>
                     </div>
                     <div class="col-md-6">
