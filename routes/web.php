@@ -27,7 +27,7 @@ Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'i
 Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
-Route::get('/payment-all', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
+Route::get('/cart', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
 
