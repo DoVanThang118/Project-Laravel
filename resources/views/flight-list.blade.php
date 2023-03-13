@@ -376,20 +376,35 @@
                                                     <li>
                                                         <h4>{{$item->TypeOfTickets[0]->name}}</h4>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
-                                                        <input type="number" value="0" name="qtyvip">
+                                                        @include("admin.html.form.input",[
+                                                          "label"=>"",
+                                                          "title"=>"Input Qty",
+                                                          "key"=>"vipqty",
+                                                          "type"=>"number",
+                                                          "required"=>true])
                                                     </li>
 
                                                     <li>
                                                         <h4>{{$item->TypeOfTickets[1]->name}}</h4>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
+                                                        @include("admin.html.form.input",[
+                                                              "label"=>"",
+                                                              "title"=>"Input Qty",
+                                                              "key"=>"normalqty",
+                                                              "type"=>"number",
+                                                              "required"=>true])
 
-                                                        <input type="number" value="0" name="">
                                                     </li>
                                                     <li>
                                                         <h4>{{$item->TypeOfTickets[2]->name}}</h4>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
+                                                        @include("admin.html.form.input",[
+                                                             "label"=>"",
+                                                             "title"=>"Input Qty",
+                                                             "key"=>"cheapqty",
+                                                             "type"=>"number",
+                                                             "required"=>true])
 
-                                                        <input type="number" value="0" name="">
                                                     </li>
                                                 </ul>
 
