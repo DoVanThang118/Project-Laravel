@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -15,5 +16,4 @@ class ProfileController extends Controller
     {
         return view('user.profile-edit');
     }
-
 }
