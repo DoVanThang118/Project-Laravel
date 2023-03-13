@@ -86,7 +86,7 @@ class AirplaneController extends Controller
             $airplane = Airplane::create([
                 "name"=>$request->get("name"),
                 "brand"=>$request->get("brand"),
-                "desciption"=>$request->get("description"),
+                "description"=>$request->get("description"),
                 "thumbnail"=>$thumbnail,
                 "totalseat"=>$qty
 

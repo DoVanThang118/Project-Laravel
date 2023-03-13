@@ -17,6 +17,7 @@ class CreateTableTypeoftickets extends Migration
             $table->id();
             $table->string("name");
             $table->unsignedInteger("totalticket");
+            $table->unsignedInteger("ticketinstock");
             $table->string("image")->nullable();
             $table->text("description")->nullable();
             $table->unsignedDecimal("price",12,3);
