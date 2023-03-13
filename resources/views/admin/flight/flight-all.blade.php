@@ -75,6 +75,7 @@
                                         <th>Landing time</th>
                                         <th>Description</th>
                                         <th>Total Ticket</th>
+                                        <th>Ticket Sold</th>
                                         <th>Airplane Name</th>
                                         <th>Take of city</th>
                                         <th>Landing City</th>
@@ -91,6 +92,7 @@
                                             <td>{{$item->landingtime}}</td>
                                             <td>{{$item->description}}</td>
                                             <td>{{$item->totalticket}}</td>
+                                            <td></td>
                                             <td>{{$item->Airplane->name}}</td>
                                             <td>{{$item->AirStrip->TakeofCity->name}}</td>
                                             <td>{{$item->AirStrip->LandingCity->name}}</td>
