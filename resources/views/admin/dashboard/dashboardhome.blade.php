@@ -58,219 +58,72 @@
         </div>
         <div class="sb2-2-3">
             <div class="row">
-                <!--== Country Campaigns ==-->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="box-inn-sp">
                         <div class="inn-title">
-                            <h4>Country Campaigns</h4>
-                            <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
-                            <a class='dropdown-button drop-down-meta' href='#' data-activates='dropdown1'><i class="material-icons">more_vert</i></a>
-                            <!-- Dropdown Structure -->
-                            <ul id='dropdown1' class='dropdown-content'>
-                                <li><a href="#!">Add New</a>
-                                </li>
-                                <li><a href="#!">Edit</a>
-                                </li>
-                                <li><a href="#!">Update</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">play_for_work</i>Download</a>
-                                </li>
-                            </ul>
+                            <h4>All Flight</h4>
+
                         </div>
                         <div class="tab-inn">
                             <div class="table-responsive table-desi">
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>Country</th>
-                                        <th>Client</th>
-                                        <th>Changes</th>
-                                        <th>Budget</th>
-                                        <th>Status</th>
+                                        <th>#</th>
+                                        <th>Takeof time</th>
+                                        <th>Landing time</th>
+                                        <th>Description</th>
+                                        <th>Total Ticket</th>
+                                        <th>In Stock</th>
+                                        <th>Airplane Name</th>
+                                        <th>Take of city</th>
+                                        <th>Landing City</th>
+                                        <th>View</th>
+                                        <th>Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Australia</span>
-                                        </td>
-                                        <td>Beavis</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>2.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$1478</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Cuba</span>
-                                        </td>
-                                        <td>Felix</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>1.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$951</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">Closed</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">France</span>
-                                        </td>
-                                        <td>Cannibus</td>
-                                        <td><span class="txt-danger"><i class="fa fa-angle-up" aria-hidden="true"></i><span>-8.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$632</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-default">Hold</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Norway</span>
-                                        </td>
-                                        <td>Neosoft</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>7.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$325</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-default">Hold</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">South Africa</span>
-                                        </td>
-                                        <td>Hencework</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>9.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span>$258</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                    </tr>
+                                    @foreach($flight as $item)
+                                        <tr>
+
+                                            <td>{{$item->id}}</td>
+                                            <td>{{$item->takeoftime}}</td>
+                                            <td>{{$item->landingtime}}</td>
+                                            <td>{{$item->description}}</td>
+                                            <td>{{$item->totalticket}}
+                                            </td>
+                                            <td> @for($i=0;$i<count($f);$i++)
+                                                    @if($f[$i][0]==$item)
+                                                        {{$f[$i][1]}}
+                                                    @endif
+                                                @endfor</td>
+                                            <td>{{$item->Airplane->name}}</td>
+                                            <td>{{$item->AirStrip->TakeofCity->name}}</td>
+                                            <td>{{$item->AirStrip->LandingCity->name}}</td>
+
+
+                                            <td>
+                                                <a href="{{url("admin/flight/flight-view",["flight"=>$item->id])}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </td>
+                                            <td>
+                                                <a href="{{url("admin/flight/flight-edit",["flight"=>$item->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--== Country Campaigns ==-->
-                <div class="col-md-6">
-                    <div class="box-inn-sp">
-                        <div class="inn-title">
-                            <h4>Country Campaigns</h4>
-                            <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
-                            <a class='dropdown-button drop-down-meta' href='#' data-activates='dropdown2'><i class="material-icons">more_vert</i></a>
-                            <!-- Dropdown Structure -->
-                            <ul id='dropdown2' class='dropdown-content'>
-                                <li><a href="#!">Add New</a>
-                                </li>
-                                <li><a href="#!">Edit</a>
-                                </li>
-                                <li><a href="#!">Update</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">play_for_work</i>Download</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-inn">
-                            <div class="table-responsive table-desi">
-                                <table class="table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>State</th>
-                                        <th>Client</th>
-                                        <th>Changes</th>
-                                        <th>Budget</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">California</span>
-                                        </td>
-                                        <td>Beavis</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>2.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$1478</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Florida</span>
-                                        </td>
-                                        <td>Felix</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>1.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$951</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-danger">Closed</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Hawaii</span>
-                                        </td>
-                                        <td>Cannibus</td>
-                                        <td><span class="txt-danger"><i class="fa fa-angle-up" aria-hidden="true"></i><span>-8.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$632</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-default">Hold</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">Alaska</span>
-                                        </td>
-                                        <td>Neosoft</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>7.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span class="txt-dark weight-500">$325</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-default">Hold</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="txt-dark weight-500">New Jersey</span>
-                                        </td>
-                                        <td>Hencework</td>
-                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>9.43%</span></span>
-                                        </td>
-                                        <td>
-                                            <span>$258</span>
-                                        </td>
-                                        <td>
-                                            <span class="label label-success">Active</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card-footer clearfix">
+                                {{--                                            <ul class="pagination pagination-sm m-0 float-right">--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+                                {{--                                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>--}}
+                                {{--                                            </ul>--}}
+                                {!! $flight->appends(app("request")->input())->links("pagination::bootstrap-4") !!}
                             </div>
                         </div>
                     </div>
@@ -287,22 +140,7 @@
                         <div class="inn-title">
                             <h4>Google Map</h4>
                             <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
-                            <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-map"><i class="material-icons">more_vert</i></a>
-                            <ul id="dr-map" class="dropdown-content">
-                                <li><a href="#!">Add New</a>
-                                </li>
-                                <li><a href="#!">Edit</a>
-                                </li>
-                                <li><a href="#!">Update</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">subject</i>View All</a>
-                                </li>
-                                <li><a href="#!"><i class="material-icons">play_for_work</i>Download</a>
-                                </li>
-                            </ul>
+
                             <!-- Dropdown Structure -->
 
                         </div>

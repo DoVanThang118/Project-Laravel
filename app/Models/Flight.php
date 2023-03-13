@@ -17,9 +17,9 @@ class Flight extends Model
         "airplane_id",
         "airstrip_id"
     ];
-   public function AirStrip(){
-       return $this->belongsTo(AirStrip::class,"airstrip_id");
-   }
+    public function AirStrip(){
+        return $this->belongsTo(AirStrip::class,"airstrip_id");
+    }
     public function Airplane(){
         return $this->belongsTo(Airplane::class,"airplane_id");
     }
@@ -51,10 +51,10 @@ class Flight extends Model
         return $query;
     }
 
-         public function scopeFlightAirStripFilter($query,$airstrip){
-            if(is_array($airstrip)){
-                return $query ->whereIn("airstrip_id",$airstrip);
-            }
-             return $query;
-         }
+    public function scopeFlightAirStripFilter($query,$airstrip){
+        if(is_array($airstrip)){
+            return $query ->whereIn("airstrip_id",$airstrip);
+        }
+        return $query;
+    }
 }

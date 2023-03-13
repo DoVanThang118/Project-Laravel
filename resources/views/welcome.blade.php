@@ -1,12 +1,5 @@
 @extends('layouts.app')
 @section("title","Trang Chủ")
-@section("custom_css")
-
-@endsection
-@section("custom_js")
-    <script src="/assets/js/jquery-ui.js"></script>
-    <script src="/assets/js/mail.js"></script>
-@endsection
 @section('content')
     <!--HEADER SECTION-->
     <section>
@@ -15,103 +8,101 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="v2-ho-se-ri">
-                            <h5>World's leading tour and travels template</h5>
+
                             <h1>Flight Booking to your travel!</h1>
-                            <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
+                            <br>
+                            <p>Experience the various exciting tour and travel packages, find vacation packages, search cheap flight and events</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <form class="contact__form v2-search-form" method="post" action="{{url("/flight-list")}}">
+                            <form class="contact__form v2-search-form" method="post" action="{{url("/")}}"  role="form" enctype="multipart/form-data">
+                                @csrf
                                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                                     Thank you message
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="noofadults">
-                                            <option value="" disabled selected>Return</option>
+                                        <select name="direction" required>
                                             <option value="1">One-way</option>
-                                            <option value="2">Return</option>
+                                            <option value="2">Round-trip</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
-                                        <select name="city">
+                                        <div class="input-field col s12">
+                                        <h4>Choose departure </h4>
+                                        <select name="takeofcity_id" required>
                                             <option value="0">From</option>
-{{--                                            @foreach($city as $item)--}}
-{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($city as $item)
+                                                <option @if(old("takeofcity_id")== $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
                                         </select>
+                                            @error("takeofcity_id")
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input type="text" id="from" name="arrivaldate">
-                                        <label for="from">Departure date</label>
+                                        @include("admin.html.form.input",[
+                                  "label"=>"",
+                                  "title"=>"Takeof Time",
+                                  "key"=>"takeoftime",
+                                  "type"=>"date",
+                                  "required"=>true])
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
-                                        <select name="city">
+                                        <div class="input-field col s12">
+                                        <h4>Choose destination</h4>
+                                        <select name="landingcity_id" required>
                                             <option value="0">To</option>
-{{--                                            @foreach($city as $item)--}}
-{{--                                                <option value="{{$item->id}}">{{$item->name}}</option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($city as $item)
+                                                <option @if(old("landingcity_id")== $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
                                         </select>
+                                            @error("landingcity_id")
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
+                                        </div>
                                     </div>
                                     <div class="input-field col s4">
-                                        <input type="text" id="to" name="departuredate">
-                                        <label for="to">Return date</label>
+                                        @include("admin.html.form.input",[
+                                  "label"=>"",
+                                  "title"=>"Return Day",
+                                  "key"=>"returnday",
+                                  "type"=>"date",
+                                  "required"=>false])
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <select name="noofadults">
-                                            <option value="" disabled selected>No of adults</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        @include("admin.html.form.input",[
+                                          "label"=>"",
+                                          "title"=>"Adults",
+                                          "key"=>"adults",
+                                          "type"=>"number",
+                                          "required"=>true,
+                                          ])
+                                        @error("adults")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <div class="input-field col s6">
-                                        <select name="noofchildrens">
-                                            <option value="" disabled selected>No of childrens</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
+                                        @include("admin.html.form.input",[
+                                         "label"=>"",
+                                         "title"=>"Children",
+                                         "key"=>"children",
+                                         "type"=>"number",
+                                         "required"=>true,
+                                         ])
+                                        @error("children")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                 </div>
-
-{{--                                <div class="row">--}}
-{{--                                    <div class="input-field col s6">--}}
-{{--                                        <select name="minprice">--}}
-{{--                                            <option value="" disabled selected>Min Price</option>--}}
-{{--                                            <option value="$200">$200</option>--}}
-{{--                                            <option value="$500">$500</option>--}}
-{{--                                            <option value="$1000">$1000</option>--}}
-{{--                                            <option value="$5000">$5000</option>--}}
-{{--                                            <option value="$10,000">$10,000</option>--}}
-{{--                                            <option value="$50,000">$50,000</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="input-field col s6">--}}
-{{--                                        <select name="maxprice">--}}
-{{--                                            <option value="" disabled selected>Max Price</option>--}}
-{{--                                            <option value="$200">$200</option>--}}
-{{--                                            <option value="$500">$500</option>--}}
-{{--                                            <option value="$1000">$1000</option>--}}
-{{--                                            <option value="$5000">$5000</option>--}}
-{{--                                            <option value="$10,000">$10,000</option>--}}
-{{--                                            <option value="$50,000">$50,000</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input type="submit" value="Let's go" class="waves-effect waves-light tourz-sear-btn v2-ser-btn">
@@ -125,203 +116,49 @@
         </div>
     </section>
     <!--END HEADER SECTION-->
-    <!--====== HOME PLACES ==========-->
+
     <section>
-        <div class="rows pad-bot-redu tb-space">
+        <div class=" rows pad-bot-redu tb-space ">
             <div class="container">
                 <!-- TITLE & DESCRIPTION -->
                 <div class="spe-title">
-                    <h2>Top <span>Tour Packages</span></h2>
+                    <h2>TOP <span> DESTINATIONS IN VIETNAM</span> </h2>
                     <div class="title-line">
                         <div class="tl-1"></div>
                         <div class="tl-2"></div>
                         <div class="tl-3"></div>
                     </div>
-                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-                </div>
-                <div>
-                    <!-- TOUR PLACE 1 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <!-- OFFER BRAND -->
-                        <div class="band"> <img src="/assets/images/band.png" alt="" /> </div>
-                        <!-- IMAGE -->
-                        <div class="v_place_img"> <img src="/assets/images/t5.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <!-- TOUR TITLE & ICONS -->
-                        <div class="b_pack rows">
-                            <!-- TOUR TITLE -->
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Rio de Janeiro<span class="v_pl_name">(Brazil)</span></a></h4> </div>
-                            <!-- TOUR ICONS -->
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 2 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <!-- OFFER BRAND -->
-                        <div class="band"> <img src="/assets/images/band1.png" alt="" /> </div>
-                        <!-- IMAGE -->
-                        <div class="v_place_img"> <img src="/assets/images/t1.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <!-- TOUR TITLE & ICONS -->
-                        <div class="b_pack rows">
-                            <!-- TOUR TITLE -->
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Paris<span class="v_pl_name">(England)</span></a></h4> </div>
-                            <!-- TOUR ICONS -->
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 3 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t2.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">South India<span class="v_pl_name">(India)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t3.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">The Great Wall<span class="v_pl_name">(China)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 5 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t4.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Nail Island<span class="v_pl_name">(Andaman)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 6 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t6.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Mauritius<span class="v_pl_name">(Indiana)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== HOME HOTELS ==========-->
-    <section>
-        <div class="rows tb-space pad-top-o pad-bot-redu">
-            <div class="container">
-                <!-- TITLE & DESCRIPTION -->
-                <div class="spe-title">
-                    <h2>Popular <span>Cities</span> </h2>
-                    <div class="title-line">
-                        <div class="tl-1"></div>
-                        <div class="tl-2"></div>
-                        <div class="tl-3"></div>
-                    </div>
-                    <p>World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
                 </div>
                 <!-- CITY -->
                 <div class="col-md-6">
-                    <a href="tour-details.html">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="v_place_img"> <img src="/assets/images/listing/home1.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con">
+                                <h5>Ho Chi Minh City</h5>
+                                <a href="#"><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con">
-                                <h5>Europe</h5>
-                                <p><span>12 Packages</span> Starting from $2400</p>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Ha Noi</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home2.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Phu Quoc</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
@@ -331,30 +168,8 @@
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Dubai</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home2.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>India</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home1.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Usa</h5>
-                                <p>Starting from $2400</p>
+                                <h5>Da Nang</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
@@ -364,8 +179,81 @@
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home4.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Da Lat</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== HOME HOTELS ==========-->
+
+    <!--====== HOME PLACES ==========-->
+    <section>
+        <div class="rows tb-space pad-top-o pad-bot-redu">
+            <div class="container">
+                <!-- TITLE & DESCRIPTION -->
+                <div class="spe-title">
+                    <h2>TOP <span> DESTINATIONS AROUND THE WORLD</span> </h2>
+                    <div class="title-line">
+                        <div class="tl-1"></div>
+                        <div class="tl-2"></div>
+                        <div class="tl-3"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="v_place_img"> <img src="/assets/images/t1.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con">
                                 <h5>London</h5>
-                                <p>Starting from $2400</p>
+                                <a href="#"><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t2.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Paris</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t3.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>New York City</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t4.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Bangkok</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t5.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Singapore</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
