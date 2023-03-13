@@ -20,10 +20,10 @@ class TypeOfTicket extends Model
         "typeofseat_id"
     ];
     public function Flight(){
-        return $this->belongsTo(Flight::class);
+        return $this->belongsTo(Flight::class,"flight_id");
     }
     public function TypeOfSeat(){
-        return $this->belongsTo(TypeOfSeat::class);
+        return $this->belongsTo(TypeOfSeat::class,"typeofseat_id");
     }
     public function Tickets(){
         return $this->hasMany(Ticket::class);
@@ -34,4 +34,5 @@ class TypeOfTicket extends Model
         }
         return $query;
     }
+
 }

@@ -33,23 +33,27 @@
                         <div class="hot-page2-hom-pre hot-page2-alp-left-ner-notb">
                             <ul>
                                 <!--LISTINGS-->
+
                                 <li>
                                     <a href="#">
                                         <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="images/package/1.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>Bali, Indonesia</h5> <span>Bali is a living postcard</span> </div>
+                                            <h5></h5> <span>Bali is a living postcard</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.2</span> </div>
                                     </a>
                                 </li>
+
                                 <!--LISTINGS-->
+
                                 <li>
                                     <a href="#">
                                         <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="images/package/2.jpg" alt=""> </div>
                                         <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
-                                            <h5>London, United Kingdom</h5> <span>There's so much to see and do in London</span> </div>
+                                            <h5></h5> <span>There's so much to see and do in London</span> </div>
                                         <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
                                     </a>
                                 </li>
+
                                 <!--LISTINGS-->
                                 <li>
                                     <a href="#">
@@ -345,7 +349,11 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
+                                <form >
+                                    @csrf
+                                    @foreach($data as $item)
                                 <div class="hot-page2-alp-r-list">
+
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hotel-list-score">4.5</div>
@@ -354,7 +362,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
+                                            <a href="tour-details.html"><h3>Flight No {{$item->id}} from {{$item->AirStrip->TakeofCity->name}} to {{$item->AirStrip->LandingCity->name}} </h3></a>
                                             <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
                                         </div>
                                     </div>
@@ -362,23 +370,31 @@
                                         <div class="trav-ami">
                                             <h4>Select ticket</h4>
                                             <div class="ticket">
-                                                <form >
-                                                    @csrf
+
                                                 <ul>
+
                                                     <li>
-                                                        <h4>Business class : 48</h4>
+                                                        <h4>{{$item->TypeOfTickets[0]->name}}</h4>
+                                                        <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
+                                                        <input type="number" value="0" name="qtyvip">
+                                                    </li>
+
+                                                    <li>
+                                                        <h4>{{$item->TypeOfTickets[1]->name}}</h4>
+                                                        <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
+
                                                         <input type="number" value="0" name="">
                                                     </li>
                                                     <li>
-                                                        <h4>Economy class: 48</h4>
-                                                        <input type="number" value="0" name="">
-                                                    </li>
-                                                    <li>
-                                                        <h4>Cheap class 48</h4>
+                                                        <h4>{{$item->TypeOfTickets[2]->name}}</h4>
+                                                        <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
+
                                                         <input type="number" value="0" name="">
                                                     </li>
                                                 </ul>
-                                                </form>
+
+
+
                                                 <div class="col-md-3">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                         <a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
@@ -388,12 +404,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                    @endforeach
+
                                 <!--END LISTINGS-->
+                                </form>
                             </div>
                         </div>
                     </div>
                     <!--END RIGHT LISTINGS-->
                 </div>
+        </div>
         </div>
     </section>
 @endsection
