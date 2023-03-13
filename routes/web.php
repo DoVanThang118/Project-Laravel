@@ -49,7 +49,6 @@ Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/airplane/airplane-all",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneall"]);
     Route::get("/admin/airplane/airplane-view/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneview"]);
 
-
     Route::get("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneedit"]);
     Route::post("/admin/airplane/airplane-edit/{airplane}",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneupdate"]);
     Route::get("/admin/airplane/airplane-add",[App\Http\Controllers\Admin\AirplaneController::class,"airplaneadd"]);
@@ -69,5 +68,10 @@ Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightedit"]);
     Route::post("/admin/flight/flight-edit/{flight}",[App\Http\Controllers\Admin\FlightController::class,"flightupdate"]);
 
+
+//mailable
+    Route::get("/checkout",[\App\Http\Controllers\MailController::class,"checkout"]);
+    Route::post("/checkout",[\App\Http\Controllers\MailController::class,"placeOrder"]);
+    Route::get("/sendNotification",[\App\Http\Controllers\MailController::class,"sendNotification"]);
 });
 
