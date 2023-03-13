@@ -9,6 +9,17 @@ use Pusher\Pusher;
 
 class MailController extends Controller
 {
+    public function checkout(){
+        $cart = session()->has("cart") && is_array(session("cart"))?session("cart"):[];
+        if(count($cart) == 0){
+            return redirect()->to("/cart");
+        }
+        $grand_total = 0;
+        foreach ($cart as $item){
+            $grand_total += $item->price * $item->buy_qty;
+        }
+        return view("user.checkout",compact('cart',"grand_total"));
+    }
     public function placeOrder(Request $request ){
         Auth::id();
         $request->validate([
