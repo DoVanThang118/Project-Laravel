@@ -8,7 +8,7 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        return view('user.payment-all');
+        return view('user.cart');
     }
 
     public function payment()
