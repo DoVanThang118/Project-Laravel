@@ -12,6 +12,7 @@ class TypeOfTicket extends Model
     protected $fillable=[
         "name",
         "totalticket",
+        "ticketinstock",
         "image",
         "description",
         "price",

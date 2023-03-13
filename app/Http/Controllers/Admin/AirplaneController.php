@@ -76,7 +76,7 @@ class AirplaneController extends Controller
                 $path = public_path("uploads");
                 $file->move($path,$fileName);
                 $thumbnail = "uploads/".$fileName;
-        }
+            }
 
             $qtyvip=$request->get("vip");
             $qtynormal=$request->get("normal");
@@ -86,7 +86,7 @@ class AirplaneController extends Controller
             $airplane = Airplane::create([
                 "name"=>$request->get("name"),
                 "brand"=>$request->get("brand"),
-                "desciption"=>$request->get("description"),
+                "description"=>$request->get("description"),
                 "thumbnail"=>$thumbnail,
                 "totalseat"=>$qty
 

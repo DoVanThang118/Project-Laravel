@@ -16,6 +16,7 @@ class TypeOfTicketFactory extends Factory
         return [
             "name"=>$this->faker->name(),
             "totalticket"=>0,
+            "ticketinstock"=>0,
             "image"=>$this->faker->imageUrl(),
             "description"=>$this->faker->address,
             "price"=>random_int(50,200),

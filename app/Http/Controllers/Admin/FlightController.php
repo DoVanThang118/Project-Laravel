@@ -159,12 +159,13 @@ class FlightController extends Controller
                 "landingtime"=>$request->get("landingtime"),
                 "description"=>$request->get("description"),
                 "totalticket"=>0,
+                "ticketinstock"=>0,
                 "airstrip_id"=>$request->get("airstrip_id"),
                 "airplane_id"=>$request->get("airplane_id")
             ]);
             $airplane=Airplane::where("id",$flight->airplane_id)
                 ->get();
-            $flight->update(["totalticket"=>$airplane[0]->totalseat]);
+            $flight->update(["totalticket"=>$airplane[0]->totalseat,"ticketinstock"=>$airplane[0]->totalseat ]);
 
             $typeofseat=TypeOfSeat::with("Airplane")
                 ->AirplaneFilter($flight->airplane_id)
@@ -178,6 +179,7 @@ class FlightController extends Controller
                 $typeofticket[]=TypeOfTicket::create([
                     "name"=>$typeofseat[$i]->name,
                     "totalticket"=>$typeofseat[$i]->totalseat,
+                    "ticketinstock"=>$typeofseat[$i]->totalseat,
                     "image"=>null,
                     "description"=>null,
                     "price"=>$request->get("vip"),
@@ -189,6 +191,7 @@ class FlightController extends Controller
                     $typeofticket[]=TypeOfTicket::create([
                         "name"=>$typeofseat[$i]->name,
                         "totalticket"=>$typeofseat[$i]->totalseat,
+                        "ticketinstock"=>$typeofseat[$i]->totalseat,
                         "image"=>null,
                         "description"=>null,
                         "price"=>$request->get("normal"),
@@ -200,6 +203,7 @@ class FlightController extends Controller
                     $typeofticket[]=TypeOfTicket::create([
                         "name"=>$typeofseat[$i]->name,
                         "totalticket"=>$typeofseat[$i]->totalseat,
+                        "ticketinstock"=>$typeofseat[$i]->totalseat,
                         "image"=>null,
                         "description"=>null,
                         "price"=>$request->get("cheap"),
