@@ -3365,7 +3365,7 @@
      padding-bottom: 70px;
 }
  .hot-page2-alp-con-left-1 {
-     background: #253d52;
+     background: #0ad3e7;
      color: #fff;
      padding: 25px;
 }
@@ -3731,7 +3731,7 @@
      background: #fff;
      position: relative;
      overflow: hidden;
-     margin: 15px 15px 15px 15px;
+     margin: 15px 15px 15px 0px;
      transition: all 0.5s ease;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
@@ -5022,16 +5022,16 @@
 /*-------------------------------------------------------*/
  .v2-ho-se-ri {
 }
- .v2-ho-se-ri h5{
+ .v2-ho-se-ri h2{
      color: #fff;
      text-transform: uppercase;
      font-family: 'Quicksand', sans-serif;
-     font-size: 10px;
+     font-size: 25px;
      letter-spacing: 4px;
      font-weight: 100;
 }
  .v2-ho-se-ri h1 {
-     margin: 0px;
+     margin-top: 100px;
      color: #fff;
      font-size: 48px;
      margin-bottom: 20px;

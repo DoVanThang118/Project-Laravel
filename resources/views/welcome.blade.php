@@ -8,8 +8,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="v2-ho-se-ri">
-                            <h5>World's leading tour and travels template</h5>
-                            <h1>Flight Booking to your travel!</h1>
+                            <h1>Flight with The Travel</h1>
+                            <h2><i><span>Going place together</span></i></h2>
+                            <br>
                             <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
                         </div>
                     </div>
@@ -23,7 +24,6 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select name="direction">
-{{--                                            <option value="" disabled selected>Return</option>--}}
                                             <option value="1">One-way</option>
                                             <option value="2">Round-trip</option>
                                         </select>
@@ -31,12 +31,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
+                                        <div class="input-field col s12">
+                                        <h4>Choose departure </h4>
                                         <select name="takeofcity_id">
                                             <option value="0">From</option>
                                             @foreach($city as $item)
                                                 <option value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                         </select>
+                                        </div>
                                     </div>
                                     <div class="input-field col s4">
                                         @include("admin.html.form.input",[
@@ -49,12 +52,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
+                                        <div class="input-field col s12">
+                                        <h4>Choose destination</h4>
                                         <select name="landingcity_id">
                                             <option value="0">To</option>
                                             @foreach($city as $item)
                                                 <option value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                         </select>
+                                        </div>
                                     </div>
                                     <div class="input-field col s4">
                                         @include("admin.html.form.input",[
@@ -67,19 +73,19 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <p>Adults</p>
                                         @include("admin.html.form.input",[
                                           "label"=>"",
-                                          "title"=>"",
+                                          "title"=>"Adults",
+                                          "value"=>"1",
                                           "key"=>"adults",
                                           "type"=>"number",
                                           "required"=>false])
                                     </div>
                                     <div class="input-field col s6">
-                                        <p>Children</p>
                                         @include("admin.html.form.input",[
                                          "label"=>"",
-                                         "title"=>"",
+                                         "title"=>"Children",
+                                         "value"=>"0",
                                          "key"=>"children",
                                          "type"=>"number",
                                          "required"=>false])
