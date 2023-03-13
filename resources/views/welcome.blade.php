@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="direction">
+                                        <select name="direction" required>
                                             <option value="1">One-way</option>
                                             <option value="2">Round-trip</option>
                                         </select>
@@ -33,12 +33,15 @@
                                     <div class="input-field col s8">
                                         <div class="input-field col s12">
                                         <h4>Choose departure </h4>
-                                        <select name="takeofcity_id">
+                                        <select name="takeofcity_id" required>
                                             <option value="0">From</option>
                                             @foreach($city as $item)
-                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                                <option @if(old("takeofcity_id")== $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                         </select>
+                                            @error("takeofcity_id")
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="input-field col s4">
@@ -47,26 +50,29 @@
                                   "title"=>"Takeof Time",
                                   "key"=>"takeoftime",
                                   "type"=>"date",
-                                  "required"=>false])
+                                  "required"=>true])
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
                                         <div class="input-field col s12">
                                         <h4>Choose destination</h4>
-                                        <select name="landingcity_id">
+                                        <select name="landingcity_id" required>
                                             <option value="0">To</option>
                                             @foreach($city as $item)
-                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                                <option @if(old("landingcity_id")== $item->id) selected @endif value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
                                         </select>
+                                            @error("landingcity_id")
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="input-field col s4">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
-                                  "title"=>"Landing Time",
-                                  "key"=>"landingtime",
+                                  "title"=>"Return Day",
+                                  "key"=>"returnday",
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
@@ -76,19 +82,25 @@
                                         @include("admin.html.form.input",[
                                           "label"=>"",
                                           "title"=>"Adults",
-                                          "value"=>"1",
                                           "key"=>"adults",
                                           "type"=>"number",
-                                          "required"=>false])
+                                          "required"=>true,
+                                          ])
+                                        @error("adults")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                     <div class="input-field col s6">
                                         @include("admin.html.form.input",[
                                          "label"=>"",
                                          "title"=>"Children",
-                                         "value"=>"0",
                                          "key"=>"children",
                                          "type"=>"number",
-                                         "required"=>false])
+                                         "required"=>true,
+                                         ])
+                                        @error("children")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">

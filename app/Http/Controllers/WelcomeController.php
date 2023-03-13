@@ -22,16 +22,31 @@ class WelcomeController extends Controller
 
     public function filter(Request $request)
     {
+        $request->validate([
+            "takeoftime"=>"required",
+//            "returnday"=>"required",
+            "takeofcity_id"=>"required|numeric|min:1",
+            "landingcity_id"=>"required|numeric|min:1",
+            "direction"=>"required|numeric|min:1",
+            "adults"=>"required|numeric|min:1",
+            "children"=>"required|numeric|min:0",
+
+        ],[
+            "required"=>"Vui lòng nhập thông tin",
+            "string"=> "Phải nhập vào là một chuỗi văn bản",
+            "min"=> "Phải nhập :attribute  tối thiểu :min",
+            "mimes"=>"Vui lòng nhập đúng định dạng ảnh"
+        ]);
         $takeofcity_id = $request->get("takeofcity_id");
         $landingcity_id = $request->get("landingcity_id");
         $takeoftime = $request->get("takeoftime");
-        $landingtime = $request->get("landingtime");
+        $returnday = $request->get("returnday");
         $adults = $request->get("adults");
         $children = $request->get("children");
         $direction=$request->get("direction");
 
 
-        if ($takeofcity_id != 0 && $landingcity_id != 0 && $direction==1) {
+        if ($takeofcity_id!=$landingcity_id && $direction==1) {
             $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                 ->pluck("id")->toArray();
 
@@ -79,7 +94,6 @@ class WelcomeController extends Controller
                 if(isset($data)){
                     return view("flight-list", [
                         "data"=>$data,
-
                     ])->with("success","The entered time could not be found. We recommend some similar flights");
                 }else{
                     return redirect()->back();
@@ -90,7 +104,7 @@ class WelcomeController extends Controller
 
         }
 
-        if($takeofcity_id != 0 && $landingcity_id != 0 && $direction==2){
+        if($takeofcity_id!=$landingcity_id && $direction==2){
 
         }
     }
