@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section("title","Trang Chủ")
 @section('content')
+@include('admin.html.notification')
     <!--HEADER SECTION-->
     <section>
         <div class="v2-hom-search">

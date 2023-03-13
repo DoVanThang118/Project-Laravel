@@ -349,10 +349,11 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                <form >
-                                    @csrf
+
                                     @foreach($data as $item)
                                 <div class="hot-page2-alp-r-list">
+                                    <form method="post" action="{{url("/",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
+                                        @csrf
 
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
@@ -418,11 +419,91 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                                     @endforeach
+                                    @if(isset($data2))
+                                        <h1>Return</h1>
+                                        @foreach($data2 as $item)
+                                            <div class="hot-page2-alp-r-list">
+                                                <form  method="post" action="{{url("/",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
+                                                    @csrf
+
+                                                <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                                    <a href="javascript:void(0);">
+                                                        <div class="hotel-list-score">4.5</div>
+                                                        <div class="hot-page2-hli-1"> <img src="public/assets/images/package/1.jpg" alt=""> </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="trav-list-bod">
+                                                        <a href="tour-details.html"><h3>Flight No {{$item->id}} from {{$item->AirStrip->TakeofCity->name}} to {{$item->AirStrip->LandingCity->name}} </h3></a>
+                                                        <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="trav-ami">
+                                                        <h4>Select ticket</h4>
+                                                        <div class="ticket">
+
+                                                            <ul>
+
+                                                                <li>
+                                                                    <h4>{{$item->TypeOfTickets[0]->name}}</h4>
+                                                                    <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
+                                                                    @include("admin.html.form.input",[
+                                                                      "label"=>"",
+                                                                      "title"=>"Input Qty",
+                                                                      "key"=>"vipqty",
+                                                                      "type"=>"number",
+                                                                      "required"=>true])
+                                                                </li>
+
+                                                                <li>
+                                                                    <h4>{{$item->TypeOfTickets[1]->name}}</h4>
+                                                                    <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
+                                                                    @include("admin.html.form.input",[
+                                                                          "label"=>"",
+                                                                          "title"=>"Input Qty",
+                                                                          "key"=>"normalqty",
+                                                                          "type"=>"number",
+                                                                          "required"=>true])
+
+                                                                </li>
+                                                                <li>
+                                                                    <h4>{{$item->TypeOfTickets[2]->name}}</h4>
+                                                                    <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
+                                                                    @include("admin.html.form.input",[
+                                                                         "label"=>"",
+                                                                         "title"=>"Input Qty",
+                                                                         "key"=>"cheapqty",
+                                                                         "type"=>"number",
+                                                                         "required"=>true])
+
+                                                                </li>
+                                                            </ul>
+
+
+
+                                                            <div class="col-md-3">
+                                                                <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                                    <a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                </form>
+                                            </div>
+                                        @endforeach
+                                        @endif
+
+
+
 
                                 <!--END LISTINGS-->
-                                </form>
+
                             </div>
                         </div>
                     </div>
