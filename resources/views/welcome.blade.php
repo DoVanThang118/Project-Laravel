@@ -116,203 +116,49 @@
         </div>
     </section>
     <!--END HEADER SECTION-->
-    <!--====== HOME PLACES ==========-->
+
     <section>
-        <div class="rows pad-bot-redu tb-space">
+        <div class=" rows pad-bot-redu tb-space ">
             <div class="container">
                 <!-- TITLE & DESCRIPTION -->
                 <div class="spe-title">
-                    <h2>Top <span>Tour Packages</span></h2>
+                    <h2>TOP <span> DESTINATIONS IN VIETNAM</span> </h2>
                     <div class="title-line">
                         <div class="tl-1"></div>
                         <div class="tl-2"></div>
                         <div class="tl-3"></div>
                     </div>
-                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
-                </div>
-                <div>
-                    <!-- TOUR PLACE 1 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <!-- OFFER BRAND -->
-                        <div class="band"> <img src="/assets/images/band.png" alt="" /> </div>
-                        <!-- IMAGE -->
-                        <div class="v_place_img"> <img src="/assets/images/t5.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <!-- TOUR TITLE & ICONS -->
-                        <div class="b_pack rows">
-                            <!-- TOUR TITLE -->
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Rio de Janeiro<span class="v_pl_name">(Brazil)</span></a></h4> </div>
-                            <!-- TOUR ICONS -->
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 2 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <!-- OFFER BRAND -->
-                        <div class="band"> <img src="/assets/images/band1.png" alt="" /> </div>
-                        <!-- IMAGE -->
-                        <div class="v_place_img"> <img src="/assets/images/t1.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <!-- TOUR TITLE & ICONS -->
-                        <div class="b_pack rows">
-                            <!-- TOUR TITLE -->
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Paris<span class="v_pl_name">(England)</span></a></h4> </div>
-                            <!-- TOUR ICONS -->
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 3 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t2.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">South India<span class="v_pl_name">(India)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t3.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">The Great Wall<span class="v_pl_name">(China)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 5 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t4.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Nail Island<span class="v_pl_name">(Andaman)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TOUR PLACE 6 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12 b_packages">
-                        <div class="v_place_img"><img src="/assets/images/t6.png" alt="Tour Booking" title="Tour Booking" /> </div>
-                        <div class="b_pack rows">
-                            <div class="col-md-8 col-sm-8">
-                                <h4><a href="tour-details.html">Mauritius<span class="v_pl_name">(Indiana)</span></a></h4> </div>
-                            <div class="col-md-4 col-sm-4 pack_icon">
-                                <ul>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/clock.png" alt="Date" title="Tour Timing" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/info.png" alt="Details" title="View more details" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/price.png" alt="Price" title="Price" /> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="/assets/images/map.png" alt="Location" title="Location" /> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== HOME HOTELS ==========-->
-    <section>
-        <div class="rows tb-space pad-top-o pad-bot-redu">
-            <div class="container">
-                <!-- TITLE & DESCRIPTION -->
-                <div class="spe-title">
-                    <h2>Popular <span>Cities</span> </h2>
-                    <div class="title-line">
-                        <div class="tl-1"></div>
-                        <div class="tl-2"></div>
-                        <div class="tl-3"></div>
-                    </div>
-                    <p>World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
                 </div>
                 <!-- CITY -->
                 <div class="col-md-6">
-                    <a href="tour-details.html">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="v_place_img"> <img src="/assets/images/listing/home1.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con">
+                                <h5>Ho Chi Minh City</h5>
+                                <a href="#"><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con">
-                                <h5>Europe</h5>
-                                <p><span>12 Packages</span> Starting from $2400</p>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Ha Noi</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home2.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Phu Quoc</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
@@ -322,30 +168,8 @@
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Dubai</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home2.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>India</h5>
-                                <p>Starting from $2400</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tour-details.html">
-                        <div class="tour-mig-like-com">
-                            <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home1.jpg" alt=""> </div>
-                            <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>Usa</h5>
-                                <p>Starting from $2400</p>
+                                <h5>Da Nang</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
@@ -355,8 +179,81 @@
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home4.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Da Lat</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== HOME HOTELS ==========-->
+
+    <!--====== HOME PLACES ==========-->
+    <section>
+        <div class="rows tb-space pad-top-o pad-bot-redu">
+            <div class="container">
+                <!-- TITLE & DESCRIPTION -->
+                <div class="spe-title">
+                    <h2>TOP <span> DESTINATIONS AROUND THE WORLD</span> </h2>
+                    <div class="title-line">
+                        <div class="tl-1"></div>
+                        <div class="tl-2"></div>
+                        <div class="tl-3"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="v_place_img"> <img src="/assets/images/t1.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con">
                                 <h5>London</h5>
-                                <p>Starting from $2400</p>
+                                <a href="#"><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t2.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Paris</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t3.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>New York City</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t4.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Bangkok</h5>
+                                <a href="#" ><p>Discover</p></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <div class="tour-mig-like-com">
+                            <div class="tour-mig-lc-img"> <img src="/assets/images/t5.jpg" alt=""> </div>
+                            <div class="tour-mig-lc-con tour-mig-lc-con2">
+                                <h5>Singapore</h5>
+                                <a href="#" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
