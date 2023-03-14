@@ -38,10 +38,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    public function showLoginForm()
+    {
+        if(!session()->has('url.intended'))
+        {
+            session(['url.intended' => url()->previous()]);
+        }
+        return view('auth.login');
+    }
     public function authenticated(Request $request,$user){
         if($user->Admin && $user->Admin->role == "ADMIN"){
             return redirect()->to(RouteServiceProvider::ADMIN);
         }
+        return redirect(session('url.intended'));
     }
-
 }
