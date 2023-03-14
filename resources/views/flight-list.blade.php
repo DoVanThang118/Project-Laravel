@@ -24,107 +24,141 @@
             </div>
             <div class="row">
                 <div class="hot-page2-alp-con">
+                    <!--LEFT LISTINGS-->
                     <div class="col-md-3 hot-page2-alp-con-left">
                         <!--PART 1 : LEFT LISTINGS-->
-                        @foreach($data as $item)
                         <div class="hot-page2-alp-con-left-1">
-                                <h3>{{$item->AirStrip->TakeOfCity->name}}</h3>
-                                <h3>{{$item->AirStrip->LandingCity->name}}</h3>
-                        </div>
+                            <h3>Suggesting Packages</h3> </div>
                         <!--PART 2 : LEFT LISTINGS-->
                         <div class="hot-page2-hom-pre hot-page2-alp-left-ner-notb">
                             <ul>
-                                <li><h4>Take-off time:</h4> {{$item->takeoftime}}</li>
-                                <li><h4>Landing time:</h4> {{$item->landingtime}}</li>
-                                <li><h4>Airplane:</h4> {{$item->Airplane->name}}</li>
-                                <li><h4>Operated by:</h4> The Travel</li>
+                                <!--LISTINGS-->
+
+                                <li>
+                                    <a href="#">
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="assets/images/package/1.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
+                                            <h5></h5> <span>Bali is a living postcard</span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.2</span> </div>
+                                    </a>
+                                </li>
+
+                                <!--LISTINGS-->
+
+                                <li>
+                                    <a href="#">
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="assets/images/package/2.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
+                                            <h5></h5> <span>There's so much to see and do in London</span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
+                                    </a>
+                                </li>
+
+                                <!--LISTINGS-->
+                                <li>
+                                    <a href="#">
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="assets/images/package/3.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
+                                            <h5>Paris, France</h5> <span>Everyone who visits Paris for the first time probably </span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>5.0</span> </div>
+                                    </a>
+                                </li>
+                                <!--LISTINGS-->
+                                <li>
+                                    <a href="#">
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="assets/images/package/4.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
+                                            <h5>Rome, Italy</h5> <span>It’s nicknamed the Eternal City for a reason.</span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>4.4</span> </div>
+                                    </a>
+                                </li>
+                                <!--LISTINGS-->
+                                <li>
+                                    <a href="#">
+                                        <div class="hot-page2-hom-pre-1 hot-page2-alp-cl-1-1"> <img src="assets/images/package/5.jpg" alt=""> </div>
+                                        <div class="hot-page2-hom-pre-2 hot-page2-alp-cl-1-2">
+                                            <h5>New York City, New York</h5> <span>The first time you go to New York</span> </div>
+                                        <div class="hot-page2-hom-pre-3 hot-page2-alp-cl-1-3"> <span>3.4</span> </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        @endforeach
+                        <!--PART 7 : LEFT LISTINGS-->
                     </div>
+                    <!--END LEFT LISTINGS-->
                     <!--RIGHT LISTINGS-->
                     <div class="col-md-9 hot-page2-alp-con-right">
                         <div class="hot-page2-alp-con-right-1">
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                <div class="sb2-2-add-blog sb2-2-1">
-                                    <ul class="nav nav-tabs tab-list">
-                                        <li class="active"><a data-toggle="tab" href="#home"><span style="font-size: 25px; color: #d7a307">Business class</span></a>
-                                        </li>
-                                        <li><a data-toggle="tab" href="#menu1"><span style="font-size: 25px; color: #1aa5d8">Economy class</span></a>
-                                        </li>
-                                        <li><a data-toggle="tab" href="#menu2"><span style="font-size: 25px; color: #33ac33">Cheap class</span></a>
-                                        </li>
-                                    </ul>
-
-                                    <div class="tab-content">
-                                        <div id="home" class="tab-pane fade in active">
-                                            <div class="box-inn-sp">
-                                                <div class="inn-title">
-                                                    <h3 class="hot-list-p3-2">3.690 VND</h3>
-                                                    <ul>
-                                                        <li>Hand baggage: 14kg for routes to Australia, Kazakhstan; 10kg for the remaining routes and 01 small bag not exceeding 02kg.</li>
-                                                        <li>Checked baggage: 50kg for routes between Australia and Kazakhstan; 30kg for remaining routes and 01 golf kit (if any)</li>
-                                                        <li>Luxury lounge (not applicable on Thai domestic flights, and at airports where standard lounge service is not available)</li>
-                                                        <li>Priority at check-in</li>
-                                                        <li>Baggage handling service privilege</li>
-                                                        <li>Priority at security checkpoints (depending on airport conditions and facilities)</li>
-                                                        <li>Private car service between departure or arrival gate and the aircraft (in the event that there is no access to airbridge for the flight)</li>
-                                                        <li>Priority for seat selection</li>
-                                                    </ul>
+                                <form >
+                                    @csrf
+                                    @foreach($data as $item)
+                                        <div class="hot-page2-alp-r-list">
+                                            <div class="col-md-3 hot-page2-alp-r-list-re-sp" >
+                                                <a href="javascript:void(0);">
+                                                    <div class="hot-page2-hli-1"> <img src="public/assets/images/listing/home1.jpg" alt=""> </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="trav-list-bod">
+                                                    <a href="#"><h3>Flight from {{$item->AirStrip->TakeofCity->name}} to {{$item->AirStrip->LandingCity->name}} </h3></a>
+                                                    <p><b>Take off time: </b>{{$item->takeoftime}}</p>
+                                                    <p><b>Landing time: </b>{{$item->landingtime}}</p>
                                                 </div>
-                                                <div class="bor">
-                                                    <div class="row">
-                                                        <div class="input-field col s12">
-                                                            <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
+                                            </div>
+                                            <div>
+                                                <div class="trav-ami">
+                                                    <h4>Select ticket</h4>
+                                                    <div class="ticket">
+                                                        <ul>
+                                                            <li>
+                                                                <h4>{{$item->TypeOfTickets[0]->name}}</h4>
+                                                                <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
+                                                                @include("admin.html.form.input",[
+                                                                  "label"=>"",
+                                                                  "title"=>"Input Qty",
+                                                                  "key"=>"vipqty",
+                                                                  "type"=>"number",
+                                                                  "required"=>true])
+                                                            </li>
+                                                            <li>
+                                                                <h4>{{$item->TypeOfTickets[1]->name}}</h4>
+                                                                <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
+                                                                @include("admin.html.form.input",[
+                                                                      "label"=>"",
+                                                                      "title"=>"Input Qty",
+                                                                      "key"=>"normalqty",
+                                                                      "type"=>"number",
+                                                                      "required"=>true])
+
+                                                            </li>
+                                                            <li>
+                                                                <h4>{{$item->TypeOfTickets[2]->name}}</h4>
+                                                                <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
+                                                                @include("admin.html.form.input",[
+                                                                     "label"=>"",
+                                                                     "title"=>"Input Qty",
+                                                                     "key"=>"cheapqty",
+                                                                     "type"=>"number",
+                                                                     "required"=>true])
+                                                            </li>
+                                                        </ul>
+                                                        <div class="col-md-3">
+                                                            <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                                <a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="menu1" class="tab-pane fade">
-                                            <div class="inn-title">
-                                                <h3 class="hot-list-p3-2">1.093 VND</h3>
-                                                <ul>
-                                                    <li>7kg or 10kg (Australia/Kazakhstan routes) carry-on baggage and 01 small bag not exceeding 02 Kg</li>
-                                                    <li>40kg (Australia/Kazakhstan routes) of checked baggage; 20kg for the rest of the routes.</li>
-                                                    <li>Food & beverage (applicable on routes Australia/Kazakhstan)</li>
-                                                    <li>Seat selection (upon availability, excluding SkyBoss and SkyBoss Business seats)</li>
-                                                    <li>Change of flight, date or route are all permitted (fare difference applied, if any)</li>
-                                                    <li>Complimentary Deluxe Flight Care (not eligible for flights operated by Thai Vietjet)</li>
-                                                </ul>
-                                            </div>
-                                            <div class="bor">
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="menu2" class="tab-pane fade">
-                                            <div class="inn-title">
-                                                <h3 class="hot-list-p3-2">890 VND</h3>
-                                                <ul>
-                                                    <li>7kg or 10kg (Australia/Kazakhstan routes) carry-on baggage and 01 small bag not exceeding 02 Kg</li>
-                                                    <li>40kg (Australia/Kazakhstan routes) of checked baggage; 20kg for the rest of the routes.</li>
-                                                    <li>Food & beverage (applicable on routes Australia/Kazakhstan)</li>
-                                                </ul>
-                                            </div>
-                                            <div class="bor">
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <a href="{{url("/booking")}}" class="col-md-2 hot-page2-alp-quot-btn">Select</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                            </div>
+                                    @endforeach
 
+                                    <!--END LISTINGS-->
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <!--END RIGHT LISTINGS-->

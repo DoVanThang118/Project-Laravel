@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MailOrder;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,8 +21,9 @@ class PaymentController extends Controller
 
     public function payment()
     {
-        $data = [
-
+            $data = [
+            'message' => "Compact successfully",
+            'user' => User::findOrFail(1)
         ];
         Mail::to('email')->send(new MailOrder($data));
     }

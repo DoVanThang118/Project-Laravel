@@ -2,44 +2,56 @@
 @section("title","Payment All")
 @section('center-content')
     <div class="db-2">
-        <div class="db-2-com db-2-main">
-            <h4>All Payment</h4>
-            <div class="db-2-main-com db-2-main-com-table">
-                <table class="responsive-table">
-                    <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Package</th>
-                        <th>Start Date</th>
-                        <th>Price</th>
-                        <th>Payment</th>
-                        <th>Invoice</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Australia</td>
-                        <td>12 Aug 2017</td>
-                        <td>$784</td>
-                        <td><span class="db-done">Done</span>
-                        </td>
-                        <td><a href="#" class="db-down-pdf"><i class="fa fa-download" aria-hidden="true"></i> Download PDF</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Dubai</td>
-                        <td>28 Feb 2018</td>
-                        <td>$654</td>
-                        <td><span class="db-not-done">Not-Done</span>
-                        </td>
-                        <td><a href="#" class="db-make-pay"><i class="fa fa-usd" aria-hidden="true"></i> Make Payment</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+        <form>
+            <div class="db-2-com db-2-main">
+                <h4>Your ticket</h4>
+                <div class="db-2-main-com db-2-main-com-table db2-form-pay db2-form-com">
+                    <table class="responsive-table">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total money</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ha Noi</td>
+                            <td>Ho Chi Minh</td>
+                            <td>11:00:00 - 13:00:00</td>
+                            <td>VIP</td>
+                            <td>300.000</td>
+                            <td>1</td>
+                            <td>300.000</td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-6">
+                        <h5>Discount</h5>
+                        <input style="height: 30px" type="text"  class="validate" name="discount" required>
+                        <p style="font-size: 12px">If you have a discount code please enter the code</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" style="float: right;margin-right: 30px">
+                        <span class="db-pay-amount" style="color: rgba(255,0,0,0.89)">Total: 300.000</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2" style="float: right;margin-right: 30px">
+                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                            <a href="{{url("/payment")}}" style="width: 100px" class="btn btn-warning">Done</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 @endsection
