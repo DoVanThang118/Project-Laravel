@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section("title","Trang Chủ")
 @section('content')
+@include('admin.html.notification')
     <!--HEADER SECTION-->
     <section>
         <div class="v2-hom-search">
@@ -47,7 +48,7 @@
                                     <div class="input-field col s4">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
-                                  "title"=>"Takeof Time",
+                                  "title"=>"Takeoff Time",
                                   "key"=>"takeoftime",
                                   "min"=> today()->format('Y-m-d'),
                                   "type"=>"date",

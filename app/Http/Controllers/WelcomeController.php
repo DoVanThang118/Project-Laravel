@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     {
 
         $city = City::all();
-        return view("welcome", [
+        return view("/welcome", [
             "city" => $city
         ]);
     }
@@ -50,7 +50,6 @@ class WelcomeController extends Controller
         if ($takeofcity_id != $landingcity_id) {
             if ($direction == 1) {
 
-
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
 
@@ -75,11 +74,12 @@ class WelcomeController extends Controller
                 if (isset($data)) {
                     return view("flight-list", [
                         "data" => $data,
-                    ])->with("success", "Success");;
+                    ])->with("success", "Success");
 
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight->count(); $i++) {
@@ -95,11 +95,11 @@ class WelcomeController extends Controller
                         }
                     }
                     if (isset($data)) {
-                        return view("flight-list", [
+                       return view("flight-list", [
                             "data" => $data,
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
-                        return redirect()->back();
+                        return redirect()->back()->with("error","Flight not found please find again");
                     }
 
                 }
@@ -160,9 +160,11 @@ class WelcomeController extends Controller
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
 
@@ -190,13 +192,14 @@ class WelcomeController extends Controller
                             $data2[] = $flight2[$i];
                         }
                     }
-                    if (isset($data)||isset($data2)) {
+                    if (isset($data)&&isset($data2)) {
                         return view("flight-list", [
                             "data" => $data,
                             "data2"=>$data2
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
-                    } else {
-                        return redirect()->back();
+                    }
+                    else{
+                        return redirect()->back("error","Flight not found please find again");
                     }
 
                 }
