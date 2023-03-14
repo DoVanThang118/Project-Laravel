@@ -31,6 +31,9 @@ Route::get('/payment-all', [App\Http\Controllers\PaymentController::class, 'inde
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
 
+//Pusher
+Route::get("/sendNotification",[\App\Http\Controllers\PusherController::class,"sendNotification"]);
+
 Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');
 
