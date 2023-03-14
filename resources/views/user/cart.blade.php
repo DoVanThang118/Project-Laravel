@@ -34,7 +34,7 @@
                         <td>$654</td>
                         <td><span class="db-not-done">Not-Done</span>
                         </td>
-                        <td><a href="db-payment.html" class="db-make-pay"><i class="fa fa-usd" aria-hidden="true"></i> Make Payment</a>
+                        <td><a href="#" class="db-make-pay"><i class="fa fa-usd" aria-hidden="true"></i> Make Payment</a>
                         </td>
                     </tr>
                     </tbody>

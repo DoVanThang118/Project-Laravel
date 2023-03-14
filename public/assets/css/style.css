@@ -514,6 +514,7 @@
 }
  .v_place_img img {
      width: 100% !important;
+     border-radius: 5px;
 }
  .b_packages img {
      width: 100%;
@@ -4087,20 +4088,21 @@
  .tour-mig-lc-img {
 }
  .tour-mig-like-com:hover img {
-     -webkit-transition: all 0.5s ease;
+     -webkit-transform: scale(1.08);
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
      transition: all 0.5s ease;
-     opacity: 0.5;
+     /*opacity: 0.5;*/
 }
  .tour-mig-lc-img img {
-     width: 100%;
+     width: 255px;
+     height: 169px;
      border-radius: 5px;
 }
  .tour-mig-like-com:before {
      content: '';
      position: absolute;
-     background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 10%, rgba(84, 84, 84, 0.35) 80%);
+     /*background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 10%, rgba(84, 84, 84, 0.35) 80%);*/
      top: 0px;
      bottom: 0px;
      left: 0px;
