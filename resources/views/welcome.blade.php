@@ -49,6 +49,7 @@
                                   "label"=>"",
                                   "title"=>"Takeof Time",
                                   "key"=>"takeoftime",
+                                  "min"=> today()->format('Y-m-d'),
                                   "type"=>"date",
                                   "required"=>true])
                                     </div>
@@ -73,6 +74,7 @@
                                   "label"=>"",
                                   "title"=>"Return Day",
                                   "key"=>"returnday",
+                                  "min"=> today()->format('Y-m-d'),
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
