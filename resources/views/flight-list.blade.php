@@ -123,33 +123,33 @@
                                                     <li class="col-md-3">
                                                         <h5>{{$item->TypeOfTickets[0]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
-                                                        @include("admin.html.form.input",[
+                                                        @include("admin.html.form.inputnumber",[
                                                           "label"=>"",
                                                           "title"=>"Input Qty",
+                                                          "max"=>$item->TypeOfTickets[0]->ticketinstock,
                                                           "key"=>"vipqty",
-                                                          "type"=>"number",
                                                           "required"=>true])
                                                     </li>
 
                                                     <li class="col-md-3" >
                                                         <h5>{{$item->TypeOfTickets[1]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
-                                                        @include("admin.html.form.input",[
+                                                        @include("admin.html.form.inputnumber",[
                                                               "label"=>"",
                                                               "title"=>"Input Qty",
                                                               "key"=>"normalqty",
-                                                              "type"=>"number",
+                                                              "max"=>$item->TypeOfTickets[1]->ticketinstock,
                                                               "required"=>true])
 
                                                     </li>
                                                     <li class="col-md-3">
                                                         <h5>{{$item->TypeOfTickets[2]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
-                                                        @include("admin.html.form.input",[
+                                                        @include("admin.html.form.inputnumber",[
                                                              "label"=>"",
                                                              "title"=>"Input Qty",
                                                              "key"=>"cheapqty",
-                                                             "type"=>"number",
+                                                             "max"=>$item->TypeOfTickets[2]->ticketinstock,
                                                              "required"=>true])
 
                                                     </li>
