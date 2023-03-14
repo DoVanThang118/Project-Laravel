@@ -8,6 +8,8 @@
     <script src="/assets/js/mail.js"></script>
 @endsection
 @section('content')
+
+
     <!--====== HOTELS LIST ==========-->
     <section class="hot-page2-alp hot-page2-pa-sp-top">
         <div class="container">
@@ -345,6 +347,7 @@
                     <!--END LEFT LISTINGS-->
                     <!--RIGHT LISTINGS-->
                     <div class="col-md-9 hot-page2-alp-con-right">
+
                         <div class="hot-page2-alp-con-right-1">
                             <!--LISTINGS-->
                             <div class="row">
@@ -374,8 +377,8 @@
 
                                                 <ul>
 
-                                                    <li>
-                                                        <h4>{{$item->TypeOfTickets[0]->name}}</h4>
+                                                    <li class="col-md-3">
+                                                        <h5>{{$item->TypeOfTickets[0]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[0]->ticketinstock}}</h5>
                                                         @include("admin.html.form.input",[
                                                           "label"=>"",
@@ -385,8 +388,8 @@
                                                           "required"=>true])
                                                     </li>
 
-                                                    <li>
-                                                        <h4>{{$item->TypeOfTickets[1]->name}}</h4>
+                                                    <li class="col-md-3" >
+                                                        <h5>{{$item->TypeOfTickets[1]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[1]->ticketinstock}}</h5>
                                                         @include("admin.html.form.input",[
                                                               "label"=>"",
@@ -396,8 +399,8 @@
                                                               "required"=>true])
 
                                                     </li>
-                                                    <li>
-                                                        <h4>{{$item->TypeOfTickets[2]->name}}</h4>
+                                                    <li class="col-md-3">
+                                                        <h5>{{$item->TypeOfTickets[2]->name}}</h5>
                                                         <h5>Available ticket:{{$item->TypeOfTickets[2]->ticketinstock}}</h5>
                                                         @include("admin.html.form.input",[
                                                              "label"=>"",
@@ -411,7 +414,7 @@
 
 
 
-                                                <div class="col-md-3">
+                                                <div class="col-md-2">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                         <a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
                                                     </div>

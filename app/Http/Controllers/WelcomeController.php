@@ -16,7 +16,7 @@ class WelcomeController extends Controller
     {
 
         $city = City::all();
-        return view("welcome", [
+        return view("/welcome", [
             "city" => $city
         ]);
     }
@@ -79,6 +79,7 @@ class WelcomeController extends Controller
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight->count(); $i++) {
@@ -94,11 +95,11 @@ class WelcomeController extends Controller
                         }
                     }
                     if (isset($data)) {
-                        return view("flight-list", [
+                       return view("flight-list", [
                             "data" => $data,
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
-                        return redirect()->back()->with("error","Please Search Again");
+                        return redirect()->back()->with("error","Flight not found please find again");
                     }
 
                 }
@@ -159,9 +160,11 @@ class WelcomeController extends Controller
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
 
@@ -196,7 +199,7 @@ class WelcomeController extends Controller
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     }
                     else{
-                        return redirect()->back();
+                        return redirect()->back("error","Flight not found please find again");
                     }
 
                 }

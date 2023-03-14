@@ -48,7 +48,7 @@
                                     <div class="input-field col s4">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
-                                  "title"=>"Takeof Time",
+                                  "title"=>"Takeoff Time",
                                   "key"=>"takeoftime",
                                   "min"=> today()->format('Y-m-d'),
                                   "type"=>"date",
