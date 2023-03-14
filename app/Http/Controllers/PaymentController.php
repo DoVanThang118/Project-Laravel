@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MailOrder;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
@@ -18,10 +20,10 @@ class PaymentController extends Controller
         return view('user.payment');
     }
 
-    public function payment()
+    public function payment(User $user)
     {
         $data = [
-
+            "user"=>$user
         ];
         Mail::to('email')->send(new MailOrder($data));
     }
