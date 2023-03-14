@@ -25,6 +25,7 @@ class PaymentController extends Controller
             'message' => "Compact successfully",
             'user' => User::findOrFail(1)
         ];
+            dd($data);
         Mail::to('email')->send(new MailOrder($data));
     }
 }
