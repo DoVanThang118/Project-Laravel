@@ -13,6 +13,10 @@
             </ul>
         </div>
         <!--== DASHBOARD INFO ==-->
+        <div class="sb2-2-3">
+                <h1 class="m-0 text-dark">Dashboard</h1>
+                <button type="button" onclick="lockChair()">Lock</button>
+        </div>
         <div class="ad-v2-hom-info">
             <div class="ad-v2-hom-info-inn">
                 <ul>
@@ -154,4 +158,31 @@
             </div>
         </div>
     </div>
+@endsection
+@section("custom_js")
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script>
+
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('265acd2b0b5380eef4d9', {
+            cluster: 'ap1'
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+
+            alert(JSON.stringify(data));
+        });
+        function lockChair() {
+            var c = confirm("Lock chair?");
+            if (c) {
+                $.ajax({
+                    url: "{{url("sendNotification")}}",
+                    method: "GET"
+                })
+            }
+        }
+    </script>
 @endsection
