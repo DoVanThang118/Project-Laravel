@@ -147,7 +147,7 @@
                                                         </ul>
                                                         <div class="col-md-3">
                                                             <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                                                <a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                                <a href="{{url("/cart")}}" class="hot-page2-alp-quot-btn">Book Now</a>
                                                             </div>
                                                         </div>
                                                     </div>
