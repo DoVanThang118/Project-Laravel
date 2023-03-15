@@ -17,6 +17,7 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total money</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,6 +31,9 @@
                             <td>{{$item->price}}</td>
                             <td>1</td>
                             <td>{{$item->price}}</td>
+                            <td class="shoping__cart__item__close">
+                                <a href="{{url("/remove-cart",["ticket"=>$item->id])}}">Delete</a>
+                            </td>
 
                         </tr>
                         @empty
