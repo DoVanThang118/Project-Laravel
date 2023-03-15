@@ -233,12 +233,28 @@ class WelcomeController extends Controller
         }
       if($normalqty>0){
           $ticketnormalselect = Ticket::with("TypeOfTicket")
-              ->TicketFilter($typevip[1]->id)->limit($request->get("normalqty"))->get();
+              ->TicketFilter($typenormal[0]->id)->limit($request->get("normalqty"))->get();
       }
       if($cheapqty>0){
           $ticketcheapselect = Ticket::with("TypeOfTicket")
-              ->TicketFilter($typevip[2]->id)->limit($request->get("cheapqty"))->get();
+              ->TicketFilter($typecheap[0]->id)->limit($request->get("cheapqty"))->get();
       }
+      if(isset($ticketvipselect)){
+          for($i=0;$i<$ticketvipselect->count();$i++){
+              $ticket[]=$ticketvipselect[$i];
+          }
+      }
+        if(isset($ticketnormalselect)){
+            for($i=0;$i<$ticketnormalselect->count();$i++){
+                $ticket[]=$ticketnormalselect[$i];
+            }
+        }
+        if(isset($ticketcheapselect)){
+            for($i=0;$i<$ticketcheapselect->count();$i++){
+                $ticket[]=$ticketcheapselect[$i];
+            }
+        }
+        dd($ticket);
 
 
 
