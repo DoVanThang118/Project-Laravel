@@ -98,7 +98,7 @@
 
                                     @foreach($data as $item)
                                 <div class="hot-page2-alp-r-list">
-                                    <form method="post" action="{{url("/",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
+                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
                                         @csrf
 
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
@@ -159,7 +159,7 @@
 
                                                 <div class="col-md-2">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                                        <a href="{{url("/cart")}}" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                        <button type="submit" class="btn btn-primary">Buy now</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,7 +172,7 @@
                                         <h1>Return</h1>
                                         @foreach($data2 as $item)
                                             <div class="hot-page2-alp-r-list">
-                                                <form  method="post" action="{{url("/",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
+                                                <form  method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}" role="form" enctype="multipart/form-data" >
                                                     @csrf
 
                                                 <div class="col-md-3 hot-page2-alp-r-list-re-sp">

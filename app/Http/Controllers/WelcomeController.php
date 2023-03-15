@@ -210,4 +210,59 @@ class WelcomeController extends Controller
         }
 
     }
+
+    public function addToCart(Flight $flight,Request $request){
+        $request->validate([
+            "vipqty"=>"required|numeric|min:0",
+            "normalqty"=>"required|numeric|min:0",
+            "cheapqty"=>"required|numeric|min:0"
+        ]);
+        $vipqty=$request->get("vipqty");
+        $normalqty=$request->get("normalqty");
+        $cheapqty=$request->get("cheapqty");
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        $typevip = TypeOfTicket::with("Flight")
+            ->FlightFilter($flight->id)->where("name","VIP")->get();
+        $typenormal = TypeOfTicket::with("Flight")
+            ->FlightFilter($flight->id)->where("name","NORMAL")->get();
+        $typecheap = TypeOfTicket::with("Flight")
+            ->FlightFilter($flight->id)->where("name","CHEAP")->get();
+        if($vipqty!=0){
+            $ticketvipselect = Ticket::with("TypeOfTicket")
+                ->TicketFilter($typevip[0]->id)->limit($request->get("vipqty"))->get();
+        }
+      if($normalqty!=0){
+          $ticketnormalselect = Ticket::with("TypeOfTicket")
+              ->TicketFilter($typevip[1]->id)->limit($request->get("normalqty"))->get();
+      }
+      if($cheapqty!=0){
+          $ticketcheapselect = Ticket::with("TypeOfTicket")
+              ->TicketFilter($typevip[2]->id)->limit($request->get("cheapqty"))->get();
+      }
+
+
+//        $flag=true;
+//        foreach ($cart as $item){
+//            if($item->id==$ticket->id){
+//                $item->buy_qty+=$request->get("qty");
+//
+//                $flag=false;
+//                break;
+//            }
+//        }
+//        if($flag){
+//            $product->buy_qty=$request->get("qty");
+//
+//            $cart[]=$product;
+//        }
+
+        session(["cart"=>$cart]);
+        return redirect()->back();
+    }
+
+
+
+
+
+
 }

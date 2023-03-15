@@ -21,13 +21,13 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
 Route::post('/', [App\Http\Controllers\WelcomeController::class, 'filter']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/flight-list/{flight}', [App\Http\Controllers\FlightListController::class, 'createorder']);
-Route::get('/ticket-list/{flight}', [App\Http\Controllers\TicketListController::class, 'index'])->name('ticket-list');
+Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
+//Route::get('/ticket-list/{flight}', [App\Http\Controllers\TicketListController::class, 'index'])->name('ticket-list');
 Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
 Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
-Route::get('/cart', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
+Route::get('/cart/', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment-all');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
 
