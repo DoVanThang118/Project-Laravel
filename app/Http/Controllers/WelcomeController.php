@@ -227,34 +227,35 @@ class WelcomeController extends Controller
             ->FlightFilter($flight->id)->where("name","NORMAL")->get();
         $typecheap = TypeOfTicket::with("Flight")
             ->FlightFilter($flight->id)->where("name","CHEAP")->get();
-        if($vipqty!=0){
+        if($vipqty>0){
             $ticketvipselect = Ticket::with("TypeOfTicket")
                 ->TicketFilter($typevip[0]->id)->limit($request->get("vipqty"))->get();
         }
-      if($normalqty!=0){
+      if($normalqty>0){
           $ticketnormalselect = Ticket::with("TypeOfTicket")
               ->TicketFilter($typevip[1]->id)->limit($request->get("normalqty"))->get();
       }
-      if($cheapqty!=0){
+      if($cheapqty>0){
           $ticketcheapselect = Ticket::with("TypeOfTicket")
               ->TicketFilter($typevip[2]->id)->limit($request->get("cheapqty"))->get();
       }
 
 
-//        $flag=true;
-//        foreach ($cart as $item){
-//            if($item->id==$ticket->id){
-//                $item->buy_qty+=$request->get("qty");
-//
-//                $flag=false;
-//                break;
-//            }
-//        }
-//        if($flag){
-//            $product->buy_qty=$request->get("qty");
-//
-//            $cart[]=$product;
-//        }
+
+        $flag=true;
+        foreach ($cart as $item){
+            if($item->id==$ticket->id){
+                $item->buy_qty+=$request->get("qty");
+
+                $flag=false;
+                break;
+            }
+        }
+        if($flag){
+            $product->buy_qty=$request->get("qty");
+
+            $cart[]=$product;
+        }
 
         session(["cart"=>$cart]);
         return redirect()->back();
