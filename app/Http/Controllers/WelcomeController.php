@@ -230,15 +230,15 @@ class WelcomeController extends Controller
             ->FlightFilter($flight->id)->where("name", "CHEAP")->get();
         if ($vipqty > 0) {
             $ticketvipselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typevip[0]->id)->limit($request->get("vipqty"))->get();
+                ->TicketFilter($typevip[0]->id)->limit($request->get("vipqty"))->orderBy("id","desc")->get();
         }
         if ($normalqty > 0) {
             $ticketnormalselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typenormal[0]->id)->limit($request->get("normalqty"))->get();
+                ->TicketFilter($typenormal[0]->id)->limit($request->get("normalqty"))->orderBy("id","desc")->get();
         }
         if ($cheapqty > 0) {
             $ticketcheapselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typecheap[0]->id)->limit($request->get("cheapqty"))->get();
+                ->TicketFilter($typecheap[0]->id)->limit($request->get("cheapqty"))->orderBy("id","desc")->get();
         }
         if (isset($ticketvipselect)) {
             for ($i = 0; $i < $ticketvipselect->count(); $i++) {
