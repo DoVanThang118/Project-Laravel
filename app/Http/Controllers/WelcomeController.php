@@ -268,9 +268,8 @@ class WelcomeController extends Controller
                 $cart[] = $ticket[$i];
             }
         }
-
             session(["cart" => $cart]);
-            return redirect()->back();
+            return redirect()->to("/user/cart");
         }
 
     public function shopcart(){
