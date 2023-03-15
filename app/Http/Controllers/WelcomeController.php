@@ -244,17 +244,17 @@ class WelcomeController extends Controller
 
         $flag=true;
         foreach ($cart as $item){
-            if($item->id==$ticket->id){
-                $item->buy_qty+=$request->get("qty");
-
-                $flag=false;
-                break;
-            }
+//            if($item->id==$ticket->id){
+//                $item->buy_qty+=$request->get("qty");
+//
+//                $flag=false;
+//                break;
+//            }
         }
         if($flag){
-            $product->buy_qty=$request->get("qty");
-
-            $cart[]=$product;
+//            $ticket->buy_qty=$request->get("qty");
+//
+//            $cart[]=$ticket;
         }
 
         session(["cart"=>$cart]);
