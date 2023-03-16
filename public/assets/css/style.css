@@ -414,7 +414,7 @@
      color: #F3F3F3;
 }
  .tb-space {
-     padding: 100px 0px;
+     padding: 10px 0px 100px 0px;
 }
  .tb-space-inn {
      padding: 40px 0px;
@@ -825,6 +825,7 @@
 /*-------------------------------------------------------*/
  .hotel-book-room {
      margin-bottom: 105px;
+     margin-top: 80px;
 }
  .carousel-inner1 > .item > img, .carousel-inner1 > .item > a > img {
      width: 100%;
@@ -883,7 +884,7 @@
 /* 7.FREE CONSULTANT
 /*-------------------------------------------------------*/
  .tour-consul {
-     background: url(../images/consul-bg.jpeg) no-repeat #00BCD4;
+     background: url(../images/consul-bg-2.jpg) no-repeat #ffffff;
      background-size: cover;
      position: relative;
      overflow: hidden;
@@ -932,7 +933,7 @@
      margin-bottom: 20px;
 }
  .to-con-1 {
-     background: #1aa5d8;
+     background: #10b3ef;
      color: #000;
      font-weight: 600;
      text-transform: uppercase;
@@ -1738,23 +1739,23 @@
      width: 100%;
 }
  .inner_banner_1 {
-     background: url('../images/banner/1.jpg') no-repeat center center;
+     background: url('../images/bg_destination.jpg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner_2 {
-     background: url('../images/banner/2.jpg') no-repeat center center;
+     background: url('../images/bg_destination.jpg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner_3 {
-     background: url('../images/banner/3.jpg') no-repeat center center;
+     background: url('../images/bg_destination.jpg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner_4 {
-     background: url('../images/banner/4.jpg') no-repeat center center;
+     background: url('../images/bg_destination.jpg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner_5 {
-     background: url('../images/banner/5.jpg') no-repeat center center;
+     background: url('../images/bg_destination.jpg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner div {
@@ -1852,16 +1853,12 @@
 }
  .ticket ul li {
      display: inline-block;
-     background: #efefef;
+     background: #ffffff;
      padding: 2px 7px;
      font-size: 14px;
      font-weight: 600;
      color: #253d52;
      margin-right: 1px;
-}
- .ticket ul li:nth-child(1) {
-     background: #a2dd2f;
-     color: #253d52;
 }
 /*-------------------------------------------------------*/
 /* FEATURES
@@ -2087,20 +2084,22 @@
  .tour_head1 {
 }
  .tour_head1 h3 {
-     background: url(../images/umbrella.png) no-repeat left center;
-     padding-left: 35px;
-     color: #213d44;
+     padding:0 35px;
+     color: #0f55bb;
      margin-bottom: 20px;
      margin-top: 50px;
      background-size: 16px;
     /* text-transform: uppercase;
      */
      font-weight: 600;
-     font-size: 22px;
+     font-size: 20px;
+     text-align: justify;
 }
  .tour_head1 p {
      color: #7f7f7f;
      font-weight: 500;
+     padding: 0 35px;
+     text-align: justify;
 }
  .tour_head1 table {
      width: 100%;
@@ -2650,6 +2649,7 @@
      text-align: center;
      background: #ffffff;
      border: 1px #e0e0e0;
+     height: 370px;
      border-style: dashed;
      position: relative;
      overflow: hidden;
@@ -2701,11 +2701,11 @@
      border-style: dashed;
      text-shadow: 0px 1px #fff, 0px -1px #262F33;
 }
- .tips_travel_2 h4 {
+ .tips_travel_2 h5 {
      color: #253d52;
      margin-top: 25px;
      font-family: 'Poppins', sans-serif;
-     font-size: 18px;
+     font-size: 15px;
      font-weight: 600;
      text-transform: capitalize;
 }
@@ -3358,7 +3358,7 @@
  .hot-page2-alp-con {
      position: relative;
      overflow: hidden;
-     background: #f2f1f1;
+     background: #ffffff;
      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.36);
 }
  .hot-page2-alp-con-left {
@@ -3582,7 +3582,7 @@
  .hot-list-p3-1 {
      color: #979797;
      font-weight: 400;
-     font-size: 14px;
+     font-size: 25px;
 }
  .hot-list-p3-2 {
      font-size: 32px;
@@ -3731,10 +3731,10 @@
 }
  .hot-page2-alp-r-list {
      border: 1px solid #dedede;
-     background: #fff;
+     background: #fafafa;
      position: relative;
      overflow: hidden;
-     margin: 15px 15px 15px 0px;
+     margin: 15px 30px;
      transition: all 0.5s ease;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
@@ -7836,7 +7836,7 @@
 }
  .trav-ami h4{
      margin:0px;
-     padding-bottom:15px;
+     /*padding-bottom:15px;*/
 }
  .trav-ami ul{
      display: inline;
@@ -7852,7 +7852,7 @@
     /* width: 18%;
      */
      text-align: center;
-     border: 1px solid #dfd2bf;
+     border-top: 1px solid #dfd2bf;
      text-overflow: ellipsis;
      overflow: hidden;
      white-space: nowrap;

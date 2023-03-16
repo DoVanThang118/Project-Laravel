@@ -3,54 +3,30 @@
 @section('center-content')
     <div class="db-2">
         <div class="db-2-com db-2-main">
-            <h4>Enter Payment Details <span class="db-pay-amount">Total: $1200</span></h4>
+            <h4>Enter Payment Details </h4>
             <div class="db-2-main-com db2-form-pay db2-form-com">
                 <div class="db-pay-card">
-                    <h5>Accepted Card Types</h5><img src="images/cards.png" alt="" /> </div>
-                <form class="col s12">
+                <form method="post" action="{{url("/checkout")}}">
+                    @csrf
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="number" class="validate">
-                            <label>Enter amount</label>
-                        </div>
+                        @include("admin.html.form.input",[
+                          "label"=>"",
+                          "title"=>"Fill your username",
+                          "key"=>"user_id",
+                          "type"=>"text",
+                          "required"=>true,
+                          ])
+                    </div>
+                    <div class="row">
+                        <span class="db-pay-amount">Total of ticket: {{$qty}}</span>
+                    </div>
+                    <div class="row">
+                        <span class="db-pay-amount">Total money: ${{$grand_total}}</span>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select>
-                                <option value="" disabled selected>Select Card Type</option>
-                                <option value="1">Master Card</option>
-                                <option value="2">Visa</option>
-                                <option value="3">American Express</option>
-                                <option value="2">Laser</option>
-                                <option value="2">Discover</option>
-                            </select>
+                            <input type="submit" value="SUBMIT" class="waves-effect waves-light full-btn">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="number" class="validate">
-                            <label>Card Number</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input type="number" class="validate">
-                            <label>Expairy Date (DD/MM)</label>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input type="number" class="validate">
-                            <label>CVV</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="pay-ca" type="text" class="validate">
-                            <label for="pay-ca">Full name on a Card</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="submit" value="SUBMIT" class="waves-effect waves-light full-btn"> </div>
                     </div>
                 </form>
             </div>
