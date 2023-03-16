@@ -17,33 +17,22 @@
                             <h5>Name</h5>
                             <input name="name{{$i}}" type="text" class="validate" required>
                         </div>
+                        <div class="input-field col s12 ">
+                            <h5>Address</h5>
+                            <input name="address{{$i}}" type="text" class="validate">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m6">
-                            <h5>Gender</h5>
-                            <input name="gender{{$i}}" type="text" class="validate" required>
+                            <h5>Phone Number</h5>
+                            <input name="phone{{$i}}" type="text" class="validate">
                         </div>
                         <div class="input-field col s12 m6">
                             <h5>Date of birth</h5>
                             <input name="birthday{{$i}}" type="date" required>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <h5>Email</h5>
-                            <input name="emmail{{$i}}" type="email" class="validate" required>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <h5>Phone Number</h5>
-                            <input name="phone{{$i}}" type="text" class="validate">
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="input-field col s12 ">
-                            <h5>Address</h5>
-                            <input name="address{{$i}}" type="text" class="validate">
-                        </div>
-                    </div>
+
                     @endfor
                     <div class="row">
                         <span class="db-pay-amount">Total of ticket: {{$qty}}</span>
