@@ -8,6 +8,10 @@
                 <form class="col s12"  method="post" action="{{url("/checkout")}}">
                     @csrf
                     @for($i=0;$i<$qty;$i++)
+                        <p></p>
+                        <p></p>
+                        <h4>Custormer {{$i+1}}</h4>
+
                     <div class="row">
                         <div class="input-field col s12">
                             <h5>Name</h5>
