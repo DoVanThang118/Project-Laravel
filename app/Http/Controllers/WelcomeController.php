@@ -242,7 +242,6 @@ class WelcomeController extends Controller
 
     public function addToCart(Flight $flight,Request $request)
     {
-
         $t=$request->get("type");
         $qty=$request->get("qty");
         $type=TypeOfTicket::where("id",$t)->first();
