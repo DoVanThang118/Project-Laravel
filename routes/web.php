@@ -24,17 +24,21 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
 Route::get("user/cart",[\App\Http\Controllers\WelcomeController::class,"shopcart"]);
 Route::get("/remove-cart/{ticket}",[\App\Http\Controllers\WelcomeController::class,"remove"]);
+Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout'])->name('payment-all');
+Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder'])->name('payment');
 
-Route::get('/all-booking', [App\Http\Controllers\AllBookingController::class, 'index'])->name('all-booking');
-Route::get('/booking', [App\Http\Controllers\BookingController::class, 'index'])->name('booking');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
-Route::get('/cart/', [App\Http\Controllers\PaymentController::class, 'index']);
-Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('payment');
+
+
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
 
 //Pusher
 Route::get("/sendNotification",[\App\Http\Controllers\PusherController::class,"sendNotification"]);
+
+
+//view
+Route::get("/hoChiMinhCity",[App\Http\Controllers\ViewController::class, 'hcmCity']);
 
 Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');

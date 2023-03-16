@@ -20,15 +20,7 @@
                                 <h4><span>SUPPORT</span> & HELP</h4>
                                 <ul class="two-columns">
                                     <li> <a href="{{url("/")}}">Home</a> </li>
-                                    <li> <a href="#">FAQ</a> </li>
-                                    <li> <a href="#">Feedbacks</a> </li>
-                                    <li> <a href="#">Blog </a> </li>
-                                    <li> <a href="#">Use Cases</a> </li>
-                                    <li> <a href="#">Advertise us</a> </li>
-                                    <li> <a href="#">Discount</a> </li>
-                                    <li> <a href="#">Vacations</a> </li>
-                                    <li> <a href="#">Branding Offers </a> </li>
-                                    <li> <a href="#">Contact Us</a> </li>
+                                    <li> <a href="{{url("/profile")}}">My profile</a> </li>
                                 </ul>
                             </div>
                             <div class="col-sm-3 foot-social foot-spec foot-com">
@@ -50,23 +42,4 @@
     </div>
 </section>
 <!--====== FOOTER - COPYRIGHT ==========-->
-<section>
-    <div class="rows copy">
-        <div class="container">
-            <p>Copyrights © 2017 Company Name. All Rights Reserved</p>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="icon-float">
-        <ul>
-            <li><a href="#" class="sh">1k <br> Share</a> </li>
-            <li><a href="#" class="fb1"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
-            <li><a href="#" class="gp1"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
-            <li><a href="#" class="tw1"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
-            <li><a href="#" class="li1"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
-            <li><a href="#" class="wa1"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-            <li><a href="#" class="sh1"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> </li>
-        </ul>
-    </div>
-</section>
+

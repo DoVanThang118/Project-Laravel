@@ -19,19 +19,13 @@
                 <div class="db-l-2">
                     <ul>
                         <li>
-                            <a href="{{url("/all-booking")}}"><img src="/assets/images/icon/dbl1.png" alt="" /> All Bookings</a>
-                        </li>
-                        <li>
-                            <a href="db-travel-booking.html"><img src="/assets/images/icon/dbl2.png" alt="" /> Travel Bookings</a>
-                        </li>
-                        <li>
                             <a href="{{url("/profile")}}"><img src="/assets/images/icon/dbl6.png" alt="" /> My Profile</a>
                         </li>
                         <li>
-                            <a href="{{url("/payment-all")}}"><img src="/assets/images/icon/dbl9.png" alt="" /> Payments</a>
+                            <a href="{{url("/user/cart")}}"><img src="/assets/images/icon/dbl1.png" alt="" /> Your Bookings</a>
                         </li>
                         <li>
-                            <a href="db-refund.html"><img src="/assets/images/icon/dbl7.png" alt="" /> Claim & Refund</a>
+                            <a href="{{url("/checkout")}}"><img src="/assets/images/icon/dbl9.png" alt="" /> Payments</a>
                         </li>
                     </ul>
                 </div>
