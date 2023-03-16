@@ -9,10 +9,12 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user= auth()->id();
-        return view('user.profile',[
-            "user"=>$user
-        ]);
+//        $user= auth()->id();
+        return view('user.profile'
+//            ,[
+//            "user"=>$user
+//        ]
+        );
     }
 
     public function edit()
