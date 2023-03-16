@@ -230,15 +230,15 @@ class WelcomeController extends Controller
             ->FlightFilter($flight->id)->where("name", "CHEAP")->get();
         if ($vipqty > 0) {
             $ticketvipselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typevip[0]->id)->limit($request->get("vipqty"))->get();
+                ->TicketFilter($typevip[0]->id)->TicketInStock()->where("status",0)->limit($request->get("vipqty"))->orderBy("id","desc")->get();
         }
         if ($normalqty > 0) {
             $ticketnormalselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typenormal[0]->id)->limit($request->get("normalqty"))->get();
+                ->TicketFilter($typenormal[0]->id)->TicketInStock()->where("status",0)->limit($request->get("normalqty"))->orderBy("id","desc")->get();
         }
         if ($cheapqty > 0) {
             $ticketcheapselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typecheap[0]->id)->limit($request->get("cheapqty"))->get();
+                ->TicketFilter($typecheap[0]->id)->TicketInStock()->where("status",0)->limit($request->get("cheapqty"))->orderBy("id","desc")->get();
         }
         if (isset($ticketvipselect)) {
             for ($i = 0; $i < $ticketvipselect->count(); $i++) {
@@ -259,7 +259,8 @@ class WelcomeController extends Controller
 
         $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
 
-        for ($i = 0; $i < count($ticket); $i++) {
+        if(isset($ticket)){
+        for ($i = 0; $i <count($ticket); $i++) {
             $flag = true;
             if (in_array($ticket[$i], $cart)) {
                 $flag = false;
@@ -267,10 +268,14 @@ class WelcomeController extends Controller
             if ($flag) {
                 $cart[] = $ticket[$i];
             }
+            $ticket[$i]->update([
+                "status"=>1
+            ]);
         }
             session(["cart" => $cart]);
             return redirect()->to("/user/cart");
         }
+    }
 
     public function shopcart(){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
@@ -309,6 +314,9 @@ class WelcomeController extends Controller
         foreach ($cart as $key=>$item){
             if($item->id == $ticket->id){
                 unset($cart[$key]);
+                $item->update([
+                    "status"=>0
+                ]);
                 break;
             }
         }

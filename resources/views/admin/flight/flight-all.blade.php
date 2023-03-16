@@ -26,7 +26,7 @@
                             <form action="{{url("admin/flight/flight-all")}}" method="get">
                                 <div class="row">
 
-                                <div style="width: 150px; margin-top: 35px" class="col-md-3">
+                                <div style="width: 150px; margin-top: 45px" class="col-md-3">
                                     <select  name="takeofcity_id">
                                         <option value="0">Take Of City</option>
                                         @foreach($airstrip as $item)
@@ -35,7 +35,7 @@
                                     </select>
                                 </div>
 
-                                <div style="width: 150px; margin-top: 35px" class="col-md-3">
+                                <div style="width: 150px; margin-top: 45px" class="col-md-3">
                                     <select  name="landingcity_id">
 
                                         <option value="0">Landing City</option>
@@ -56,7 +56,7 @@
 
 
 
-                                <div class="input-group-append" class="col-md-3" style="margin-top: 43px">
+                                <div class="input-group-append" class="col-md-3" style="margin-top: 53px">
                                     <button type="submit" class="btn btn-default">Search</button>
                                 </div>
 
