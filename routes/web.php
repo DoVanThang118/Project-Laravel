@@ -23,8 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
 Route::get("user/cart",[\App\Http\Controllers\WelcomeController::class,"shopcart"]);
-Route::get("/remove-cart/{ticket}",[\App\Http\Controllers\WelcomeController::class,"remove"]);
-Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout'])->name('payment-all');
+//Route::get("/remove-cart/{ticket}",[\App\Http\Controllers\WelcomeController::class,"remove"]);
+Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
 Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder'])->name('payment');
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');

@@ -242,110 +242,68 @@ class WelcomeController extends Controller
 
     public function addToCart(Flight $flight,Request $request)
     {
-        $request->validate([
-            "vipqty" => "required|numeric|min:0",
-            "normalqty" => "required|numeric|min:0",
-            "cheapqty" => "required|numeric|min:0"
-        ]);
-        $vipqty = $request->get("vipqty");
-        $normalqty = $request->get("normalqty");
-        $cheapqty = $request->get("cheapqty");
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        $typevip = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "VIP")->get();
-        $typenormal = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "NORMAL")->get();
-        $typecheap = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "CHEAP")->get();
-        if ($vipqty > 0) {
-            $ticketvipselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typevip[0]->id)->TicketInStock()->limit($request->get("vipqty"))->orderBy("id","desc")->get();
-        }
-        if ($normalqty > 0) {
-            $ticketnormalselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typenormal[0]->id)->TicketInStock()->limit($request->get("normalqty"))->orderBy("id","desc")->get();
-        }
-        if ($cheapqty > 0) {
-            $ticketcheapselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typecheap[0]->id)->TicketInStock()->limit($request->get("cheapqty"))->orderBy("id","desc")->get();
-        }
-        if (isset($ticketvipselect)) {
-            for ($i = 0; $i < $ticketvipselect->count(); $i++) {
-                $ticket[] = $ticketvipselect[$i];
-            }
-        }
-        if (isset($ticketnormalselect)) {
-            for ($i = 0; $i < $ticketnormalselect->count(); $i++) {
-                $ticket[] = $ticketnormalselect[$i];
-            }
-        }
-        if (isset($ticketcheapselect)) {
-            for ($i = 0; $i < $ticketcheapselect->count(); $i++) {
-                $ticket[] = $ticketcheapselect[$i];
-            }
-        }
-//        dd($ticket);
 
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
+        $t=$request->get("type");
+        $qty=$request->get("qty");
+        $type=TypeOfTicket::where("id",$t)->first();
+        $grandtotal=$type->price*$qty;
 
-        if(isset($ticket)){
-        for ($i = 0; $i <count($ticket); $i++) {
-            $flag = true;
-            if (in_array($ticket[$i], $cart)) {
-                $flag = false;
-            }
-            if ($flag) {
-                $cart[] = $ticket[$i];
-            }
-
-        }
-            session(["cart" => $cart]);
-            return redirect()->to("/user/cart");
-        }
-    }
-
-    public function shopcart(){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        $grand_total=0;
-        $can_checkout=true;
-        foreach ($cart as $item){
-            $grand_total+=$item->price;
-            if($can_checkout&&count($cart)==0){
-                $can_checkout=false;
-            }
-        }
-        return view("user.cart",[
-            "grand_total"=>$grand_total,
-            "cart"=>$cart,
-            "can_checkout"=>$can_checkout
-        ]);
-    }
+        $flag=true;
 
 
-    public function checkout(){
-        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        if(count($cart)==0){
-            return redirect()->to("user/cart");
-        }
-        $grand_total=0;
         foreach ($cart as $item){
-            $grand_total+=$item->price;
-        }
-        return view("user.checkout",[
-            "grand_total"=>$grand_total,
-            "cart"=>$cart
-        ]);
-    }
-    public function remove(Ticket $ticket){
-        $cart = session()->has("cart") && is_array(session("cart"))?session("cart"):[];
-        foreach ($cart as $key=>$item){
-            if($item->id == $ticket->id){
-                unset($cart[$key]);
+
+            if($item->id==$type->id){
+                $flag=false;
                 break;
             }
         }
+        if($flag){
+            $cart[]=$type;
+        }
+
+
         session(["cart"=>$cart]);
-        return redirect()->back();
+
+        return view("user.cart",[
+            "qty"=>$qty,
+            "grand_total"=>$grandtotal,
+            "cart"=>$cart,
+
+
+        ]);
+    }
+
+//    public function shopcart(){
+//        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+//        $can_checkout=true;
+//        foreach ($cart as $item){
+//
+//            if($can_checkout&&count($cart)==0){
+//                $can_checkout=false;
+//            }
+//        }
+//        return view("user.cart",[
+//            "cart"=>$cart,
+//            "can_checkout"=>$can_checkout
+//        ]);
+//    }
+
+
+    public function checkout(Request $request){
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        $grand_total=$request->get("grand_total");
+        $qty=$request->get("qty");
+
+        if(count($cart)==0){
+            return redirect()->to("/");
+        }
+        return view("user.checkout",[
+            "cart"=>$cart,
+            "grand_total"=>$grand_total,
+            "qty"=>$qty,
+        ]);
     }
 
 

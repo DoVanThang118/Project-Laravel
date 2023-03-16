@@ -347,761 +347,168 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/1.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                @foreach($data as $item)
+                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                          role="form" enctype="multipart/form-data" >
+
+                                        @csrf
+
+
+
+                                        <div class="hot-page2-alp-r-list">
+                                            <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                                <a href="javascript:void(0);">
+                                                    <div class="hotel-list-score">
+                                                    </div>
+                                                    <div class="hot-page2-hli-1"> <img src="/{{$item->Airplane->thumbnail}}" alt=""> </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="trav-list-bod">
+                                                    <a><h3>Flight No {{$item->id}} Airplane {{$item->Airplane->name}}</h3></a>
+                                                    <p>From {{$item->AirStrip->TakeofCity->name}} To {{$item->AirStrip->LandingCity->name}}. Takeoff Time: {{$item->takeoftime}} - Landing Time: {{$item->landingtime}}  </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
+                                                        <span class="hot-list-p3-4">
+                                                                @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
+                                                                <input type="hidden" name="qty" value="{{$adults}}">
+                                                                <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
+                                                                <button type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
+                                                            @endif
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span><span class="hot-list-p3-4">
+
+                                                                @if($item->TypeOfTickets[1]->ticketinstock>=$adults)
+                                                                <input type="hidden" name="qty" value="{{$adults}}">
+
+                                                                <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
+                                                                <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
+                                                            @endif
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/2.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span><span class="hot-list-p3-4">
+                                                                @if($item->TypeOfTickets[2]->ticketinstock>=$adults)
+                                                                <input type="hidden" name="qty" value="{{$adults}}">
+
+                                                                <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
+
+                                                                <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
+                                                            @endif
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
+                                                </div>
+                                            </div>
+
+                                            {{--                                    <div>--}}
+                                            {{--                                        <div class="trav-ami">--}}
+                                            {{--                                            <h4>Detail Type Of Ticket</h4>--}}
+                                            {{--                                            <ul>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>--}}
+                                            {{--                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>--}}
+                                            {{--                                            </ul>--}}
+                                            {{--                                        </div>--}}
+                                            {{--                                    </div>--}}
                                         </div>
-                                    </div>
-                                </div>
+                                    </form>
+                                @endforeach
                                 <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/3.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                @if(isset($data2))
+                                    <h1>Return</h1>
+
+                                    @foreach($data2 as $item)
+                                        <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                              role="form" enctype="multipart/form-data" >
+
+                                            @csrf
+
+
+
+                                            <div class="hot-page2-alp-r-list">
+                                                <div class="col-md-3 hot-page2-alp-r-list-re-sp">
+                                                    <a href="javascript:void(0);">
+                                                        <div class="hotel-list-score">
+                                                        </div>
+                                                        <div class="hot-page2-hli-1"> <img src="/{{$item->Airplane->thumbnail}}" alt=""> </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="trav-list-bod">
+                                                        <a><h3>Flight No {{$item->id}} Airplane {{$item->Airplane->name}}</h3></a>
+                                                        <p>From {{$item->AirStrip->TakeofCity->name}} To {{$item->AirStrip->LandingCity->name}}. Takeoff Time: {{$item->takeoftime}} - Landing Time: {{$item->landingtime}}  </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="col-md-4">
+                                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                            <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
+                                                            <span class="hot-list-p3-4">
+                                                                @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
+                                                                    <input type="hidden" name="qty" value="{{$adults}}">
+                                                                    <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
+												<button type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
+                                                                @endif
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                            <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span><span class="hot-list-p3-4">
+
+                                                                @if($item->TypeOfTickets[1]->ticketinstock>=$adults)
+                                                                    <input type="hidden" name="qty" value="{{$adults}}">
+
+                                                                    <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
+                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
+                                                                @endif
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/4.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                            <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span><span class="hot-list-p3-4">
+                                                                @if($item->TypeOfTickets[2]->ticketinstock>=$adults)
+                                                                    <input type="hidden" name="qty" value="{{$adults}}">
+
+                                                                    <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
+
+                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
+                                                                @endif
 											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/5.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/6.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/7.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/1.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/2.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/3.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/4.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/5.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/6.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/7.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.5</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/1.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Swiss, Paris & Italy</h3></a>
-                                            <p>Home to numerous lakes, villages and high peaks of the Alps, Switzerland is a dreamy mountainous Central European country that lures tourists from all over the world.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$650</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.3</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/2.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Incredible India</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$420</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.0</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/3.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Awesome Dubai: Action Packed</h3></a>
-                                            <p>Explore Dubai in all its glory with Yatra's 'Go Dubai.' From the air-conditioned interior of a 4X4, see the sands of the Arabian Desert.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$720</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.8</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/4.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Amazing London and Edinburgh</h3></a>
-                                            <p>London may not be the most ancient city in the world, but is surely one of those that take their history quite seriously; especially in terms of keeping traditions and heritage intact.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$860</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.4</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/5.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Rio De Janeiro</h3></a>
-                                            <p>Brazil may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$480</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.2</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/6.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Roatan, Bay Islands</h3></a>
-                                            <p>India may not be the most ancient city in the world, but is surely one of those that take their history quite seriously.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1200</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
-                                <!--LISTINGS START-->
-                                <div class="hot-page2-alp-r-list">
-                                    <div class="col-md-3 hot-page2-alp-r-list-re-sp">
-                                        <a href="javascript:void(0);">
-                                            <div class="hotel-list-score">4.9</div>
-                                            <div class="hot-page2-hli-1"> <img src="images/package/7.jpg" alt=""> </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="trav-list-bod">
-                                            <a href="tour-details.html"><h3>Venice Holiday Packages</h3></a>
-                                            <p>Honeymoon calls for an utterly romantic and very distinguished place that will, at the same time, provide privacy and convenience, and Venice perfectly fits the bill.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                            <div class="hot-page2-alp-r-hot-page-rat">25%Off</div> <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">$1350</span><span class="hot-list-p3-4">
-												<a href="tour-details.html" class="hot-page2-alp-quot-btn">Book Now</a>
-											</span> </div>
-                                    </div>
-                                    <div>
-                                        <div class="trav-ami">
-                                            <h4>Detail and Includes</h4>
-                                            <ul>
-                                                <li><img src="images/icon/a14.png" alt=""> <span>Sightseeing</span></li>
-                                                <li><img src="images/icon/a15.png" alt=""> <span>Hotel</span></li>
-                                                <li><img src="images/icon/a16.png" alt=""> <span>Transfer</span></li>
-                                                <li><img src="images/icon/a17.png" alt=""> <span>Luggage</span></li>
-                                                <li><img src="images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>
-                                                <li><img src="images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>
-                                                <li><img src="images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END LISTINGS-->
+                                                    </div>
+                                                </div>
+
+                                                {{--                                    <div>--}}
+                                                {{--                                        <div class="trav-ami">--}}
+                                                {{--                                            <h4>Detail Type Of Ticket</h4>--}}
+                                                {{--                                            <ul>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>--}}
+                                                {{--                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>--}}
+                                                {{--                                            </ul>--}}
+                                                {{--                                        </div>--}}
+                                                {{--                                    </div>--}}
+                                            </div>
+                                        </form>
+                                    @endforeach
+                                @endif
+
                             </div>
                         </div>
                     </div>
