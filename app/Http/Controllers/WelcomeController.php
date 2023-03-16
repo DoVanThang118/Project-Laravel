@@ -30,7 +30,6 @@ class WelcomeController extends Controller
             "landingcity_id" => "required|numeric|min:1",
             "direction" => "required|numeric|min:1",
             "adults" => "required|numeric|min:1",
-            "children" => "required|numeric|min:0",
 
         ], [
             "required" => "Vui lòng nhập thông tin",
@@ -43,37 +42,44 @@ class WelcomeController extends Controller
         $takeoftime = $request->get("takeoftime");
         $returnday = $request->get("returnday");
         $adults = $request->get("adults");
-        $children = $request->get("children");
         $direction = $request->get("direction");
 
 
         if ($takeofcity_id != $landingcity_id) {
-            if ($direction == 1) {
 
+            if ($direction == 1) {
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
+
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
                     ->orderBy("id", "desc")
-                    ->paginate(20);
+                    ->get();
+
 
                 for ($i = 0; $i < $flight->count(); $i++) {
-                    $type[$i] = TypeOfTicket::with("Flight")
+                    $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight[$i]->id)
-                        ->pluck("id")->toArray();
-                    $ticket[$i] = Ticket::
-                    TicketTypeFilter($type[$i])
-                        ->TicketInStock()
                         ->get();
-                    if ($ticket[$i]->count() >= $adults) {
-                        $data[] = $flight[$i];
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
+                            $c++;
+                        }
                     }
+                    if($c!=0){
+                        $data[]=$flight[$i];
+
+                    }
+
                 }
+
 
                 if (isset($data)) {
                     return view("flight-list", [
                         "data" => $data,
+                        "adults"=>$adults
                     ])->with("success", "Success");
 
                 } else {
@@ -81,22 +87,28 @@ class WelcomeController extends Controller
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
-                        ->paginate(20);
+                        ->get();
                     for ($i = 0; $i < $flight->count(); $i++) {
-                        $type[$i] = TypeOfTicket::with("Flight")
+                        $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight[$i]->id)
-                            ->pluck("id")->toArray();
-                        $ticket[$i] = Ticket::
-                        TicketTypeFilter($type[$i])
-                            ->TicketInStock()
                             ->get();
-                        if ($ticket[$i]->count() >= $adults) {
-                            $data[] = $flight[$i];
+
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
+                                $c++;
+                            }
                         }
+                        if($c!=0){
+                            $data[]=$flight[$i];
+                        }
+
                     }
+
                     if (isset($data)) {
                        return view("flight-list", [
                             "data" => $data,
+                           "adults"=>$adults
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
                         return redirect()->back()->with("error","Flight not found please find again");
@@ -120,41 +132,50 @@ class WelcomeController extends Controller
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
                     ->orderBy("id", "desc")
-                    ->paginate(20);
+                    ->get();
                 $flight2 = Flight::FlightAirStripFilter($asflight2)
                     ->TakeofTimeFilter($returnday)
                     ->orderBy("id", "desc")
-                    ->paginate(20);
+                    ->get();
 
                 for ($i = 0; $i < $flight->count(); $i++) {
-                    $type[$i] = TypeOfTicket::with("Flight")
+                    $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight[$i]->id)
-                        ->pluck("id")->toArray();
-                    $ticket[$i] = Ticket::
-                    TicketTypeFilter($type[$i])
-                        ->TicketInStock()
                         ->get();
-                    if ($ticket[$i]->count() >= $adults) {
-                        $data[] = $flight[$i];
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
+                            $c++;
+                        }
                     }
+                    if($c!=0){
+                        $data[]=$flight[$i];
+
+                    }
+
                 }
                 for ($i = 0; $i < $flight2->count(); $i++) {
-                    $type2[$i] = TypeOfTicket::with("Flight")
+                    $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight2[$i]->id)
-                        ->pluck("id")->toArray();
-                    $ticket2[$i] = Ticket::
-                    TicketTypeFilter($type2[$i])
-                        ->TicketInStock()
                         ->get();
-                    if ($ticket2[$i]->count() >= $adults) {
-                        $data2[] = $flight2[$i];
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
+                            $c++;
+                        }
                     }
+                    if($c!=0){
+                        $data2[]=$flight2[$i];
+
+                    }
+
                 }
 
                 if (isset($data)||isset($data2)) {
                     return view("flight-list", [
                         "data" => $data,
-                        "data2"=>$data2
+                        "data2"=>$data2,
+                        "adults"=>$adults
                     ])->with("success", "Success");
 
                 } else {
@@ -169,33 +190,42 @@ class WelcomeController extends Controller
                         ->paginate(20);
 
                     for ($i = 0; $i < $flight->count(); $i++) {
-                        $type[$i] = TypeOfTicket::with("Flight")
+                        $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight[$i]->id)
-                            ->pluck("id")->toArray();
-                        $ticket[$i] = Ticket::
-                        TicketTypeFilter($type[$i])
-                            ->TicketInStock()
                             ->get();
-                        if ($ticket[$i]->count() >= $adults) {
-                            $data[] = $flight[$i];
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
+                                $c++;
+                            }
                         }
+                        if($c!=0){
+                            $data[]=$flight[$i];
+
+                        }
+
                     }
                     for ($i = 0; $i < $flight2->count(); $i++) {
-                        $type2[$i] = TypeOfTicket::with("Flight")
+                        $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight2[$i]->id)
-                            ->pluck("id")->toArray();
-                        $ticket2[$i] = Ticket::
-                        TicketTypeFilter($type2[$i])
-                            ->TicketInStock()
                             ->get();
-                        if ($ticket2[$i]->count() >= $adults) {
-                            $data2[] = $flight2[$i];
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
+                                $c++;
+                            }
                         }
+                        if($c!=0){
+                            $data2[]=$flight2[$i];
+
+                        }
+
                     }
                     if (isset($data)&&isset($data2)) {
                         return view("flight-list", [
                             "data" => $data,
-                            "data2"=>$data2
+                            "data2"=>$data2,
+                            "adults"=>$adults
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     }
                     else{
@@ -206,114 +236,74 @@ class WelcomeController extends Controller
 
             }
 
-
         }
 
     }
 
     public function addToCart(Flight $flight,Request $request)
     {
-        $request->validate([
-            "vipqty" => "required|numeric|min:0",
-            "normalqty" => "required|numeric|min:0",
-            "cheapqty" => "required|numeric|min:0"
-        ]);
-        $vipqty = $request->get("vipqty");
-        $normalqty = $request->get("normalqty");
-        $cheapqty = $request->get("cheapqty");
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        $typevip = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "VIP")->get();
-        $typenormal = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "NORMAL")->get();
-        $typecheap = TypeOfTicket::with("Flight")
-            ->FlightFilter($flight->id)->where("name", "CHEAP")->get();
-        if ($vipqty > 0) {
-            $ticketvipselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typevip[0]->id)->TicketInStock()->limit($request->get("vipqty"))->orderBy("id","desc")->get();
-        }
-        if ($normalqty > 0) {
-            $ticketnormalselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typenormal[0]->id)->TicketInStock()->limit($request->get("normalqty"))->orderBy("id","desc")->get();
-        }
-        if ($cheapqty > 0) {
-            $ticketcheapselect = Ticket::with("TypeOfTicket")
-                ->TicketFilter($typecheap[0]->id)->TicketInStock()->limit($request->get("cheapqty"))->orderBy("id","desc")->get();
-        }
-        if (isset($ticketvipselect)) {
-            for ($i = 0; $i < $ticketvipselect->count(); $i++) {
-                $ticket[] = $ticketvipselect[$i];
-            }
-        }
-        if (isset($ticketnormalselect)) {
-            for ($i = 0; $i < $ticketnormalselect->count(); $i++) {
-                $ticket[] = $ticketnormalselect[$i];
-            }
-        }
-        if (isset($ticketcheapselect)) {
-            for ($i = 0; $i < $ticketcheapselect->count(); $i++) {
-                $ticket[] = $ticketcheapselect[$i];
-            }
-        }
-//        dd($ticket);
 
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
+        $t=$request->get("type");
+        $qty=$request->get("qty");
+        $type=TypeOfTicket::where("id",$t)->first();
+        $grandtotal=$type->price*$qty;
 
-        for ($i = 0; $i < count($ticket); $i++) {
-            $flag = true;
-            if (in_array($ticket[$i], $cart)) {
-                $flag = false;
-            }
-            if ($flag) {
-                $cart[] = $ticket[$i];
-            }
-        }
-            session(["cart" => $cart]);
-            return redirect()->to("/user/cart");
-        }
-
-    public function shopcart(){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        $grand_total=0;
-        $can_checkout=true;
-        foreach ($cart as $item){
-            $grand_total+=$item->price;
-            if($can_checkout&&count($cart)==0){
-                $can_checkout=false;
-            }
-        }
-        return view("user.cart",[
-            "grand_total"=>$grand_total,
-            "cart"=>$cart,
-            "can_checkout"=>$can_checkout
-        ]);
-    }
+        $flag=true;
 
 
-    public function checkout(){
-        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        if(count($cart)==0){
-            return redirect()->to("user/cart");
-        }
-        $grand_total=0;
         foreach ($cart as $item){
-            $grand_total+=$item->price;
-        }
-        return view("user.checkout",[
-            "grand_total"=>$grand_total,
-            "cart"=>$cart
-        ]);
-    }
-    public function remove(Ticket $ticket){
-        $cart = session()->has("cart") && is_array(session("cart"))?session("cart"):[];
-        foreach ($cart as $key=>$item){
-            if($item->id == $ticket->id){
-                unset($cart[$key]);
+
+            if($item->id==$type->id){
+                $flag=false;
                 break;
             }
         }
+        if($flag){
+            $cart[]=$type;
+        }
+
+
         session(["cart"=>$cart]);
-        return redirect()->back();
+
+        return view("user.cart",[
+            "qty"=>$qty,
+            "grand_total"=>$grandtotal,
+            "cart"=>$cart,
+
+
+        ]);
+    }
+
+//    public function shopcart(){
+//        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+//        $can_checkout=true;
+//        foreach ($cart as $item){
+//
+//            if($can_checkout&&count($cart)==0){
+//                $can_checkout=false;
+//            }
+//        }
+//        return view("user.cart",[
+//            "cart"=>$cart,
+//            "can_checkout"=>$can_checkout
+//        ]);
+//    }
+
+
+    public function checkout(Request $request){
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        $grand_total=$request->get("grand_total");
+        $qty=$request->get("qty");
+
+        if(count($cart)==0){
+            return redirect()->to("/");
+        }
+        return view("user.checkout",[
+            "cart"=>$cart,
+            "grand_total"=>$grand_total,
+            "qty"=>$qty,
+        ]);
     }
 
 
