@@ -299,7 +299,7 @@ class WelcomeController extends Controller
         if(count($cart)==0){
             return redirect()->to("/");
         }
-        return view("user.checkout",[
+        return view("user.payment",[
             "cart"=>$cart,
             "grand_total"=>$grand_total,
             "qty"=>$qty,
