@@ -20,6 +20,12 @@ class CreateTableTickets extends Migration
             $table->unsignedBigInteger("typeofticket_id");
             $table->unsignedBigInteger("order_id")->nullable();
             $table->unsignedBigInteger("seat_id")->nullable();
+            $table->string("name")->nullable();
+            $table->date("birthday")->nullable();
+            $table->string("phone")->nullable();
+            $table->string("address")->nullable();
+            $table->string("gender")->nullable();
+            $table->string("email")->nullable();
             $table->timestamps();
             $table->foreign("typeofticket_id")->references("id")->on("typeoftickets");
             $table->foreign("order_id")->references("id")->on("orders");
