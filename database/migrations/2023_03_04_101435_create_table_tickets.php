@@ -23,9 +23,7 @@ class CreateTableTickets extends Migration
             $table->string("name")->nullable();
             $table->date("birthday")->nullable();
             $table->string("phone")->nullable();
-            $table->string("address")->nullable();
-            $table->string("gender")->nullable();
-            $table->string("email")->nullable();
+            $table->string("cccd")->nullable();
             $table->timestamps();
             $table->foreign("typeofticket_id")->references("id")->on("typeoftickets");
             $table->foreign("order_id")->references("id")->on("orders");

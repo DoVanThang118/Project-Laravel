@@ -242,35 +242,38 @@ class WelcomeController extends Controller
 
     public function addToCart(Flight $flight,Request $request)
     {
-
         $t=$request->get("type");
         $qty=$request->get("qty");
         $type=TypeOfTicket::where("id",$t)->first();
-        $grandtotal=$type->price*$qty;
 
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         $flag=true;
-
-
         foreach ($cart as $item){
-
             if($item->id==$type->id){
                 $flag=false;
                 break;
             }
         }
         if($flag){
+            $type->buy_qty=$qty;
             $cart[]=$type;
         }
 
-
         session(["cart"=>$cart]);
+//        dd($cart);
+        $grand_total=0;
+        $can_checkout=true;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+            if($can_checkout&&$item->ticketinstock==0){
+                $can_checkout=false;
+            }
+        }
 
         return view("user.cart",[
-            "qty"=>$qty,
-            "grand_total"=>$grandtotal,
+            "grand_total"=>$grand_total,
             "cart"=>$cart,
-
+            "can_checkout"=>$can_checkout
 
         ]);
     }
@@ -294,7 +297,7 @@ class WelcomeController extends Controller
     public function checkout(Request $request){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         $grand_total=$request->get("grand_total");
-        $qty=$request->get("qty");
+        $buy_qty=$request->get("buy_qty");
 
         if(count($cart)==0){
             return redirect()->to("/");
@@ -302,7 +305,34 @@ class WelcomeController extends Controller
         return view("user.payment",[
             "cart"=>$cart,
             "grand_total"=>$grand_total,
-            "qty"=>$qty,
+            "buy_qty"=>$buy_qty,
+        ]);
+    }
+
+    public function remove(TypeOfTicket $typeOfTicket){
+        $cart = session()->has("cart") && is_array(session("cart"))?session("cart"):[];
+        foreach ($cart as $key=>$item){
+            if($item->id == $typeOfTicket->id){
+                unset($cart[$key]);
+                break;
+            }
+        }
+
+        session(["cart"=>$cart]);
+        $grand_total=0;
+        $can_checkout=true;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+            if($can_checkout&&$item->ticketinstock==0){
+                $can_checkout=false;
+            }
+        }
+
+        return view("user.cart",[
+            "grand_total"=>$grand_total,
+            "cart"=>$cart,
+            "can_checkout"=>$can_checkout
+
         ]);
     }
 
