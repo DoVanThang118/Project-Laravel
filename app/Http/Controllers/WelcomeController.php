@@ -297,8 +297,6 @@ class WelcomeController extends Controller
                 $can_checkout=false;
             }
         }
-
-
         return view("user.cart",[
             "totalticket"=>$totalticket,
             "grand_total"=>$grand_total,
@@ -351,6 +349,7 @@ class WelcomeController extends Controller
     }
 
     public function placeOrder(Request $request, User $user){
+
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         if(count($cart) == 0) return abort(404);
         $grand_total = 0;
@@ -376,8 +375,7 @@ class WelcomeController extends Controller
 //            "discount_id"
         ]);
         foreach($cart as $item){
-            $ticket[] =Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
-
+            $ticket[] = Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
         }
 
         return $this->processTransaction($order);
