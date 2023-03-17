@@ -25,7 +25,7 @@ Route::get('/flightList', [App\Http\Controllers\WelcomeController::class, 'filte
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//Route::get("user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
+Route::get("/user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
 Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
 Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
 Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder']);

@@ -75,11 +75,13 @@ class WelcomeController extends Controller
                     }
 
                 }
+                $data2=[];
 
                 if (isset($data)) {
                     return view("flight-list", [
                         "data" => $data,
                         "adults"=>$adults,
+                        "data2"=>$data2
 
                     ])->with("success", "Success");
 
@@ -104,11 +106,12 @@ class WelcomeController extends Controller
                         }
 
                     }
-
+                    $data2=[];
                     if (isset($data)) {
                        return view("flight-list", [
                             "data" => $data,
                            "adults"=>$adults,
+                           "data2"=>$data2
 
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
@@ -226,7 +229,13 @@ class WelcomeController extends Controller
                         }
 
                     }
-                    if (isset($data)&&isset($data2)) {
+                    if(!isset($data)){
+                        $data=[];
+                    }
+                    if(!isset($data2)){
+                        $data2=[];
+                    }
+                    if (isset($data)||isset($data2)) {
                         return view("flight-list", [
                             "data" => $data,
                             "data2"=>$data2,
@@ -265,38 +274,36 @@ class WelcomeController extends Controller
         }
 
         session(["cart"=>$cart]);
-//        dd($cart);
+
+        return redirect()->back();
+    }
+
+    public function shopcart(){
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart)==0){
+            return redirect()->to("/");
+        }
         $grand_total=0;
-        $can_checkout=true;
         foreach ($cart as $item){
             $grand_total+=$item->price*$item->buy_qty;
+        }
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
+        }
+        $can_checkout=true;
+        foreach ($cart as $item){
             if($can_checkout&&$item->ticketinstock==0){
                 $can_checkout=false;
             }
         }
 
         return view("user.cart",[
+            "totalticket"=>$totalticket,
             "grand_total"=>$grand_total,
-            "cart"=>$cart,
-            "can_checkout"=>$can_checkout
-
+            "cart"=>$cart
         ]);
     }
-
-//    public function shopcart(){
-//        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-//        $can_checkout=true;
-//        foreach ($cart as $item){
-//
-//            if($can_checkout&&count($cart)==0){
-//                $can_checkout=false;
-//            }
-//        }
-//        return view("user.cart",[
-//            "cart"=>$cart,
-//            "can_checkout"=>$can_checkout
-//        ]);
-//    }
 
 
     public function checkout(){
@@ -432,4 +439,6 @@ class WelcomeController extends Controller
     public function cancelTransaction(Order $order){
         return "Cancel";
     }
+
+
 }
