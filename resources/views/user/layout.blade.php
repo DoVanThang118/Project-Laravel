@@ -33,7 +33,7 @@
             <!--CENTER SECTION-->
             @yield('center-content')
             <!--RIGHT SECTION-->
-            <div class="db-3">
+            <div class="db-3" >
                 <h4>Notifications</h4>
                 <ul>
                     <li>

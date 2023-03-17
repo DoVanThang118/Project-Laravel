@@ -150,7 +150,7 @@
                             <li>
                                 <a href="{{url("/profile")}}">Profile</a>
                             </li>
-                            <li><a href="#">Contact us</a><!--thông tin thêm về công ty -->
+                            <li><a href="{{url("/aboutus")}}">About us</a><!--thông tin thêm về công ty -->
                             </li>
                         </ul>
                     </div>
