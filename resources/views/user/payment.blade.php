@@ -7,7 +7,7 @@
             <div class="db-2-main-com db2-form-pay db2-form-com">
                 <form class="col s12"  method="post" action="{{url("/checkout")}}">
                     @csrf
-                    @for($i=0;$i<$qty;$i++)
+                    @for($i=0;$i<$buy_qty;$i++)
                         <p></p>
                         <p></p>
                         <h4>Custormer {{$i+1}}</h4>
@@ -34,9 +34,7 @@
                     </div>
 
                     @endfor
-                    <div class="row">
-                        <span class="db-pay-amount">Total of ticket: {{$qty}}</span>
-                    </div>
+
                     <div class="row">
                         <span class="db-pay-amount">Total money: ${{$grand_total}}</span>
                     </div>
