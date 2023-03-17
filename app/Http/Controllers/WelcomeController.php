@@ -27,7 +27,7 @@ class WelcomeController extends Controller
             "takeoftime" => "required",
 //            "returnday"=>"required",
             "takeofcity_id" => "required|numeric|min:1",
-            "landingcity_id" => "required|numeric|min:1",
+            "landingcity_id" => "required|numeric|different:takeofcity_id|min:1",
             "direction" => "required|numeric|min:1",
             "adults" => "required|numeric|min:1",
 
