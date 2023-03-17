@@ -348,10 +348,7 @@
                             <div class="row">
                                 <!--LISTINGS START-->
                                 @foreach($data as $item)
-                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
-                                          role="form" enctype="multipart/form-data" >
 
-                                        @csrf
 
 
 
@@ -369,7 +366,12 @@
                                                     <p>From {{$item->AirStrip->TakeofCity->name}} To {{$item->AirStrip->LandingCity->name}}. Takeoff Time: {{$item->takeoftime}} - Landing Time: {{$item->landingtime}}  </p>
                                                 </div>
                                             </div>
+
                                             <div class="col-md-12">
+                                                <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                      role="form" enctype="multipart/form-data" >
+
+                                                    @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                         <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
@@ -382,6 +384,11 @@
                                                             </span>
                                                     </div>
                                                 </div>
+                                            </form>
+                                                <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                      role="form" enctype="multipart/form-data" >
+
+                                                    @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                         <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span><span class="hot-list-p3-4">
@@ -394,6 +401,11 @@
                                                             @endif
 											</span> </div>
                                                 </div>
+                                                </form>
+                                                <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                      role="form" enctype="multipart/form-data" >
+
+                                                    @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                         <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span><span class="hot-list-p3-4">
@@ -406,7 +418,9 @@
                                                             @endif
 											</span> </div>
                                                 </div>
+                                                </form>
                                             </div>
+
 
                                             {{--                                    <div>--}}
                                             {{--                                        <div class="trav-ami">--}}
@@ -423,17 +437,14 @@
                                             {{--                                        </div>--}}
                                             {{--                                    </div>--}}
                                         </div>
-                                    </form>
+
                                 @endforeach
                                 <!--END LISTINGS-->
                                 @if(isset($data2))
                                     <h1>Return</h1>
 
                                     @foreach($data2 as $item)
-                                        <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
-                                              role="form" enctype="multipart/form-data" >
 
-                                            @csrf
 
 
 
@@ -452,6 +463,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
+                                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                          role="form" enctype="multipart/form-data" >
+
+                                                        @csrf
                                                     <div class="col-md-4">
                                                         <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                             <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
@@ -464,6 +479,11 @@
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    </form>
+                                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                          role="form" enctype="multipart/form-data" >
+
+                                                        @csrf
                                                     <div class="col-md-4">
                                                         <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                             <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span><span class="hot-list-p3-4">
@@ -476,6 +496,11 @@
                                                                 @endif
 											</span> </div>
                                                     </div>
+                                                    </form>
+                                                    <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
+                                                          role="form" enctype="multipart/form-data" >
+
+                                                        @csrf
                                                     <div class="col-md-4">
                                                         <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
                                                             <span class="hot-list-p3-1">Prices Starting</span> <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span><span class="hot-list-p3-4">
@@ -488,6 +513,7 @@
                                                                 @endif
 											</span> </div>
                                                     </div>
+                                                    </form>
                                                 </div>
 
                                                 {{--                                    <div>--}}
@@ -505,7 +531,7 @@
                                                 {{--                                        </div>--}}
                                                 {{--                                    </div>--}}
                                             </div>
-                                        </form>
+
                                     @endforeach
                                 @endif
 

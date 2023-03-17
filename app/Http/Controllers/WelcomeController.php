@@ -245,31 +245,37 @@ class WelcomeController extends Controller
         $t=$request->get("type");
         $qty=$request->get("qty");
         $type=TypeOfTicket::where("id",$t)->first();
-        $grandtotal=$type->price*$qty;
+//        $grandtotal=$type[0]->price*$qty;
+
 
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         $flag=true;
-
-
         foreach ($cart as $item){
-
             if($item->id==$type->id){
                 $flag=false;
                 break;
             }
         }
         if($flag){
+            $type->buy_qty=$qty;
             $cart[]=$type;
         }
 
-
         session(["cart"=>$cart]);
+//        dd($cart);
+        $grand_total=0;
+        $can_checkout=true;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+            if($can_checkout&&$item->qty==0){
+                $can_checkout=false;
+            }
+        }
 
         return view("user.cart",[
-            "qty"=>$qty,
-            "grand_total"=>$grandtotal,
+            "grand_total"=>$grand_total,
             "cart"=>$cart,
-
+            "can_checkout"=>$can_checkout
 
         ]);
     }
