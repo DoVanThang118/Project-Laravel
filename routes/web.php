@@ -26,7 +26,7 @@ Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::cla
 Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
 Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
 Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder']);
-Route::post("/checkout",[\App\Http\Controllers\WelcomeController::class,"placeOrder"])->name("checkout");
+Route::post("/checkout",[\App\Http\Controllers\WelcomeController::class,"placeOrder"]);
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
