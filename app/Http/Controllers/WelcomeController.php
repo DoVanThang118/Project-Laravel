@@ -345,26 +345,32 @@ class WelcomeController extends Controller
     }
 
     public function placeOrder(Request $request){
-//        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-//        if(count($cart) == 0) return abort(404);
-//        $grand_total = 0;
-//        $can_checkout = true;
-//        foreach ($cart as $item){
-//            $grand_total += $item->price * $item->buy_qty;
-//            if($can_checkout && $item->qty ==0){
-//                $can_checkout =  false;
-//            }
-//        }
-//        if(!$can_checkout) return abort(404);
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart) == 0) return abort(404);
+        $grand_total = 0;
+        $can_checkout = true;
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
+        }
+        foreach ($cart as $item){
+            $grand_total += $item->price * $item->buy_qty;
+            if($can_checkout && $item->buy_qty ==0){
+                $can_checkout =  false;
+            }
+        }
+        if(!$can_checkout) return abort(404);
+
 
         $order = Order::create([
             "order_date"=> now(),
-            "qty"=>$request->get("qty"),
-            "totalmoney"=>$request->get("grand_total"),
+            "qty"=>$totalticket,
+            "totalmoney"=>$grand_total,
 //            "status",
             "user_id"=>2,
 //            "discount_id"
         ]);
+
         return $this->processTransaction($order);
     }
 
