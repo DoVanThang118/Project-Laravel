@@ -59,9 +59,6 @@
                             <span class="db-pay-amount" style="color: rgba(255,0,0,0.89)">Total: {{$grand_total}}</span>
                             <form method="get" action="{{url("/checkout")}}">
                                 @csrf
-                                <input type="hidden" name="grand_total" value="{{$grand_total}}">
-                                <input type="hidden" name="buy_qty" value="@for($i=0;$i<$cart->count()) {{$cart[0]->buy_qty}} @endfor">
-
 
                                 <button type="submit" style="width: 100px;margin-bottom: 10px" class="btn btn-warning">CHECKOUT</button>
 
