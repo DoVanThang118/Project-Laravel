@@ -25,7 +25,8 @@ Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::cla
 //Route::get("user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
 Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
 Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
-Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder'])->name('payment');
+Route::post('/checkout', [App\Http\Controllers\WelcomeController::class, 'createOrder']);
+Route::post("/checkout",[\App\Http\Controllers\WelcomeController::class,"placeOrder"])->name("checkout");
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
@@ -35,6 +36,10 @@ Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index'
 
 //Pusher
 Route::get("/sendNotification",[\App\Http\Controllers\PusherController::class,"sendNotification"]);
+
+//PayPal
+Route::get("successTransaction/{order}",[\App\Http\Controllers\WelcomeController::class,"successTransaction"])->name("successTransaction");
+Route::get("cancelTransaction/{order}",[\App\Http\Controllers\WelcomeController::class,"cancelTransaction"])->name("cancelTransaction");
 
 
 //view
