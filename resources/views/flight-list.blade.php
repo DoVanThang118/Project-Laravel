@@ -551,30 +551,4 @@
         {{--        </div>--}}
     </section>
 @endsection
-@section("custom_js")
-    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-    <script>
 
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('265acd2b0b5380eef4d9', {
-            cluster: 'ap1'
-        });
-
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
-
-            alert(JSON.stringify(data));
-        });
-        function lockChair() {
-            var c = confirm("Lock chair?");
-            if (c) {
-                $.ajax({
-                    url: "{{url("sendNotification")}}",
-                    method: "GET"
-                })
-            }
-        }
-    </script>
-@endsection

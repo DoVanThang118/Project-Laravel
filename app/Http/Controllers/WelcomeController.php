@@ -272,16 +272,16 @@ class WelcomeController extends Controller
             $type->buy_qty=$qty;
             $cart[]=$type;
         }
-
         session(["cart"=>$cart]);
-
         return redirect()->back();
+
     }
 
     public function shopcart(){
+
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         if(count($cart)==0){
-            return redirect()->to("/");
+            return redirect()->to("/home");
         }
         $grand_total=0;
         foreach ($cart as $item){
@@ -297,6 +297,7 @@ class WelcomeController extends Controller
                 $can_checkout=false;
             }
         }
+
 
         return view("user.cart",[
             "totalticket"=>$totalticket,
@@ -346,12 +347,7 @@ class WelcomeController extends Controller
             }
         }
 
-        return view("user.cart",[
-            "grand_total"=>$grand_total,
-            "cart"=>$cart,
-            "can_checkout"=>$can_checkout
-
-        ]);
+        return redirect()->back();
     }
 
     public function placeOrder(Request $request, User $user){
