@@ -8,6 +8,7 @@ use App\Models\Flight;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\TypeOfTicket;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
@@ -50,15 +51,14 @@ class WelcomeController extends Controller
         if ($takeofcity_id != $landingcity_id) {
 
             if ($direction == 1) {
+
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
-
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
                     ->orderBy("id", "desc")
                     ->get();
-
 
                 for ($i = 0; $i < $flight->count(); $i++) {
                     $type = TypeOfTicket::with("Flight")
@@ -72,20 +72,18 @@ class WelcomeController extends Controller
                     }
                     if($c!=0){
                         $data[]=$flight[$i];
-
                     }
 
                 }
 
-
                 if (isset($data)) {
                     return view("flight-list", [
                         "data" => $data,
-                        "adults"=>$adults
+                        "adults"=>$adults,
+
                     ])->with("success", "Success");
 
                 } else {
-
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
@@ -110,7 +108,8 @@ class WelcomeController extends Controller
                     if (isset($data)) {
                        return view("flight-list", [
                             "data" => $data,
-                           "adults"=>$adults
+                           "adults"=>$adults,
+
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
                         return redirect()->back()->with("error","Flight not found please find again");
@@ -152,7 +151,6 @@ class WelcomeController extends Controller
                     }
                     if($c!=0){
                         $data[]=$flight[$i];
-
                     }
 
                 }
@@ -172,7 +170,12 @@ class WelcomeController extends Controller
                     }
 
                 }
-
+                if(!isset($data2)){
+                    $data2=[];
+                }
+                if(!isset($data)){
+                    $data=[];
+                }
                 if (isset($data)||isset($data2)) {
                     return view("flight-list", [
                         "data" => $data,
@@ -344,7 +347,7 @@ class WelcomeController extends Controller
         ]);
     }
 
-    public function placeOrder(Request $request){
+    public function placeOrder(Request $request, User $user){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         if(count($cart) == 0) return abort(404);
         $grand_total = 0;
@@ -360,16 +363,19 @@ class WelcomeController extends Controller
             }
         }
         if(!$can_checkout) return abort(404);
-
-
+        $user=auth()->id();
         $order = Order::create([
             "order_date"=> now(),
             "qty"=>$totalticket,
             "totalmoney"=>$grand_total,
 //            "status",
-            "user_id"=>2,
+            "user_id"=>$user,
 //            "discount_id"
         ]);
+        foreach($cart as $item){
+            $ticket[] =Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
+
+        }
 
         return $this->processTransaction($order);
     }
@@ -416,12 +422,8 @@ class WelcomeController extends Controller
 
     public function successTransaction(Order $order){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        $ticket=collect();
-        foreach($cart as $item){
-            $ticke =Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
-            $ticket = collect([$ticke]);
-        }
-        dd($ticket);
+
+
 
         return "Success pay: ".$order->totalmoney;
         // chuyen trang thai da thanh toan

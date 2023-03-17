@@ -9,6 +9,8 @@
 @endsection
 @section('content')
 
+    @include("admin.html.notification")
+
 
     <!--====== HOTELS LIST ==========-->
     <section class="hot-page2-alp hot-page2-pa-sp-top">
@@ -347,11 +349,7 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                @foreach($data as $item)
-
-
-
-
+                                @forelse($data as $item)
                                         <div class="hot-page2-alp-r-list">
                                             <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                                 <a href="javascript:void(0);">
@@ -438,15 +436,15 @@
                                             {{--                                    </div>--}}
                                         </div>
 
-                                @endforeach
+                                    @empty
+                                        <h1>Not found</h1>
+
+                                    @endforelse
                                 <!--END LISTINGS-->
-                                @if(isset($data2))
+
                                     <h1>Return</h1>
 
-                                    @foreach($data2 as $item)
-
-
-
+                                @forelse($data2 as $item)
 
                                             <div class="hot-page2-alp-r-list">
                                                 <div class="col-md-3 hot-page2-alp-r-list-re-sp">
@@ -531,9 +529,11 @@
                                                 {{--                                        </div>--}}
                                                 {{--                                    </div>--}}
                                             </div>
+                                @empty
+                                    <h1>Not found</h1>
 
-                                    @endforeach
-                                @endif
+                                @endforelse
+
 
                             </div>
                         </div>
