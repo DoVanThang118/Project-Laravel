@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\AirStrip;
 use App\Models\City;
 use App\Models\Flight;
+use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\TypeOfTicket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class WelcomeController extends Controller
 {
@@ -27,7 +29,7 @@ class WelcomeController extends Controller
             "takeoftime" => "required",
 //            "returnday"=>"required",
             "takeofcity_id" => "required|numeric|min:1",
-            "landingcity_id" => "required|numeric|min:1",
+            "landingcity_id" => "required|numeric|different:takeofcity_id|min:1",
             "direction" => "required|numeric|min:1",
             "adults" => "required|numeric|min:1",
 
@@ -342,6 +344,82 @@ class WelcomeController extends Controller
         ]);
     }
 
+    public function placeOrder(Request $request){
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart) == 0) return abort(404);
+        $grand_total = 0;
+        $can_checkout = true;
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
+        }
+        foreach ($cart as $item){
+            $grand_total += $item->price * $item->buy_qty;
+            if($can_checkout && $item->buy_qty ==0){
+                $can_checkout =  false;
+            }
+        }
+        if(!$can_checkout) return abort(404);
 
 
+        $order = Order::create([
+            "order_date"=> now(),
+            "qty"=>$totalticket,
+            "totalmoney"=>$grand_total,
+//            "status",
+            "user_id"=>2,
+//            "discount_id"
+        ]);
+
+        return $this->processTransaction($order);
+    }
+
+
+    public function processTransaction(Order $order)
+    {
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('successTransaction',['order'=>$order->id]),
+                "cancel_url" => route('cancelTransaction',['order'=>$order->id]),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "USD",
+                        "value" => number_format($order->totalmoney,2,".","")
+                    ]
+                ]
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+
+        } else {
+            return redirect()
+                ->route('checkout')
+                ->with('error', $response['message'] ?? 'Something went wrong.');
+        }
+    }
+
+
+    public function successTransaction(Order $order){
+        return "Success pay: ".$order->grand_total;
+        // chuyen trang thai da thanh toan
+    }
+
+    public function cancelTransaction(Order $order){
+        return "Cancel";
+    }
 }

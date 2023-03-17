@@ -19,7 +19,7 @@
                         </div>
                         <div class="input-field col s12 ">
                             <h5>Address</h5>
-                            <input name="address{{$i}}" type="text" class="validate">
+                            <input name="cccd{{$i}}" type="text" class="validate">
                         </div>
                     </div>
                     <div class="row">
@@ -35,14 +35,16 @@
                     @endfor
 
                     <div class="row">
-                        <span class="db-pay-amount">Total money: ${{$grand_total}}</span>
+                        <span class="db-pay-amount">Total money: {{$grand_total}}</span>
                     </div>
+                    <input type="hidden" value="{{$grand_total}}" name="grand_total">
                     <div class="row">
                         <div class="input-field col s12">
                             <button type="submit"  class="waves-effect waves-light full-btn">SUBMIT</button>
                         </div>
                     </div>
                 </form>
+            </div>
         </div>
     </div>
 @endsection
