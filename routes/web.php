@@ -17,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::middleware('auth')->group(function (){
+    Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
+});
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
-Route::post('/', [App\Http\Controllers\WelcomeController::class, 'filter']);
+Route::get('/flightList', [App\Http\Controllers\WelcomeController::class, 'filter']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
+
 //Route::get("user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
 Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
 Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
@@ -30,6 +33,7 @@ Route::post("/checkout",[\App\Http\Controllers\WelcomeController::class,"placeOr
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
+Route::post('/profile-edit', [App\Http\Controllers\ProfileController::class, 'update']);
 
 
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
@@ -44,6 +48,15 @@ Route::get("cancelTransaction/{order}",[\App\Http\Controllers\WelcomeController:
 
 //view
 Route::get("/hoChiMinhCity",[App\Http\Controllers\ViewController::class, 'hcmCity']);
+Route::get("/HaNoi",[App\Http\Controllers\ViewController::class, 'haNoi']);
+Route::get("/phuQuoc",[App\Http\Controllers\ViewController::class, 'phuquoc']);
+Route::get("/daNang",[App\Http\Controllers\ViewController::class, 'danang']);
+Route::get("/daLat",[App\Http\Controllers\ViewController::class, 'dalat']);
+Route::get("/london",[App\Http\Controllers\ViewController::class, 'london']);
+Route::get("/paris",[App\Http\Controllers\ViewController::class, 'paris']);
+Route::get("/newYork",[App\Http\Controllers\ViewController::class, 'newyork']);
+Route::get("/bangkok",[App\Http\Controllers\ViewController::class, 'bangkok']);
+Route::get("/singapore",[App\Http\Controllers\ViewController::class, 'singapore']);
 
 Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');

@@ -20,8 +20,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <form class="contact__form v2-search-form" method="post" action="{{url("/")}}"  role="form" enctype="multipart/form-data">
-                                @csrf
+                            <form class="contact__form v2-search-form" method="get" action="{{url("/flightList")}}"  role="form" enctype="multipart/form-data">
+
                                 <div class="alert alert-success contact__msg" style="display: none" role="alert">
                                     Thank you message
                                 </div>
@@ -134,45 +134,45 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url("/HaNoi")}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Ha Noi</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url('/HaNoi')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url("/phuQuoc")}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home2.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Phu Quoc</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url("/phuQuoc")}}"><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="tour-details.html">
+                    <a href="{{url('/daNang')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Da Nang</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url("/daNang")}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="tour-details.html">
+                    <a href="{{url('/daLat')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/listing/home4.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Da Lat</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url("/daLat")}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
@@ -196,56 +196,56 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <a href="#">
+                    <a href="{{url("/london")}}">
                         <div class="tour-mig-like-com">
                             <div class="v_place_img"> <img src="/assets/images/t1.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con">
                                 <h5>London</h5>
-                                <a href="#"><p>Discover</p></a>
+                                <a href="{{url("/london")}}"><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url("/paris")}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t2.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Paris</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url('/paris')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url('/newYork')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>New York City</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url('/newYork')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url('/bangkok')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t4.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Bangkok</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url('/bangkok')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="#">
+                    <a href="{{url('/singapore')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t5.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
                                 <h5>Singapore</h5>
-                                <a href="#" ><p>Discover</p></a>
+                                <a href="{{url('/singapore')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
