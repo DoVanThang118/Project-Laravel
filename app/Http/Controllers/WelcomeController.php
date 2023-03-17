@@ -294,18 +294,24 @@ class WelcomeController extends Controller
 //    }
 
 
-    public function checkout(Request $request){
+    public function checkout(){
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-        $grand_total=$request->get("grand_total");
-        $buy_qty=$request->get("buy_qty");
-
         if(count($cart)==0){
             return redirect()->to("/");
         }
+        $grand_total=0;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+        }
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
+        }
+
         return view("user.payment",[
-            "cart"=>$cart,
+            "totalticket"=>$totalticket,
             "grand_total"=>$grand_total,
-            "buy_qty"=>$buy_qty,
+            "cart"=>$cart
         ]);
     }
 
