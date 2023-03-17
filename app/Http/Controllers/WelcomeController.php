@@ -415,7 +415,15 @@ class WelcomeController extends Controller
 
 
     public function successTransaction(Order $order){
-        return "Success pay: ".$order->grand_total;
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        $ticket=collect();
+        foreach($cart as $item){
+            $ticke =Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
+            $ticket = collect([$ticke]);
+        }
+        dd($ticket);
+
+        return "Success pay: ".$order->totalmoney;
         // chuyen trang thai da thanh toan
     }
 
