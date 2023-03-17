@@ -15,8 +15,7 @@
                             <th>Type</th>
                             <th>Price</th>
                             <th>Quantity</th>
-{{--                            <th>Total money</th>--}}
-{{--                            <th>Action</th>--}}
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -28,9 +27,11 @@
                                 <td>{{$item->Flight->takeoftime}} - {{$item->Flight->landingtime}} </td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->price}}</td>
-                                <td>{{$qty}}</td>
-{{--                                <td>{{$item->price}}</td>--}}
+                                <td>{{$item->buy_qty}}</td>
+                                <td>
+                                    <a href="{{url("/remove-cart",["typeOfTicket"=>$item->id])}}">Delete</a>
 
+                                </td>
 
                             </tr>
                         @empty
@@ -58,9 +59,6 @@
                             <span class="db-pay-amount" style="color: rgba(255,0,0,0.89)">Total: {{$grand_total}}</span>
                             <form method="get" action="{{url("/checkout")}}">
                                 @csrf
-                                <input type="hidden" name="grand_total" value="{{$grand_total}}">
-                                <input type="hidden" name="qty" value="{{$qty}}">
-
 
                                 <button type="submit" style="width: 100px;margin-bottom: 10px" class="btn btn-warning">CHECKOUT</button>
 
