@@ -349,7 +349,11 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                @forelse($data as $item)
+                                @foreach($data as $item)
+
+
+
+
                                         <div class="hot-page2-alp-r-list">
                                             <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                                 <a href="javascript:void(0);">
@@ -377,7 +381,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button onclick="lockChair()" type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
+                                                                <button type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
                                                             @endif
                                                             </span>
                                                     </div>
@@ -395,7 +399,7 @@
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
 
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
+                                                                <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -412,7 +416,7 @@
 
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
 
-                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
+                                                                <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -436,17 +440,15 @@
                                             {{--                                    </div>--}}
                                         </div>
 
-
-                                    @empty
-                                        <h1>Not found</h1>
-
-                                    @endforelse
+                                @endforeach
                                 <!--END LISTINGS-->
+                                @if(isset($data2))
+                                    <h1>Return</h1>
+
+                                    @foreach($data2 as $item)
 
 
 
-                                @forelse($data2 as $item)
-                                    <h3>Return</h3>
 
                                             <div class="hot-page2-alp-r-list">
                                                 <div class="col-md-3 hot-page2-alp-r-list-re-sp">
@@ -531,11 +533,9 @@
                                                 {{--                                        </div>--}}
                                                 {{--                                    </div>--}}
                                             </div>
-                                @empty
-                                    <h3>Not found return</h3>
 
-                                @endforelse
-
+                                    @endforeach
+                                @endif
 
                             </div>
                         </div>
@@ -551,4 +551,3 @@
         {{--        </div>--}}
     </section>
 @endsection
-
