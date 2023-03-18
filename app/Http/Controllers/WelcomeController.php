@@ -11,6 +11,7 @@ use App\Models\TypeOfTicket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Pusher\Pusher;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class WelcomeController extends Controller
@@ -55,10 +56,12 @@ class WelcomeController extends Controller
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
 
+
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
                     ->orderBy("id", "desc")
                     ->get();
+
 
                 for ($i = 0; $i < $flight->count(); $i++) {
                     $type = TypeOfTicket::with("Flight")
@@ -72,6 +75,7 @@ class WelcomeController extends Controller
                     }
                     if($c!=0){
                         $data[]=$flight[$i];
+
                     }
 
                 }
@@ -500,8 +504,6 @@ class WelcomeController extends Controller
             ]);
         }
 
-        return "Cancel";
+        return view("cancelPay");
     }
-
-
 }
