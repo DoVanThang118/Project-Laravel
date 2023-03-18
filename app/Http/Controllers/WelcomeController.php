@@ -394,7 +394,7 @@ class WelcomeController extends Controller
 //            "discount_id"
         ]);
 
-        $allticket=Ticket::where("expiredtime","<=",now())->get();
+        $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
         for($i=0;$i<$allticket->count();$i++){
             $order = Order::where("id",$allticket[$i]->order_id)->get();
@@ -476,7 +476,7 @@ class WelcomeController extends Controller
         $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
         for($i=0;$i<$ticket->count();$i++){
             $ticket[$i]->update([
-                "status"=>2
+                "status"=>2,
             ]);
         }
         session()->forget("cart");
@@ -494,7 +494,9 @@ class WelcomeController extends Controller
                 "birthday"=>null,
                 "cccd"=>null,
                 "phone"=>null,
-                "order_id"=>null
+                "order_id"=>null,
+                "expiredtime"=>null,
+
             ]);
         }
 
