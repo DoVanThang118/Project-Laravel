@@ -377,7 +377,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button onclick="lockChair()" type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
+                                                                <button onclick="lockChair()" type="submit"  class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[0]->name}}</button>
                                                             @endif
                                                             </span>
                                                     </div>
@@ -395,7 +395,7 @@
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
 
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
+                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[1]->name}}</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -412,7 +412,7 @@
 
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
 
-                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
+                                                                <button onclick="lockChair()" type="submit"    class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[2]->name}}</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -438,7 +438,7 @@
 
 
                                     @empty
-                                        <h1>Not found</h1>
+                                        <h4 style="margin-left: 30px;">Not found flight</h4>
 
                                     @endforelse
                                 <!--END LISTINGS-->
@@ -474,7 +474,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                     <input type="hidden" name="qty" value="{{$adults}}">
                                                                     <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-												<button type="submit"  class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[0]->name}}</button>
+												<button type="submit"  class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[0]->name}}</button>
                                                                 @endif
                                                             </span>
                                                         </div>
@@ -492,7 +492,7 @@
                                                                     <input type="hidden" name="qty" value="{{$adults}}">
 
                                                                     <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[1]->name}}</button>
+                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[1]->name}}</button>
                                                                 @endif
 											</span> </div>
                                                     </div>
@@ -509,7 +509,7 @@
 
                                                                     <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
 
-                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$item->TypeOfTickets[2]->name}}</button>
+                                                                    <button type="submit"    class="hot-page2-alp-quot-btn">Buy {{$adults}} ticket {{$item->TypeOfTickets[2]->name}}</button>
                                                                 @endif
 											</span> </div>
                                                     </div>
@@ -532,7 +532,7 @@
                                                 {{--                                    </div>--}}
                                             </div>
                                 @empty
-                                    <h3>Not found return</h3>
+                                    <h4 style="margin-left: 30px;">Not found flight return</h4>
 
                                 @endforelse
 
