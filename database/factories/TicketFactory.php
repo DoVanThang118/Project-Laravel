@@ -17,6 +17,11 @@ class TicketFactory extends Factory
             "status"=>0,
             "price"=>0,
             "typeofticket_id"=>random_int(1,20),
+            "expiredtime"=>null,
+            "name"=>null,
+            "phone"=>null,
+            "cccd"=>null,
+            "birthday"=>null,
             "order_id"=>null,
             "seat_id"=>null,
 

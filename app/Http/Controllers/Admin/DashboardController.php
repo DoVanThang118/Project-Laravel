@@ -56,7 +56,9 @@ class DashboardController extends Controller
             $expected+=$ticketinstock[$i]->price;
         }
 
-
+        if(!isset($f)){
+            $f=[];
+        }
         return view("admin.dashboard.dashboardhome",[
             "air" => $air,
             "ticket"=>$ticket,

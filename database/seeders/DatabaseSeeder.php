@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 //        // \App\Models\User::factory(10)->create();
 
 
-        City::factory(1)->create();
+//        City::factory(1)->create();
 
 
 

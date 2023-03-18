@@ -73,7 +73,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="input-field col s4">
+                                    <div class="input-field col s4" id="content">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
                                   "title"=>"Return Day",
@@ -82,6 +82,8 @@
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
+
+
                                 </div>
                                 <div class="row">
                                         @include("admin.html.form.input",[
@@ -337,6 +339,17 @@
                 </div>
         </div>
         </div>
+        <script>
+
+        document.getElementById("btn1").onclick = function () {
+        document.getElementById("content").style.display = 'none';
+        };
+
+        document.getElementById("btn2").onclick = function () {
+        document.getElementById("content").style.display = 'block';
+        };
+
+        </script>
 </section>
 
 @endsection
