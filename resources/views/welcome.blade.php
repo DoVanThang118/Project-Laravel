@@ -75,7 +75,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="input-field col s4" id="content" style="border: solid 1px; padding: 20px; background: #ddd;">
+                                    <div class="input-field col s4">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
                                   "title"=>"Return Day",
@@ -84,8 +84,7 @@
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
-                                    <input type="button" id="btn1" value="Ẩn"/>
-                                    <input type="button" id="btn2" value="Hiển Thị"/>
+
 
 
                                 </div>
@@ -343,17 +342,7 @@
                 </div>
         </div>
         </div>
-        <script language="javascript">
 
-            document.getElementById("btn1").onclick = function () {
-                document.getElementById("content").style.display = 'none';
-            };
-
-            document.getElementById("btn2").onclick = function () {
-                document.getElementById("content").style.display = 'block';
-            };
-
-        </script>
 </section>
 
 @endsection

@@ -51,13 +51,12 @@ class WelcomeController extends Controller
         $direction = $request->get("direction");
 
 
-        if ($takeofcity_id != $landingcity_id) {
+        try {
 
             if ($direction == 1) {
 
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
-
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
@@ -88,7 +87,6 @@ class WelcomeController extends Controller
                         "data" => $data,
                         "adults"=>$adults,
                         "data2"=>$data2
-
                     ])->with("success", "Success");
 
                 } else {
@@ -100,7 +98,6 @@ class WelcomeController extends Controller
                         $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight[$i]->id)
                             ->get();
-
                         $c=0;
                         foreach ($type as $t){
                             if($t->ticketinstock>=$adults){
@@ -125,7 +122,6 @@ class WelcomeController extends Controller
                     }
 
                 }
-
 
             }
 
@@ -179,46 +175,12 @@ class WelcomeController extends Controller
                     }
 
                 }
+
                 if(!isset($data2)){
-                    $data2=[];
-                }
-                if(!isset($data)){
-                    $data=[];
-                }
-                if (isset($data)||isset($data2)) {
-                    return view("flight-list", [
-                        "data" => $data,
-                        "data2"=>$data2,
-                        "adults"=>$adults
-                    ])->with("success", "Success");
-
-                } else {
-
-                    $flight = Flight::FlightAirStripFilter($asflight)
-                        ->whereDate("takeoftime",">=",now())
-                        ->orderBy("id", "desc")
-                        ->paginate(20);
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
                         ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
-
-                    for ($i = 0; $i < $flight->count(); $i++) {
-                        $type = TypeOfTicket::with("Flight")
-                            ->FlightFilter($flight[$i]->id)
-                            ->get();
-                        $c=0;
-                        foreach ($type as $t){
-                            if($t->ticketinstock>=$adults){
-                                $c++;
-                            }
-                        }
-                        if($c!=0){
-                            $data[]=$flight[$i];
-
-                        }
-
-                    }
                     for ($i = 0; $i < $flight2->count(); $i++) {
                         $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight2[$i]->id)
@@ -231,31 +193,47 @@ class WelcomeController extends Controller
                         }
                         if($c!=0){
                             $data2[]=$flight2[$i];
-
                         }
-
                     }
+                }
+
+                if(!isset($data)){
+                    $flight = Flight::FlightAirStripFilter($asflight)
+                        ->whereDate("takeoftime",">=",now())
+                        ->orderBy("id", "desc")
+                        ->paginate(20);
+                    for ($i = 0; $i < $flight->count(); $i++) {
+                        $type = TypeOfTicket::with("Flight")
+                            ->FlightFilter($flight[$i]->id)
+                            ->get();
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
+                                $c++;
+                            }
+                        }
+                        if($c!=0){
+                            $data[]=$flight[$i];
+                        }
+                    }
+
+                }
                     if(!isset($data)){
                         $data=[];
                     }
                     if(!isset($data2)){
                         $data2=[];
                     }
-                    if (isset($data)||isset($data2)) {
                         return view("flight-list", [
                             "data" => $data,
                             "data2"=>$data2,
                             "adults"=>$adults
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
-                    }
-                    else{
-                        return redirect()->back("error","Flight not found please find again");
-                    }
-
                 }
 
-            }
 
+        }catch (\Exception $e){
+            return redirect()->back("error","Flight not found please find again");
         }
 
     }

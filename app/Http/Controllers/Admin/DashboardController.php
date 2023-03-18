@@ -20,35 +20,35 @@ class DashboardController extends Controller
         $air = Airplane::orderBy("id","desc")
             ->paginate(20);
         $ticket=Ticket::all();
-        $airstrip = AirStrip::orderBy("id","desc")->paginate(20);
-        $cities= City::all();
+
         $flight=Flight::orderBy("id","desc")
             ->paginate(20);
-        for($i=0;$i<$flight->count();$i++){
-            $data[]=Ticket::leftJoin("typeoftickets","typeoftickets.id","=","tickets.typeofticket_id")
-                ->leftJoin("flights","flights.id","=","typeoftickets.flight_id")
-                ->where("flight_id",$flight[$i]->id)
-                ->select(["tickets.*","typeoftickets.name as typeofticket_name"])
-                ->get();
+        $ticketinstock=Ticket::where("order_id",null)->get();
+        $ticketsold=Ticket::where("order_id",">",0)->get();
 
-            $t=Ticket::leftJoin("typeoftickets","typeoftickets.id","=","tickets.typeofticket_id")
-                ->leftJoin("flights","flights.id","=","typeoftickets.flight_id")
-                ->where("flight_id",$flight[$i]->id)
-                ->where("order_id",null)
-                ->select(["tickets.*","typeoftickets.name as typeofticket_name"])
-                ->get();
-            $t->count();
-            $f[$i]=[$flight[$i],$t->count()];
-
-        }
+//        for($i=0;$i<$flight->count();$i++){
+//            $data[]=Ticket::leftJoin("typeoftickets","typeoftickets.id","=","tickets.typeofticket_id")
+//                ->leftJoin("flights","flights.id","=","typeoftickets.flight_id")
+//                ->where("flight_id",$flight[$i]->id)
+//                ->select(["tickets.*","typeoftickets.name as typeofticket_name"])
+//                ->get();
+//
+//            $t=Ticket::leftJoin("typeoftickets","typeoftickets.id","=","tickets.typeofticket_id")
+//                ->leftJoin("flights","flights.id","=","typeoftickets.flight_id")
+//                ->where("flight_id",$flight[$i]->id)
+//                ->where("order_id",null)
+//                ->select(["tickets.*","typeoftickets.name as typeofticket_name"])
+//                ->get();
+//            $t->count();
+//            $f[$i]=[$flight[$i],$t->count()];
+//        }
 //        dd($f);
 
 
-        $ticketinstock=Ticket::TicketInStock()->get();
-        $ticketsold=Ticket::where("order_id",">",0)->get();
+
         $order=Order::all();
         $revenue=0;
-        for ($i=0;$i<$ticketsold->count();$i++){
+        for ($i=0;$i<$order->count();$i++){
             $revenue+=$order[$i]->totalmoney;
         }
         $expected=0;
@@ -56,9 +56,7 @@ class DashboardController extends Controller
             $expected+=$ticketinstock[$i]->price;
         }
 
-        if(!isset($f)){
-            $f=[];
-        }
+
         return view("admin.dashboard.dashboardhome",[
             "air" => $air,
             "ticket"=>$ticket,
@@ -66,9 +64,8 @@ class DashboardController extends Controller
             "ticketsold"=>$ticketsold,
             "revenue"=>$revenue,
             "expected"=>$expected,
-            "flight"=>$flight,
-            "f"=>$f
-
+            "flight"=>$flight
+            
         ]);
     }
 
