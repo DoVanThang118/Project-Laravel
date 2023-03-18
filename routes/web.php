@@ -60,10 +60,6 @@ Route::get("/singapore",[App\Http\Controllers\ViewController::class, 'singapore'
 Route::middleware(["auth","admin"])->group(function (){
     Route::get("/admin/dashboard",[App\Http\Controllers\Admin\DashboardController::class,'dashboard'])->name('dashboard');
 
-    Route::get("/admin/member/user-all",[App\Http\Controllers\Admin\MemberController::class,"userall"]);
-    Route::get("/admin/member/user-add",[App\Http\Controllers\Admin\MemberController::class,"useradd"]);
-    Route::get("/admin/member/user-edit",[App\Http\Controllers\Admin\MemberController::class,"useredit"]);
-    Route::get("/admin/member/user-view",[App\Http\Controllers\Admin\MemberController::class,"userview"]);
 
     Route::get("/admin/discount/discount-all",[App\Http\Controllers\Admin\DiscountController::class,"discountall"]);
     Route::get("/admin/discount/discount-add",[App\Http\Controllers\Admin\DiscountController::class,"discountadd"]);

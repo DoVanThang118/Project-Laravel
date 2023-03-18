@@ -78,7 +78,6 @@
                                         <th>Landing time</th>
                                         <th>Description</th>
                                         <th>Total Ticket</th>
-                                        <th>In Stock</th>
                                         <th>Airplane Name</th>
                                         <th>Take of city</th>
                                         <th>Landing City</th>
@@ -94,13 +93,7 @@
                                             <td>{{$item->takeoftime}}</td>
                                             <td>{{$item->landingtime}}</td>
                                             <td>{{$item->description}}</td>
-                                            <td>{{$item->totalticket}}
-                                            </td>
-                                            <td> @for($i=0;$i<count($f);$i++)
-                                                    @if($f[$i][0]==$item)
-                                                        {{$f[$i][1]}}
-                                                    @endif
-                                                @endfor</td>
+                                            <td>{{$item->totalticket}}</td>
                                             <td>{{$item->Airplane->name}}</td>
                                             <td>{{$item->AirStrip->TakeofCity->name}}</td>
                                             <td>{{$item->AirStrip->LandingCity->name}}</td>
