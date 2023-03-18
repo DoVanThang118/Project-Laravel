@@ -2,6 +2,7 @@
 @section("title","Profile")
 @section('content')
     <section>
+
         <div class="db">
             <!--LEFT SECTION-->
             <div class="db-l">
