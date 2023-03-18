@@ -41,18 +41,10 @@ class AirStripController extends Controller
             "mimes" => "Vui lòng nhập đúng định dạng ảnh"
         ]);
 
-        $takeofcity_id = $request->get("takeofcity_id");
-        $landingcity_id = $request->get("landingcity_id");
-        if ($takeofcity_id != $landingcity_id) {
-            $allairstrip=AirStrip::all();
-            $c=0;
-            for($i=0;$allairstrip->count();$i++){
-                if($takeofcity_id==$allairstrip[$i]->takeofcity_id && $landingcity_id==$allairstrip[$i]->landingcity_id){
-                    $c++;
-                    break;
-                }
-            }
-            if($c==0){
+        try{
+
+            $takeofcity_id = $request->get("takeofcity_id");
+            $landingcity_id = $request->get("landingcity_id");
                 AirStrip::create([
                     "name" => $request->get("name"),
                     "takeofcity_id" => $takeofcity_id,
@@ -60,11 +52,14 @@ class AirStripController extends Controller
                 ]);
                 return redirect()->to("admin/airstrip/airstrip-all")->with("success", "Them airstrip thanh cong");
 
-            }
-
+        }catch (\Exception $e){
+            return redirect()->back();
         }
 
-        return redirect()->back();
+
+
+
+
 
     }
     public function airstripedit(AirStrip $airstrip)
