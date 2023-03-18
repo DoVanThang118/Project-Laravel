@@ -28,10 +28,12 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select name="direction" required>
-                                            <option value="1">One-way</option>
-                                            <option value="2">Round-trip</option>
+                                            <option id="btn1" value="1">One-way</option>
+                                            <option id="btn2" value="2">Round-trip</option>
                                         </select>
+
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s8">
@@ -73,7 +75,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="input-field col s4" id="content">
+                                    <div class="input-field col s4" id="content" style="border: solid 1px; padding: 20px; background: #ddd;">
                                         @include("admin.html.form.input",[
                                   "label"=>"",
                                   "title"=>"Return Day",
@@ -82,6 +84,8 @@
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
+                                    <input type="button" id="btn1" value="Ẩn"/>
+                                    <input type="button" id="btn2" value="Hiển Thị"/>
 
 
                                 </div>
@@ -339,15 +343,15 @@
                 </div>
         </div>
         </div>
-        <script>
+        <script language="javascript">
 
-        document.getElementById("btn1").onclick = function () {
-        document.getElementById("content").style.display = 'none';
-        };
+            document.getElementById("btn1").onclick = function () {
+                document.getElementById("content").style.display = 'none';
+            };
 
-        document.getElementById("btn2").onclick = function () {
-        document.getElementById("content").style.display = 'block';
-        };
+            document.getElementById("btn2").onclick = function () {
+                document.getElementById("content").style.display = 'block';
+            };
 
         </script>
 </section>

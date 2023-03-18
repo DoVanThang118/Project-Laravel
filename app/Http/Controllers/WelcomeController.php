@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailOrder;
 use App\Models\AirStrip;
 use App\Models\City;
 use App\Models\Flight;
@@ -11,6 +12,7 @@ use App\Models\TypeOfTicket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Pusher\Pusher;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -397,6 +399,7 @@ class WelcomeController extends Controller
             "user_id"=>$user,
 //            "discount_id"
         ]);
+//        Mail::to( 'mail')->send(new MailOrder($order));
 
         $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
@@ -482,7 +485,13 @@ class WelcomeController extends Controller
             $ticket[$i]->update([
                 "status"=>2,
             ]);
+            $type=TypeOfTicket::where("id",$ticket[$i]->typeofticket_id)->first();
+
+            $type->update([
+                "ticketinstock"=>$type->ticketinstock-1
+            ]);
         }
+
         session()->forget("cart");
         session()->forget('payment_info');
         return "Success pay: ".$order->totalmoney;
@@ -506,4 +515,6 @@ class WelcomeController extends Controller
 
         return view("cancelPay");
     }
+
+
 }
