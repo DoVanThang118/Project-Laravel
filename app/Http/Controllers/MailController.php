@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function payment(Order $order, User $user)
+    public function payment(Order $order, User $user,Ticket $ticket)
     {
         $data= [
             "order"=>$order,
-            "user"=>$user
+            "user"=>$user,
+            "ticket"=>$ticket
         ];
-        Mail::to( 'email')->send(new MailOrder($order));
+        Mail::to( 'email')->send(new MailOrder($data));
     }
 }
