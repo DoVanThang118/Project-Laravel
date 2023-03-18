@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PaymentOrderRequest;
 use App\Models\AirStrip;
 use App\Models\City;
 use App\Models\Flight;
@@ -52,44 +51,43 @@ class WelcomeController extends Controller
         if ($takeofcity_id != $landingcity_id) {
 
             if ($direction == 1) {
+
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
-
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
                     ->orderBy("id", "desc")
                     ->get();
 
-
                 for ($i = 0; $i < $flight->count(); $i++) {
                     $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight[$i]->id)
                         ->get();
-                    $c = 0;
-                    foreach ($type as $t) {
-                        if ($t->ticketinstock >= $adults) {
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
                             $c++;
                         }
                     }
-                    if ($c != 0) {
-                        $data[] = $flight[$i];
-
+                    if($c!=0){
+                        $data[]=$flight[$i];
                     }
 
                 }
-
+                $data2=[];
 
                 if (isset($data)) {
                     return view("flight-list", [
                         "data" => $data,
-                        "adults" => $adults
+                        "adults"=>$adults,
+                        "data2"=>$data2
+
                     ])->with("success", "Success");
 
                 } else {
-
                     $flight = Flight::FlightAirStripFilter($asflight)
-                        ->whereDate("takeoftime", ">=", now())
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->get();
                     for ($i = 0; $i < $flight->count(); $i++) {
@@ -97,25 +95,27 @@ class WelcomeController extends Controller
                             ->FlightFilter($flight[$i]->id)
                             ->get();
 
-                        $c = 0;
-                        foreach ($type as $t) {
-                            if ($t->ticketinstock >= $adults) {
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
                                 $c++;
                             }
                         }
-                        if ($c != 0) {
-                            $data[] = $flight[$i];
+                        if($c!=0){
+                            $data[]=$flight[$i];
                         }
 
                     }
-
+                    $data2=[];
                     if (isset($data)) {
                         return view("flight-list", [
                             "data" => $data,
-                            "adults" => $adults
+                            "adults"=>$adults,
+                            "data2"=>$data2
+
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
                     } else {
-                        return redirect()->back()->with("error", "Flight not found please find again");
+                        return redirect()->back()->with("error","Flight not found please find again");
                     }
 
                 }
@@ -127,10 +127,10 @@ class WelcomeController extends Controller
 
                 $asflight = AirStrip::AirStripFilter($landingcity_id, $takeofcity_id)
                     ->pluck("id")->toArray();
-                $landingcity_id2 = $takeofcity_id;
-                $takeofcity_id2 = $landingcity_id;
+                $landingcity_id2=$takeofcity_id;
+                $takeofcity_id2=$landingcity_id;
 
-                $asflight2 = AirStrip::AirStripFilter($landingcity_id2, $takeofcity_id2)
+                $asflight2=AirStrip::AirStripFilter($landingcity_id2, $takeofcity_id2)
                     ->pluck("id")->toArray();
 
                 $flight = Flight::FlightAirStripFilter($asflight)
@@ -146,15 +146,14 @@ class WelcomeController extends Controller
                     $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight[$i]->id)
                         ->get();
-                    $c = 0;
-                    foreach ($type as $t) {
-                        if ($t->ticketinstock >= $adults) {
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
                             $c++;
                         }
                     }
-                    if ($c != 0) {
-                        $data[] = $flight[$i];
-
+                    if($c!=0){
+                        $data[]=$flight[$i];
                     }
 
                 }
@@ -162,34 +161,39 @@ class WelcomeController extends Controller
                     $type = TypeOfTicket::with("Flight")
                         ->FlightFilter($flight2[$i]->id)
                         ->get();
-                    $c = 0;
-                    foreach ($type as $t) {
-                        if ($t->ticketinstock >= $adults) {
+                    $c=0;
+                    foreach ($type as $t){
+                        if($t->ticketinstock>=$adults){
                             $c++;
                         }
                     }
-                    if ($c != 0) {
-                        $data2[] = $flight2[$i];
+                    if($c!=0){
+                        $data2[]=$flight2[$i];
 
                     }
 
                 }
-
-                if (isset($data) || isset($data2)) {
+                if(!isset($data2)){
+                    $data2=[];
+                }
+                if(!isset($data)){
+                    $data=[];
+                }
+                if (isset($data)||isset($data2)) {
                     return view("flight-list", [
                         "data" => $data,
-                        "data2" => $data2,
-                        "adults" => $adults
+                        "data2"=>$data2,
+                        "adults"=>$adults
                     ])->with("success", "Success");
 
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
-                        ->whereDate("takeoftime", ">=", now())
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
-                        ->whereDate("takeoftime", ">=", now())
+                        ->whereDate("takeoftime",">=",now())
                         ->orderBy("id", "desc")
                         ->paginate(20);
 
@@ -197,14 +201,14 @@ class WelcomeController extends Controller
                         $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight[$i]->id)
                             ->get();
-                        $c = 0;
-                        foreach ($type as $t) {
-                            if ($t->ticketinstock >= $adults) {
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
                                 $c++;
                             }
                         }
-                        if ($c != 0) {
-                            $data[] = $flight[$i];
+                        if($c!=0){
+                            $data[]=$flight[$i];
 
                         }
 
@@ -213,26 +217,33 @@ class WelcomeController extends Controller
                         $type = TypeOfTicket::with("Flight")
                             ->FlightFilter($flight2[$i]->id)
                             ->get();
-                        $c = 0;
-                        foreach ($type as $t) {
-                            if ($t->ticketinstock >= $adults) {
+                        $c=0;
+                        foreach ($type as $t){
+                            if($t->ticketinstock>=$adults){
                                 $c++;
                             }
                         }
-                        if ($c != 0) {
-                            $data2[] = $flight2[$i];
+                        if($c!=0){
+                            $data2[]=$flight2[$i];
 
                         }
 
                     }
-                    if (isset($data) && isset($data2)) {
+                    if(!isset($data)){
+                        $data=[];
+                    }
+                    if(!isset($data2)){
+                        $data2=[];
+                    }
+                    if (isset($data)||isset($data2)) {
                         return view("flight-list", [
                             "data" => $data,
-                            "data2" => $data2,
-                            "adults" => $adults
+                            "data2"=>$data2,
+                            "adults"=>$adults
                         ])->with("success", "The entered time could not be found. We recommend some similar flights");
-                    } else {
-                        return redirect()->back("error", "Flight not found please find again");
+                    }
+                    else{
+                        return redirect()->back("error","Flight not found please find again");
                     }
 
                 }
@@ -243,124 +254,182 @@ class WelcomeController extends Controller
 
     }
 
-    public function addToCart(Flight $flight, Request $request)
+    public function addToCart(Flight $flight,Request $request)
     {
-        $t = $request->get("type");
-        $qty = $request->get("qty");
-        $type = TypeOfTicket::where("id", $t)->first();
+        $t=$request->get("type");
+        $qty=$request->get("qty");
+        $type=TypeOfTicket::where("id",$t)->first();
 
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        $flag = true;
-        foreach ($cart as $item) {
-            if ($item->id == $type->id) {
-                $flag = false;
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        $flag=true;
+        foreach ($cart as $item){
+            if($item->id==$type->id){
+                $flag=false;
                 break;
             }
         }
-        if ($flag) {
-            $type->buy_qty = $qty;
-            $cart[] = $type;
+        if($flag){
+            $type->buy_qty=$qty;
+            $cart[]=$type;
         }
-        session(["cart" => $cart]);
+        session(["cart"=>$cart]);
         return redirect()->back();
 
     }
 
-//    public function shopcart(){
-//        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-//        $can_checkout=true;
-//        foreach ($cart as $item){
-//
-//            if($can_checkout&&count($cart)==0){
-//                $can_checkout=false;
-//            }
-//        }
-//        return view("user.cart",[
-//            "cart"=>$cart,
-//            "can_checkout"=>$can_checkout
-//        ]);
-//    }
+    public function shopcart(){
 
-
-    public function checkout()
-    {
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        if (count($cart) == 0) {
-            return redirect()->to("/");
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart)==0){
+            return redirect()->to("/home");
         }
-        $grand_total = 0;
-        foreach ($cart as $item) {
-            $grand_total += $item->price * $item->buy_qty;
+        $grand_total=0;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
         }
-        $totalticket = 0;
-        foreach ($cart as $item) {
-            $totalticket += $item->buy_qty;
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
         }
-
-        return view("user.payment", [
-            "totalticket" => $totalticket,
-            "grand_total" => $grand_total,
-            "cart" => $cart
+        $can_checkout=true;
+        foreach ($cart as $item){
+            if($can_checkout&&$item->ticketinstock==0){
+                $can_checkout=false;
+            }
+        }
+        return view("user.cart",[
+            "totalticket"=>$totalticket,
+            "grand_total"=>$grand_total,
+            "cart"=>$cart
         ]);
     }
 
-    public function remove(TypeOfTicket $typeOfTicket)
-    {
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        foreach ($cart as $key => $item) {
-            if ($item->id == $typeOfTicket->id) {
+
+    public function checkout(){
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart)==0){
+            return redirect()->to("/");
+        }
+        $grand_total=0;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+        }
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
+            $buy_qty=$item->buy_qty;
+        }
+
+        return view("user.payment",[
+            "totalticket"=>$totalticket,
+            "grand_total"=>$grand_total,
+            "cart"=>$cart,
+            "buy_qty"=>$buy_qty
+        ]);
+    }
+
+    public function remove(TypeOfTicket $typeOfTicket){
+        $cart = session()->has("cart") && is_array(session("cart"))?session("cart"):[];
+        foreach ($cart as $key=>$item){
+            if($item->id == $typeOfTicket->id){
                 unset($cart[$key]);
                 break;
             }
         }
 
-        session(["cart" => $cart]);
-        $grand_total = 0;
-        $can_checkout = true;
-        foreach ($cart as $item) {
-            $grand_total += $item->price * $item->buy_qty;
-            if ($can_checkout && $item->ticketinstock == 0) {
-                $can_checkout = false;
+        session(["cart"=>$cart]);
+        $grand_total=0;
+        $can_checkout=true;
+        foreach ($cart as $item){
+            $grand_total+=$item->price*$item->buy_qty;
+            if($can_checkout&&$item->ticketinstock==0){
+                $can_checkout=false;
             }
         }
 
         return redirect()->back();
     }
 
-    public function placeOrder(Request $request, User $user)
-    {
-//        dd($request->order);
-        foreach ($request->order as $offset => $val) {
+    public function placeOrder(Request $request, User $user){
+
+
+        foreach ($request->payment_info as $offset => $val) {
             foreach ($val as $key => $item) {
                 if($val[$key] == null) {
-                    dd($key . $offset);
+                    session()->flash('error', [
+                        'offset' => $offset,
+                        'key' => $key,
+                        'message' => 'Vui lòng không để trống thông tin'
+                    ]);
+
+                    return redirect()->back();
+                } else {
+                    session()->flash('payment_info', $request->payment_info);
                 }
             }
         }
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
-        if (count($cart) == 0) return abort(404);
+
+        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
+        if(count($cart) == 0) return abort(404);
         $grand_total = 0;
         $can_checkout = true;
-        $totalticket = 0;
-        foreach ($cart as $item) {
-            $totalticket += $item->buy_qty;
+        $totalticket=0;
+        foreach($cart as $item){
+            $totalticket+=$item->buy_qty;
         }
-        foreach ($cart as $item) {
+        foreach ($cart as $item){
             $grand_total += $item->price * $item->buy_qty;
-            if ($can_checkout && $item->buy_qty == 0) {
-                $can_checkout = false;
+            if($can_checkout && $item->buy_qty ==0){
+                $can_checkout =  false;
             }
         }
-        if (!$can_checkout) return abort(404);
-        $user = auth()->id();
+        if(!$can_checkout) return abort(404);
+        $user=auth()->id();
         $order = Order::create([
-            "order_date" => now(),
-            "qty" => $totalticket,
-            "totalmoney" => $grand_total,
+            "order_date"=> now(),
+            "qty"=>$totalticket,
+            "totalmoney"=>$grand_total,
 //            "status",
-            "user_id" => $user,
+            "user_id"=>$user,
 //            "discount_id"
         ]);
+
+        $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
+
+        for($i=0;$i<$allticket->count();$i++){
+            $order = Order::where("id",$allticket[$i]->order_id)->get();
+            $order->delete();
+        }
+
+        for($i=0;$i<$allticket->count();$i++){
+            $allticket[$i]->update([
+                "status"=>0,
+                "name"=>null,
+                "birthday"=>null,
+                "cccd"=>null,
+                "phone"=>null,
+                "order_id"=>null
+            ]);
+        }
+
+        foreach($cart as $item){
+            $ticket[] = Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->where("status",0)->limit($item->buy_qty)->get();
+        }
+        $payment_info = $request->payment_info;
+
+        for($i=0;$i<count($ticket);$i++){
+            for($j=0;$j<$ticket[$i]->count();$j++){
+                $ticket[$i][$j]->update([
+                    "status"=>1,
+                    "name"=>$payment_info[$j]['name'],
+                    "birthday"=>$payment_info[$j]['birthday'],
+                    "cccd"=>$payment_info[$j]['cccd'],
+                    "phone"=>$payment_info[$j]['phone'],
+                    "order_id"=>$order->id,
+                    "expiredtime"=>now()->addHours(5),
+                ]);
+            }
+        }
         return $this->processTransaction($order);
     }
 
@@ -374,21 +443,20 @@ class WelcomeController extends Controller
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
-                "return_url" => route('successTransaction', ['order' => $order->id]),
-                "cancel_url" => route('cancelTransaction', ['order' => $order->id]),
+                "return_url" => route('successTransaction',['order'=>$order->id]),
+                "cancel_url" => route('cancelTransaction',['order'=>$order->id]),
             ],
             "purchase_units" => [
                 0 => [
                     "amount" => [
                         "currency_code" => "USD",
-                        "value" => number_format($order->totalmoney, 2, ".", "")
+                        "value" => number_format($order->totalmoney,2,".","")
                     ]
                 ]
             ]
         ]);
 
         if (isset($response['id']) && $response['id'] != null) {
-
             // redirect to approve href
             foreach ($response['links'] as $links) {
                 if ($links['rel'] == 'approve') {
@@ -404,17 +472,36 @@ class WelcomeController extends Controller
     }
 
 
-    public function successTransaction(Order $order)
-    {
-        $cart = session()->has("cart") && is_array(session("cart")) ? session("cart") : [];
+    public function successTransaction(Order $order){
+        $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
+        for($i=0;$i<$ticket->count();$i++){
+            $ticket[$i]->update([
+                "status"=>2,
+            ]);
+        }
+        session()->forget("cart");
+        session()->forget('payment_info');
+        return "Success pay: ".$order->totalmoney;
 
-
-        return "Success pay: " . $order->totalmoney;
-        // chuyen trang thai da thanh toan
     }
 
-    public function cancelTransaction(Order $order)
-    {
+    public function cancelTransaction(Order $order){
+        $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
+        for($i=0;$i<$ticket->count();$i++){
+            $ticket[$i]->update([
+                "status"=>0,
+                "name"=>null,
+                "birthday"=>null,
+                "cccd"=>null,
+                "phone"=>null,
+                "order_id"=>null,
+                "expiredtime"=>null,
+
+            ]);
+        }
+
         return "Cancel";
     }
+
+
 }

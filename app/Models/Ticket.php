@@ -13,6 +13,11 @@ class Ticket extends Model
         "status",
         "price",
         "typeofticket_id",
+        "name",
+        "birthday",
+        "cccd",
+        "expiredtime",
+        "phone",
         "order_id",
         "seat_id"
 
@@ -52,7 +57,7 @@ class Ticket extends Model
     }
     public function scopeTicketInStock($query){
 
-            return $query->where("order_id",null);
+        return $query->where("order_id",null);
 
     }
     public function scopeTicketTypeFilter($query,$type){

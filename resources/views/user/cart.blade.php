@@ -30,9 +30,7 @@
                                 <td>{{$item->buy_qty}}</td>
                                 <td>
                                     <a href="{{url("/remove-cart",["typeOfTicket"=>$item->id])}}">Delete</a>
-
                                 </td>
-
                             </tr>
                         @empty
                             <tr>

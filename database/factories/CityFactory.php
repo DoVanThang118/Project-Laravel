@@ -14,7 +14,7 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            "name"=>"PHUQUOC",
+            "name"=>"VINH",
 
             "national"=>"VN",
 

@@ -145,7 +145,7 @@
                                 </div>
                             </li>
                             <li class="admi-menu">
-                                <a href="{{url("/all-booking")}}" class="mm-arr">All booking</a>
+                                <a href="{{url("/user/cart")}}" class="mm-arr">All booking</a>
                             </li>
                             <li>
                                 <a href="{{url("/profile")}}">Profile</a>
