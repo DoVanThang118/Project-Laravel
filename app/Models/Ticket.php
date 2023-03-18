@@ -13,6 +13,11 @@ class Ticket extends Model
         "status",
         "price",
         "typeofticket_id",
+        "name",
+        "birthday",
+        "cccd",
+        "expiredtime",
+        "phone",
         "order_id",
         "seat_id"
 

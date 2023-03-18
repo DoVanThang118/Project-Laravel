@@ -317,12 +317,14 @@ class WelcomeController extends Controller
         $totalticket=0;
         foreach($cart as $item){
             $totalticket+=$item->buy_qty;
+            $buy_qty=$item->buy_qty;
         }
 
         return view("user.payment",[
             "totalticket"=>$totalticket,
             "grand_total"=>$grand_total,
-            "cart"=>$cart
+            "cart"=>$cart,
+            "buy_qty"=>$buy_qty
         ]);
     }
 
@@ -350,6 +352,23 @@ class WelcomeController extends Controller
 
     public function placeOrder(Request $request, User $user){
 
+
+        foreach ($request->payment_info as $offset => $val) {
+            foreach ($val as $key => $item) {
+                if($val[$key] == null) {
+                    session()->flash('error', [
+                        'offset' => $offset,
+                        'key' => $key,
+                        'message' => 'Vui lòng không để trống thông tin'
+                    ]);
+
+                    return redirect()->back();
+                } else {
+                    session()->flash('payment_info', $request->payment_info);
+                }
+            }
+        }
+
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         if(count($cart) == 0) return abort(404);
         $grand_total = 0;
@@ -374,10 +393,43 @@ class WelcomeController extends Controller
             "user_id"=>$user,
 //            "discount_id"
         ]);
-        foreach($cart as $item){
-            $ticket[] = Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->limit($item->buy_qty)->get();
+
+        $allticket=Ticket::where("expiredtime","<=",now())->get();
+
+        for($i=0;$i<$allticket->count();$i++){
+            $order = Order::where("id",$allticket[$i]->order_id)->get();
+            $order->delete();
         }
 
+        for($i=0;$i<$allticket->count();$i++){
+            $allticket[$i]->update([
+                "status"=>0,
+                "name"=>null,
+                "birthday"=>null,
+                "cccd"=>null,
+                "phone"=>null,
+                "order_id"=>null
+            ]);
+        }
+
+        foreach($cart as $item){
+            $ticket[] = Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->where("status",0)->limit($item->buy_qty)->get();
+        }
+        $payment_info = $request->payment_info;
+
+        for($i=0;$i<count($ticket);$i++){
+            for($j=0;$j<$ticket[$i]->count();$j++){
+                $ticket[$i][$j]->update([
+                    "status"=>1,
+                    "name"=>$payment_info[$j]['name'],
+                    "birthday"=>$payment_info[$j]['birthday'],
+                    "cccd"=>$payment_info[$j]['cccd'],
+                    "phone"=>$payment_info[$j]['phone'],
+                    "order_id"=>$order->id,
+                    "expiredtime"=>now()->addHours(5),
+                ]);
+            }
+        }
         return $this->processTransaction($order);
     }
 
@@ -405,7 +457,6 @@ class WelcomeController extends Controller
         ]);
 
         if (isset($response['id']) && $response['id'] != null) {
-
             // redirect to approve href
             foreach ($response['links'] as $links) {
                 if ($links['rel'] == 'approve') {
@@ -422,15 +473,31 @@ class WelcomeController extends Controller
 
 
     public function successTransaction(Order $order){
-        $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
-
-
-
+        $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
+        for($i=0;$i<$ticket->count();$i++){
+            $ticket[$i]->update([
+                "status"=>2
+            ]);
+        }
+        session()->forget("cart");
+        session()->forget('payment_info');
         return "Success pay: ".$order->totalmoney;
-        // chuyen trang thai da thanh toan
+
     }
 
     public function cancelTransaction(Order $order){
+        $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
+        for($i=0;$i<$ticket->count();$i++){
+            $ticket[$i]->update([
+                "status"=>0,
+                "name"=>null,
+                "birthday"=>null,
+                "cccd"=>null,
+                "phone"=>null,
+                "order_id"=>null
+            ]);
+        }
+
         return "Cancel";
     }
 
