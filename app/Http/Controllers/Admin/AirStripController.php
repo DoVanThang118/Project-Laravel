@@ -32,7 +32,7 @@ class AirStripController extends Controller
         $request->validate([
             "name" => "required|string|min:3",
             "takeofcity_id" => "required|numeric|min:1",
-            "landingcity_id" => "required|numeric|min:1"
+            "landingcity_id" => "required|numeric|different:takeofcity_id|min:1"
 
         ], [
             "required" => "Vui lòng nhập thông tin",
@@ -44,12 +44,24 @@ class AirStripController extends Controller
         $takeofcity_id = $request->get("takeofcity_id");
         $landingcity_id = $request->get("landingcity_id");
         if ($takeofcity_id != $landingcity_id) {
-            AirStrip::create([
-                "name" => $request->get("name"),
-                "takeofcity_id" => $takeofcity_id,
-                "landingcity_id" => $landingcity_id
-            ]);
-            return redirect()->to("admin/airstrip/airstrip-all")->with("success", "Them airstrip thanh cong");
+            $allairstrip=AirStrip::all();
+            $c=0;
+            for($i=0;$allairstrip->count();$i++){
+                if($takeofcity_id==$allairstrip[$i]->takeofcity_id && $landingcity_id==$allairstrip[$i]->landingcity_id){
+                    $c++;
+                    break;
+                }
+            }
+            if($c==0){
+                AirStrip::create([
+                    "name" => $request->get("name"),
+                    "takeofcity_id" => $takeofcity_id,
+                    "landingcity_id" => $landingcity_id
+                ]);
+                return redirect()->to("admin/airstrip/airstrip-all")->with("success", "Them airstrip thanh cong");
+
+            }
+
         }
 
         return redirect()->back();
