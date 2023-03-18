@@ -32,6 +32,7 @@ Route::post("/checkout",[App\Http\Controllers\WelcomeController::class,"placeOrd
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
+Route::get('/detail-order/{order}', [App\Http\Controllers\ProfileController::class, 'detailorder'])->name('detail-order');
 Route::post('/profile-edit', [App\Http\Controllers\ProfileController::class, 'update']);
 
 

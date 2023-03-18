@@ -90,7 +90,64 @@
                         </div>
                     </div>
                 </div>
+
+
+                @forelse($order as $od)
+                <div class="db-2-com db-2-main">
+                    <h4>My Order No {{$od->id}}</h4>
+                    <div class="db-2-main-com db-2-main-com-table">
+                        <table class="responsive-table">
+                            <tbody>
+                            <tr>
+                                <td>Date</td>
+                                <td>:</td>
+                                <td>{{$od->order_date}}</td>
+                            </tr>
+                            <tr>
+                                <td>Qty Ticket</td>
+                                <td>:</td>
+                                    <td>{{$od->qty}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Money</td>
+                                <td>:</td>
+                                    <td>{{$od->totalmoney}}</td>
+                            </tr>
+{{--                            <tr>--}}
+{{--                                <td>Detail Ticket</td>--}}
+{{--                            </tr>--}}
+{{--                            @for($i=0;$i<$od->count();$i++)--}}
+{{--                            <tr>--}}
+{{--                                <td>{{$od->Tickets[5]->TypeOfTicket->name}}</td>--}}
+{{--                                <td></td>--}}
+{{--                                <td></td>--}}
+{{--                            </tr>--}}
+{{--                            @endfor--}}
+{{--                            <tr>--}}
+{{--                                <td>Phone</td>--}}
+{{--                                <td>:</td>--}}
+{{--                                <td></td>--}}
+{{--                            </tr>--}}
+
+                            </tbody>
+                        </table>
+                        <div class="db-mak-pay-bot">
+                            <a href="{{url('/detail-order',["order"=>$od->id])}}" class="waves-effect waves-light btn-large">Detail Order No {{$od->id}}</a>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                    <h3>Not found yours order</h3>
+
+                @endforelse
+
+
+
             </div>
+
+
+
+
             <!--RIGHT SECTION-->
             <div class="db-3">
                 <h4>Notifications</h4>
