@@ -155,10 +155,12 @@
             <h4>Notifications</h4>
             <ul>
                 <li>
-                    <a href="#!"> <img src="/assets/images/icon/dbr1.jpg" alt="" />
-                        <h5>50% Discount Offer</h5>
-                        <p>All the Lorem Ipsum generators on the</p>
-                    </a>
+                    @if(session()->has("error"))
+                        <p>Update Ticket Success</p>
+                    @endif
+                    @if(session()->has("success"))
+                        <p>Update Ticket Failed</p>
+                    @endif
                 </li>
 
             </ul>

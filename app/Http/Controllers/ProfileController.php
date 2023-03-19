@@ -77,11 +77,14 @@ class ProfileController extends Controller
                 ]);
                 $user= auth()->user();
                 $order=Order::where("id",$ticket->order_id)->first();
-                return view('user.ticket-edit',[
-                    "user"=>$user,
-                    "order"=>$order,
-                    "ticket"=>$ticket
-                ])->with("success","DONE");
+
+//                return view('user.ticket-edit',[
+//                    "user"=>$user,
+//                    "order"=>$order,
+//                    "ticket"=>$ticket
+//                ])->with("success","DONE");
+
+                return redirect()->back()->with("success","SUCCESS");
 
             }else{
                 return redirect()->back()->with("error","FAILED");

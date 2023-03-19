@@ -90,8 +90,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="db-2-com db-2-main">
                     <h4>Ticket No {{$ticket->id}}</h4>
                     <div class="db-2-main-com db-2-main-com-table">
@@ -148,11 +146,7 @@
                                     "value"=>$ticket->cccd ])
                                 </td>
 
-
                             </tr>
-
-
-
 
                             </tbody>
                         </table>
@@ -160,6 +154,7 @@
                             <button type="submit" class="waves-effect waves-light btn-large">Edit Ticket</button>
                         </div>
                         </form>
+
                         @if(session()->has("error"))
                             <div class="alert alert-warning alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -181,20 +176,14 @@
                     </div>
                 </div>
 
-
-
-
             </div>
-
-
-
 
             <!--RIGHT SECTION-->
             <div class="db-3">
                 <h4>Notifications</h4>
                 <ul>
                     <li>
-                        @include("admin.html.notification")
+
                     </li>
 
                 </ul>
