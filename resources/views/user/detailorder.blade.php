@@ -119,7 +119,16 @@
                             <tr>
                                 <td>Ticket No {{$i+1}}</td>
                                 <td>:</td>
-                                <td>Price {{$ticket[$i]->price}} / Flight From {{$ticket[$i]->TypeOfTicket->Flight->AirStrip->TakeofCity->name}} To {{$ticket[$i]->TypeOfTicket->Flight->AirStrip->LandingCity->name}} / Type {{$ticket[$i]->TypeOfTicket->name}} / Takeoff Time: {{$ticket[$i]->TypeOfTicket->Flight->takeoftime}} / Landing Time: {{$ticket[$i]->TypeOfTicket->Flight->landingtime}}   </td>
+                                <td>Price {{$ticket[$i]->price}} / Flight From {{$ticket[$i]->TypeOfTicket->Flight->AirStrip->TakeofCity->name}} To {{$ticket[$i]->TypeOfTicket->Flight->AirStrip->LandingCity->name}} Type {{$ticket[$i]->TypeOfTicket->name}}
+                                    <p>Takeoff Time: {{$ticket[$i]->TypeOfTicket->Flight->takeoftime}} / Landing Time: {{$ticket[$i]->TypeOfTicket->Flight->landingtime}}</p>
+                                <p>Name: {{$ticket[$i]->name}}</p>
+                                <p>CCCD: {{$ticket[$i]->cccd}}</p>
+                                <p>Phone: {{$ticket[$i]->phone}}</p>
+                                <p>Birthday: {{$ticket[$i]->birthday}}</p>
+
+                                </td>
+                                <td><a href="{{url("/ticket-edit",["ticket"=>$ticket[$i]->id])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                </td>
                             </tr>
 
                         @endfor

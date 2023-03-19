@@ -43,6 +43,8 @@
                         </tbody>
 
                     </table>
+
+
 {{--                    <div class="col-md-6">--}}
 {{--                        <h5>Discount</h5>--}}
 {{--                        <input style="height: 30px" type="text"  class="validate" name="discount" required>--}}

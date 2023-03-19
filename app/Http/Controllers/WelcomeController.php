@@ -468,7 +468,6 @@ class WelcomeController extends Controller
                 "ticketinstock"=>$type->ticketinstock-1
             ]);
         }
-
         session()->forget("cart");
         session()->forget('payment_info');
         return "Success pay: ".$order->totalmoney;

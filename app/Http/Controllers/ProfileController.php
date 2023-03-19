@@ -13,7 +13,7 @@ class ProfileController extends Controller
     {
 
         $user= auth()->user();
-        $order=Order::where("user_id",$user->id)->get();
+        $order=Order::where("user_id",$user->id)->orderBy("id","desc")->get();
 
 //        dd($order);
 //        dd($user);
@@ -30,7 +30,6 @@ class ProfileController extends Controller
     public function detailorder(Order $order){
         $user= auth()->user();
         $ticket=Ticket::where("order_id",$order->id)->get();
-
 //        dd($order);
 //        dd($user);
         return view('user.detailorder',[
@@ -39,5 +38,51 @@ class ProfileController extends Controller
             "ticket"=>$ticket
         ]);
     }
+    public function ticketedit(Ticket $ticket){
+
+        $user= auth()->user();
+
+        return view('user.ticket-edit',[
+            "user"=>$user,
+            "ticket"=>$ticket
+        ]);
+
+    }
+    public function ticketupdate(Request $request,Ticket $ticket){
+        $request->validate([
+            "name"=>"required|string|min:3",
+            "phone"=>"required|string|min:3",
+            "cccd"=>"required|string|min:3",
+            "birthday"=>"required",
+
+        ],[
+            "required"=>"Vui lòng nhập thông tin",
+            "string"=> "Phải nhập vào là một chuỗi văn bản",
+            "min"=> "Phải nhập :attribute  tối thiểu :min",
+            "mimes"=>"Vui lòng nhập đúng định dạng ảnh"
+        ]);
+        try{
+            $ticket->update([
+                "name"=>$request->get("name"),
+                "phone"=>$request->get("phone"),
+                "cccd"=>$request->get("cccd"),
+                "birthday"=>$request->get("birthday"),
+
+            ]);
+            $user= auth()->user();
+            $order=Order::where("id",$ticket->order_id)->first();
+            return view('user.ticket-edit',[
+                "user"=>$user,
+                "order"=>$order,
+                "ticket"=>$ticket
+            ])->with("success","DONE");
+
+        }catch (\Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
+
+    }
+
+
 
 }
