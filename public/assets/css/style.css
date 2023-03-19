@@ -3581,12 +3581,13 @@
      text-align: center;
 }
  .hot-list-p3-1 {
-     color: #979797;
-     font-weight: 400;
+     color: #343c42;
+     font-weight: 600;
      font-size: 25px;
+     font-family: 'Quicksand', sans-serif;
 }
  .hot-list-p3-2 {
-     font-size: 32px;
+     font-size: 25px;
      font-weight: 600;
      color: #f4364f;
      padding: 10px 0px;
@@ -7878,4 +7879,5 @@
  .trav-list-bod p{
      font-size: 13px;
      line-height: 20px;
+     margin-bottom: 20px;
 }
