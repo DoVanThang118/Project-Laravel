@@ -262,10 +262,9 @@ class WelcomeController extends Controller
     }
 
     public function shopcart(){
-
         $cart=session()->has("cart")&&is_array(session("cart"))?session("cart"):[];
         if(count($cart)==0){
-            return redirect()->to("/home");
+            return redirect()->to("/");
         }
         $grand_total=0;
         foreach ($cart as $item){
@@ -336,7 +335,6 @@ class WelcomeController extends Controller
 
     public function placeOrder(Request $request, User $user){
 
-
         foreach ($request->payment_info as $offset => $val) {
             foreach ($val as $key => $item) {
                 if($val[$key] == null) {
@@ -368,21 +366,13 @@ class WelcomeController extends Controller
             }
         }
         if(!$can_checkout) return abort(404);
-        $user=auth()->id();
-        $order = Order::create([
-            "order_date"=> now(),
-            "qty"=>$totalticket,
-            "totalmoney"=>$grand_total,
-//            "status",
-            "user_id"=>$user,
-//            "discount_id"
-        ]);
+
 //        Mail::to( 'mail')->send(new MailOrder($order));
 
         $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
         for($i=0;$i<$allticket->count();$i++){
-            $order = Order::where("id",$allticket[$i]->order_id)->get();
+            $order = Order::where("id",$allticket[$i]->order_id)->first();
             $order->delete();
         }
 
@@ -396,6 +386,15 @@ class WelcomeController extends Controller
                 "order_id"=>null
             ]);
         }
+        $user=auth()->id();
+        $order = Order::create([
+            "order_date"=> now(),
+            "qty"=>$totalticket,
+            "totalmoney"=>$grand_total,
+//            "status",
+            "user_id"=>$user,
+//            "discount_id"
+        ]);
 
         foreach($cart as $item){
             $ticket[] = Ticket::with("TypeOfTicket")->where("typeofticket_id",$item->id)->where("status",0)->limit($item->buy_qty)->get();
@@ -487,9 +486,9 @@ class WelcomeController extends Controller
                 "phone"=>null,
                 "order_id"=>null,
                 "expiredtime"=>null,
-
             ]);
         }
+        $order->delete();
 
         return view("cancelPay");
     }

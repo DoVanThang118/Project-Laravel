@@ -86,7 +86,7 @@
                             <!--LISTINGS-->
                             <div class="row">
                                 <!--LISTINGS START-->
-                                @foreach($data as $item)
+                                @forelse($data as $item)
                                     <div class="hot-page2-alp-r-list">
                                             <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                                 <a href="javascript:void(0);">
@@ -172,15 +172,14 @@
                                             {{--                                        </div>--}}
                                             {{--                                    </div>--}}
                                         </div>
+                                @empty
+                                    <h4 style="margin-left: 20px;">Not found flight</h4>
 
-                                @endforeach
+                                @endforelse
                                 <!--END LISTINGS-->
-                                @if(isset($data2))
-                                    <h1>Return</h1>
-
-                                    @foreach($data2 as $item)
 
 
+                                    @forelse($data2 as $item)
 
 
                                             <div class="hot-page2-alp-r-list">
@@ -266,9 +265,11 @@
                                                 {{--                                        </div>--}}
                                                 {{--                                    </div>--}}
                                             </div>
+                                @empty
+                                        <h4 style="margin-left: 30px;">Not found flight return</h4>
 
-                                    @endforeach
-                                @endif
+                                       @endforelse
+
 
                             </div>
                         </div>
