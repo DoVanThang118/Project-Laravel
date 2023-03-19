@@ -28,7 +28,7 @@ class MailOrder extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.neworder')
+        return $this->view('email.neworder')
             ->with([
                 'orderName' => $this->order->name,
                 'orderTotalmoney' => $this->order->totalmoney,

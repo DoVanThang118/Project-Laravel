@@ -367,7 +367,6 @@ class WelcomeController extends Controller
         }
         if(!$can_checkout) return abort(404);
 
-//        Mail::to( 'mail')->send(new MailOrder($order));
 
         $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
@@ -414,6 +413,7 @@ class WelcomeController extends Controller
                 ]);
             }
         }
+        Mail::to($request->user())->send(new MailOrder($order));
         return $this->processTransaction($order);
     }
 
