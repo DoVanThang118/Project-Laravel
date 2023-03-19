@@ -21,6 +21,21 @@ class DashboardController extends Controller
             ->paginate(20);
         $ticket=Ticket::all();
 
+        $order=Order::all();
+
+        for($j=0;$j<$order->count();$j++) {
+            $c=0;
+            for ($i = 0; $i < $ticket->count(); $i++) {
+                if($order[$j]->id==$ticket[$i]->order_id){
+                    $c++;
+                }
+            }
+            if($c==0){
+                $order[$j]->delete();
+            }
+        }
+
+
         $flight=Flight::orderBy("id","desc")
             ->paginate(20);
         $ticketinstock=Ticket::where("order_id",null)->get();
@@ -65,7 +80,7 @@ class DashboardController extends Controller
             "revenue"=>$revenue,
             "expected"=>$expected,
             "flight"=>$flight
-            
+
         ]);
     }
 
