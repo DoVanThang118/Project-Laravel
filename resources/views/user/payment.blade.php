@@ -6,7 +6,7 @@
             <h4>Enter Customers Details </h4>
             <div class="db-2-main-com db2-form-pay db2-form-com">
                 <div class="db-2-main-com db2-form-pay db2-form-com">
-                    <form style="background-color: #fafafa"  class="col s12"  method="post" action="{{route('placeOrder')}}">
+                    <form style="background-color: #fafafa"  class="col s12"  method="post" action="{{url('/checkout')}}">
                         @csrf
                         @for($i=0;$i<$buy_qty;$i++)
                         <p></p>
