@@ -160,6 +160,21 @@
                             <button type="submit" class="waves-effect waves-light btn-large">Edit Ticket</button>
                         </div>
                         </form>
+                        @if(session()->has("error"))
+                            <div class="alert alert-warning alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
+                                {{session("error")}}
+                            </div>
+                        @endif
+                        @if(session()->has("success"))
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                                {{session("success")}}
+
+                            </div>
+                        @endif
                         {{--                    <div class="db-mak-pay-bot">--}}
                         {{--                        <a href="{{url('/detail-order')}}" class="waves-effect waves-light btn-large">Detail Order No {{$od->id}}</a>--}}
                         {{--                    </div>--}}

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Flight;
 use App\Models\Order;
 use App\Models\Ticket;
+use App\Models\TypeOfTicket;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -62,20 +64,28 @@ class ProfileController extends Controller
             "mimes"=>"Vui lòng nhập đúng định dạng ảnh"
         ]);
         try{
-            $ticket->update([
-                "name"=>$request->get("name"),
-                "phone"=>$request->get("phone"),
-                "cccd"=>$request->get("cccd"),
-                "birthday"=>$request->get("birthday"),
+            $type=TypeOfTicket::where("id",$ticket->typeofticket_id)->first();
+            $flight=Flight::where("id",$type->flight_id)->first();
+//            dd(now()->addDays(2));
+            if($flight->takeoftime>=now()->addDays(2)){
+                $ticket->update([
+                    "name"=>$request->get("name"),
+                    "phone"=>$request->get("phone"),
+                    "cccd"=>$request->get("cccd"),
+                    "birthday"=>$request->get("birthday"),
 
-            ]);
-            $user= auth()->user();
-            $order=Order::where("id",$ticket->order_id)->first();
-            return view('user.ticket-edit',[
-                "user"=>$user,
-                "order"=>$order,
-                "ticket"=>$ticket
-            ])->with("success","DONE");
+                ]);
+                $user= auth()->user();
+                $order=Order::where("id",$ticket->order_id)->first();
+                return view('user.ticket-edit',[
+                    "user"=>$user,
+                    "order"=>$order,
+                    "ticket"=>$ticket
+                ])->with("success","DONE");
+
+            }else{
+                return redirect()->back()->with("error","FAILED");
+            }
 
         }catch (\Exception $e){
             return redirect()->back()->with("error",$e->getMessage());

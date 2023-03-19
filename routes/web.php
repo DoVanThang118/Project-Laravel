@@ -19,23 +19,25 @@ Auth::routes();
 
 Route::middleware('auth')->group(function (){
     Route::post("/add_to_cart/{flight}",[App\Http\Controllers\WelcomeController::class, 'addToCart'])->name("add_to_cart");
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+    Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
+    Route::get('/detail-order/{order}', [App\Http\Controllers\ProfileController::class, 'detailorder'])->name('detail-order');
+    Route::get('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketedit'])->name('ticket-edit');
+    Route::post('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketupdate'])->name('ticket-edit');
+    Route::post('/profile-edit', [App\Http\Controllers\ProfileController::class, 'update']);
+    Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
+    Route::get("/user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
+    Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
+    Route::post("/checkout",[App\Http\Controllers\WelcomeController::class,"placeOrder"]);
+
 });
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
 Route::get('/flightList', [App\Http\Controllers\WelcomeController::class, 'filter']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
-Route::get("/user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
-Route::get('/checkout', [App\Http\Controllers\WelcomeController::class, 'checkout']);
-Route::post("/checkout",[App\Http\Controllers\WelcomeController::class,"placeOrder"]);
 
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
-Route::get('/detail-order/{order}', [App\Http\Controllers\ProfileController::class, 'detailorder'])->name('detail-order');
-Route::get('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketedit'])->name('ticket-edit');
-Route::post('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketupdate'])->name('ticket-edit');
-Route::post('/profile-edit', [App\Http\Controllers\ProfileController::class, 'update']);
+
 
 
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
