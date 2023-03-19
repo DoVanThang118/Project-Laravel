@@ -87,7 +87,10 @@
                         </table>
                         <div class="db-mak-pay-bot">
                             <a href="{{url('/profile-edit')}}" class="waves-effect waves-light btn-large">Edit my profile</a>
+                            <a style="margin-left: 30px" href="{{url("/profile")}}" class="waves-effect waves-light btn-large">Back To My Order</a>
+
                         </div>
+
                     </div>
                 </div>
                 <div class="db-2-com db-2-main">
@@ -150,10 +153,13 @@
 
                             </tbody>
                         </table>
+
                         <div class="db-mak-pay-bot">
                             <button type="submit" class="waves-effect waves-light btn-large">Edit Ticket</button>
                         </div>
+
                         </form>
+
 
                         @if(session()->has("error"))
                             <div class="alert alert-warning alert-dismissible">

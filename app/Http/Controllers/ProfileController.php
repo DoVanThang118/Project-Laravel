@@ -77,7 +77,7 @@ class ProfileController extends Controller
                 ]);
                 $user= auth()->user();
                 $order=Order::where("id",$ticket->order_id)->first();
-
+//
 //                return view('user.ticket-edit',[
 //                    "user"=>$user,
 //                    "order"=>$order,
