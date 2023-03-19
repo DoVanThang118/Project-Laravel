@@ -470,7 +470,17 @@ class WelcomeController extends Controller
         }
         session()->forget("cart");
         session()->forget('payment_info');
-        return "Success pay: ".$order->totalmoney;
+        $mes="Payment success! Order No ".$order->id;
+        $user= auth()->user();
+        $order=Order::where("user_id",$user->id)->orderBy("id","desc")->get();
+
+//        dd($order);
+//        dd($user);
+        return view('user.profile',[
+            "user"=>$user,
+            "order"=>$order,
+            "mes"=>$mes
+        ]);
 
     }
 

@@ -7,6 +7,7 @@
             <!--LEFT SECTION-->
             <div class="db-l">
                 <div class="db-l-1">
+
                     <ul>
                         @if($user->thumbnail == null)
                             <li>
@@ -36,6 +37,9 @@
             <!--CENTER SECTION-->
             <div class="db-2">
                 <div class="db-2-com db-2-main">
+                    @if(isset($mes))
+                        <h3 style="text-align: center">{{$mes}}</h3>
+                    @endif
                     <h4>My Profile</h4>
                     <div class="db-2-main-com db-2-main-com-table">
                         <table class="responsive-table">
