@@ -53,6 +53,33 @@ class WelcomeController extends Controller
 
 
         try {
+            $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
+
+            if(!isset($allticket)){
+                for($i=0;$i<$allticket->count();$i++){
+                    $orderdelete[] = Order::where("id",$allticket[$i]->order_id)->first();
+                    $type[]=TypeOfTicket::where("id",$allticket[$i]->typeofticket_id)->first();
+                }
+
+                for($i=0;$i<$allticket->count();$i++){
+                    $allticket[$i]->update([
+                        "status"=>0,
+                        "name"=>null,
+                        "birthday"=>null,
+                        "cccd"=>null,
+                        "phone"=>null,
+                        "order_id"=>null
+                    ]);
+                }
+                for($i=0;$i<count($orderdelete);$i++){
+                    $orderdelete[$i]->delete();
+                }
+                for($i=0;$i<count($type);$i++){
+                    $type[$i]->update([
+                        "ticketinstock"=>$type[$i]->ticketinstock+1
+                    ]);
+                }
+            }
 
             if ($direction == 1) {
 
@@ -320,8 +347,6 @@ class WelcomeController extends Controller
                 break;
             }
         }
-
-        session(["cart"=>$cart]);
         $grand_total=0;
         $can_checkout=true;
         foreach ($cart as $item){
@@ -330,7 +355,7 @@ class WelcomeController extends Controller
                 $can_checkout=false;
             }
         }
-
+        session(["cart"=>$cart]);
         return redirect()->back();
     }
 
@@ -368,12 +393,12 @@ class WelcomeController extends Controller
         }
         if(!$can_checkout) return abort(404);
 
-
         $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
         if(!isset($allticket)){
             for($i=0;$i<$allticket->count();$i++){
                 $orderdelete[] = Order::where("id",$allticket[$i]->order_id)->first();
+                $type[]=TypeOfTicket::where("id",$allticket[$i]->typeofticket_id)->first();
             }
 
             for($i=0;$i<$allticket->count();$i++){
@@ -388,6 +413,11 @@ class WelcomeController extends Controller
             }
             for($i=0;$i<count($orderdelete);$i++){
                 $orderdelete[$i]->delete();
+            }
+            for($i=0;$i<count($type);$i++){
+                $type[$i]->update([
+                    "ticketinstock"=>$type[$i]->ticketinstock+1
+                ]);
             }
         }
 
@@ -416,6 +446,11 @@ class WelcomeController extends Controller
                     "phone"=>$payment_info[$j]['phone'],
                     "order_id"=>$order->id,
                     "expiredtime"=>now()->addHours(5),
+                ]);
+                $type=TypeOfTicket::where("id",$ticket[$i][$j]->typeofticket_id)->first();
+
+                $type->update([
+                    "ticketinstock"=>$type->ticketinstock-1
                 ]);
             }
         }
@@ -469,11 +504,7 @@ class WelcomeController extends Controller
             $ticket[$i]->update([
                 "status"=>2,
             ]);
-            $type=TypeOfTicket::where("id",$ticket[$i]->typeofticket_id)->first();
 
-            $type->update([
-                "ticketinstock"=>$type->ticketinstock-1
-            ]);
         }
         session()->forget("cart");
         session()->forget('payment_info');
@@ -503,6 +534,11 @@ class WelcomeController extends Controller
                 "phone"=>null,
                 "order_id"=>null,
                 "expiredtime"=>null,
+            ]);
+            $type=TypeOfTicket::where("id",$ticket[$i]->typeofticket_id)->first();
+
+            $type->update([
+                "ticketinstock"=>$type->ticketinstock+1
             ]);
         }
         $order->delete();

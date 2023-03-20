@@ -27,6 +27,7 @@ class DashboardController extends Controller
         if(!isset($allticket)){
             for($i=0;$i<$allticket->count();$i++){
                 $orderdelete[] = Order::where("id",$allticket[$i]->order_id)->first();
+                $type[]=TypeOfTicket::where("id",$allticket[$i]->typeofticket_id)->first();
             }
 
             for($i=0;$i<$allticket->count();$i++){
@@ -41,6 +42,11 @@ class DashboardController extends Controller
             }
             for($i=0;$i<count($orderdelete);$i++){
                 $orderdelete[$i]->delete();
+            }
+            for($i=0;$i<count($type);$i++){
+                $type[$i]->update([
+                    "ticketinstock"=>$type[$i]->ticketinstock+1
+                ]);
             }
         }
 
