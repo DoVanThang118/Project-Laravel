@@ -85,8 +85,9 @@
                         <div class="hot-page2-alp-con-right-1">
                             <!--LISTINGS-->
                             <div class="row">
+                                @if(!empty($data))
                                 <h3 style=" margin-left: 30px; border-radius: 3px; background: #a2dd2f; width: 230px  ">Filghts --></h3>
-
+                                @endif
                                 <!--LISTINGS START-->
                                 @forelse($data as $item)
                                     <div class="hot-page2-alp-r-list">
@@ -186,9 +187,10 @@
 
                                 @endforelse
                                 <!--END LISTINGS-->
+                                @if(!empty($data2))
 
                                 <h3 style=" margin-left: 30px; border-radius: 3px; background: #f4364f; width: 230px  ">Return Filghts <--</h3>
-
+                                @endif
                             @forelse($data2 as $item)
 
 
