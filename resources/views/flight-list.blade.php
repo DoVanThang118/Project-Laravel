@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section("title","Danh sách chuyến bay")
 @section("custom_css")
-
 @endsection
 @section("custom_js")
     <script src="/assets/js/jquery-ui.js"></script>
@@ -177,21 +176,6 @@
                                                 </form>
                                             </div>
 
-
-                                            {{--                                    <div>--}}
-                                            {{--                                        <div class="trav-ami">--}}
-                                            {{--                                            <h4>Detail Type Of Ticket</h4>--}}
-                                            {{--                                            <ul>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a14.png" alt=""> <span>Sightseeing</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a15.png" alt=""> <span>Hotel</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a16.png" alt=""> <span>Transfer</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a17.png" alt=""> <span>Luggage</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a18.png" alt=""> <span>Duration 8N/9D</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/a19.png" alt=""> <span>Location : Rio,Brazil</span></li>--}}
-                                            {{--                                                <li><img src="/assets/images/icon/dbl4.png" alt=""> <span>Stay Plan</span></li>--}}
-                                            {{--                                            </ul>--}}
-                                            {{--                                        </div>--}}
-                                            {{--                                    </div>--}}
                                         </div>
                                 @empty
                                     <h4 style="margin-left: 30px;">Not found flight</h4>

@@ -414,7 +414,7 @@
      color: #F3F3F3;
 }
  .tb-space {
-     padding: 10px 0px 100px 0px;
+     padding: 70px 0px 100px 0px;
 }
  .tb-space-inn {
      padding: 40px 0px;
@@ -3357,6 +3357,7 @@
      color: #8a8a8a;
 }
  .hot-page2-alp-con {
+     margin-bottom: 50px;
      position: relative;
      overflow: hidden;
      background: #ffffff;
@@ -3364,6 +3365,7 @@
 }
  .hot-page2-alp-con-left {
      padding-left: 0px !important;
+     padding-bottom: 15px;
 }
  .hot-page2-alp-con-right {
      padding-bottom: 70px;

@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <!--DASHBOARD-->
-    <section>
-        <div class="db">
+    <section >
+        <div class="db" >
             <!--LEFT SECTION-->
             <div class="db-l">
                 <div class="db-l-1">

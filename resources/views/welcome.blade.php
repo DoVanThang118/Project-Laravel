@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section("title","Home")
+@section("custom_js")
+    <script >
+        function myFunction(obj) {
+           var x = document.getElementById('btn2').value;
+           document.getElementById('returnDay').style.display= 'block';
+
+        }
+    </script>
+@endsection
 @section('content')
 @include('admin.html.notification')
     <!--HEADER SECTION-->
@@ -27,7 +36,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="direction" required>
+                                        <select name="direction"  onchange="myFunction()" required>
                                             <option id="btn1" value="1">One-way</option>
                                             <option id="btn2" value="2">Round-trip</option>
                                         </select>
@@ -75,7 +84,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="input-field col s4">
+                                    <div class="input-field col s4 " id="returnDay" style="display: none" >
                                         @include("admin.html.form.input",[
                                   "label"=>"",
                                   "title"=>"Return Day",
@@ -84,9 +93,6 @@
                                   "type"=>"date",
                                   "required"=>false])
                                     </div>
-
-
-
                                 </div>
                                 <div class="row">
                                         @include("admin.html.form.input",[
