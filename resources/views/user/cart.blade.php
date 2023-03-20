@@ -30,15 +30,16 @@
                                     <div class="col-md-3 hot-page2-alp-r-list-re-sp">
                                         <a href="javascript:void(0);">
                                             <div class="hot-page2-hli-1">
-                                                <img src="/assets/images/plane.jpg" alt="">
+                                                <img src="/{{$item->Flight->Airplane->thumbnail}}" alt="">
 
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-md-9">
                                         <div class="trav-list-bod">
-                                            <a><h3>From: {{$item->Flight->AirStrip->TakeofCity->name}}
-                                                    -----  To: {{$item->Flight->AirStrip->LandingCity->name}}</h3></a>
+                                            <a><h3>Flight No {{$item->Flight->id}} - Airplane {{$item->Flight->Airplane->name}}</h3></a>
+                                            <a><h4>From: {{$item->Flight->AirStrip->TakeofCity->name}}
+                                                    -----  To: {{$item->Flight->AirStrip->LandingCity->name}}</h4></a>
                                             <h4><span>Takeoff Time: </span>{{$item->Flight->takeoftime}}</h4>
                                             <h4><span> Landing Time: </span>{{$item->Flight->landingtime}}</h4>
                                             <hr>
