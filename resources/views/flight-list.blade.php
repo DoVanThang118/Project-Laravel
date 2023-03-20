@@ -108,14 +108,17 @@
                                                     @csrf
                                                 <div class="col-md-4" >
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[0]->ticketinstock}}</span>
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[0]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
+
                                                         <span class="hot-list-p3-4">
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
                                                                 <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
                                                             @endif
+
                                                             </span>
                                                     </div>
                                                 </div>
@@ -126,6 +129,8 @@
                                                     @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[1]->ticketinstock}}</span>
+
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[1]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span>
                                                         <span class="hot-list-p3-4">
@@ -143,6 +148,8 @@
                                                     @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[2]->ticketinstock}}</span>
+
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[2]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span>
                                                         <span class="hot-list-p3-4">
@@ -203,6 +210,8 @@
                                                 @csrf
                                                 <div class="col-md-4" >
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[0]->ticketinstock}}</span>
+
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[0]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
                                                         <span class="hot-list-p3-4">
@@ -221,6 +230,8 @@
                                                 @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[1]->ticketinstock}}</span>
+
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[1]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span>
                                                         <span class="hot-list-p3-4">
@@ -238,6 +249,8 @@
                                                 @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[2]->ticketinstock}}</span>
+
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[2]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[2]->price}}</span>
                                                         <span class="hot-list-p3-4">
