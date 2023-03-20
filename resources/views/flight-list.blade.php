@@ -180,7 +180,7 @@
                                             {{--                                    </div>--}}
                                         </div>
                                 @empty
-                                    <h4 style="margin-left: 20px;">Not found flight</h4>
+                                    <h4 style="margin-left: 20px;">Not find outbound flight</h4>
 
                                 @endforelse
                                 <!--END LISTINGS-->
