@@ -21,7 +21,7 @@ class AirStripController extends Controller
 
     public function airstripadd()
     {
-        $cities = City::orderBy("id", "desc")->get();
+        $cities = City::orderBy("id", "asc")->get();
         return view("admin.airstrip.airstrip-add", [
             "cities" => $cities
         ]);
