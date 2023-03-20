@@ -2,10 +2,13 @@
 @section("title","Home")
 @section("custom_js")
     <script >
-        function myFunction(obj) {
-           var x = document.getElementById('btn2').value;
-           document.getElementById('returnDay').style.display= 'block';
-
+        function myFunction() {
+            var x=document.getElementById('myselect').value;
+            if (x==2){
+                document.getElementById('returnDay').style.display= 'block';
+            }else{
+                document.getElementById('returnDay').style.display= 'none';
+            }
         }
     </script>
 @endsection
@@ -36,9 +39,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="direction"  onchange="myFunction()" required>
-                                            <option id="btn1" value="1">One-way</option>
-                                            <option id="btn2" value="2">Round-trip</option>
+                                        <select name="direction" id="myselect" onchange="myFunction()" required>
+                                            <option  id="btn1" value="1">One-way</option>
+                                            <option  id="btn2" value="2">Round-trip</option>
                                         </select>
 
                                     </div>
