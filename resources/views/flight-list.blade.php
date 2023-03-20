@@ -39,42 +39,53 @@
                         <!--END PART 4 : LEFT LISTINGS-->
                         <!--PART 5 : LEFT LISTINGS-->
                         <div class="hot-page2-alp-l3 hot-page2-alp-l-com">
-                            <h4><i class="fa fa-dollar" aria-hidden="true"></i> Select Price Range</h4>
+                            <h4><i class="fa fa-star-o" aria-hidden="true"></i> Select Ratings</h4>
                             <div class="hot-page2-alp-l-com1 hot-page2-alp-p5">
                                 <form>
                                     <ul>
                                         <li>
                                             <div class="checkbox checkbox-info checkbox-circle">
-                                                <input id="chp51" class="styled" type="checkbox" checked="">
-                                                <label for="chp51"> $5000 - Above </label>
+                                                <input id="chp61" class="styled" type="checkbox" checked="">
+                                                <label for="chp61"> <span class="ho-hot-rat-star-list">
+                                                        <span class="hot-list-left-part-rat">5.0</span> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> </span>
+                                                </label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="checkbox checkbox-info checkbox-circle">
-                                                <input id="chp52" class="styled" type="checkbox">
-                                                <label for="chp52"> $4000 - $5000 </label>
+                                                <input id="chp62" class="styled" type="checkbox">
+                                                <label for="chp62"> <span class="ho-hot-rat-star-list">
+                                                        <span class="hot-list-left-part-rat">4.0</span> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> </span>
+                                                </label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="checkbox checkbox-info checkbox-circle">
-                                                <input id="chp53" class="styled" type="checkbox">
-                                                <label for="chp53"> $3000 - $4000 </label>
+                                                <input id="chp63" class="styled" type="checkbox">
+                                                <label for="chp63"> <span class="ho-hot-rat-star-list">
+                                                        <span class="hot-list-left-part-rat">3.0</span> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> </span>
+                                                </label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="checkbox checkbox-info checkbox-circle">
-                                                <input id="chp54" class="styled" type="checkbox">
-                                                <label for="chp54"> $2000 - $3000 </label>
+                                                <input id="chp64" class="styled" type="checkbox">
+                                                <label for="chp64"> <span class="ho-hot-rat-star-list">
+                                                        <span class="hot-list-left-part-rat">2.0</span> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> </span>
+                                                </label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="checkbox checkbox-info checkbox-circle">
-                                                <input id="chp55" class="styled" type="checkbox">
-                                                <label for="chp55"> $2000 - Below </label>
+                                                <input id="chp65" class="styled" type="checkbox">
+                                                <label for="chp65"> <span class="ho-hot-rat-star-list">
+                                                        <span class="hot-list-left-part-rat">1.0</span> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> </span>
+                                                </label>
                                             </div>
                                         </li>
                                     </ul>
-                                </form> <a href="javascript:void(0);" class="hot-page2-alp-p5-btn-s">view more</a> </div>
+                                </form>
+                            </div>
                         </div>
                         <!--END PART 5 : LEFT LISTINGS-->
                         <!--PART 6 : LEFT LISTINGS-->
