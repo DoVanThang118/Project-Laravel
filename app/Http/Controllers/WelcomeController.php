@@ -463,6 +463,7 @@ class WelcomeController extends Controller
 
 
     public function successTransaction(Order $order){
+
         $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
         for($i=0;$i<$ticket->count();$i++){
             $ticket[$i]->update([
