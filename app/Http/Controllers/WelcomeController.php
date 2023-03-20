@@ -20,7 +20,8 @@ class WelcomeController extends Controller
 {
     public function welcome()
     {
-
+        session()->forget("cart");
+        session()->forget('payment_info');
         $city = City::all();
         return view("/welcome", [
             "city" => $city
