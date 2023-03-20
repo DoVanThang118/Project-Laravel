@@ -23,17 +23,28 @@ class DashboardController extends Controller
 
         $order=Order::all();
 
-        for($j=0;$j<$order->count();$j++) {
-            $c=0;
-            for ($i = 0; $i < $ticket->count(); $i++) {
-                if($order[$j]->id==$ticket[$i]->order_id){
-                    $c++;
-                }
+        $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
+        if(!isset($allticket)){
+            for($i=0;$i<$allticket->count();$i++){
+                $orderdelete[] = Order::where("id",$allticket[$i]->order_id)->first();
             }
-            if($c==0){
-                $order[$j]->delete();
+
+            for($i=0;$i<$allticket->count();$i++){
+                $allticket[$i]->update([
+                    "status"=>0,
+                    "name"=>null,
+                    "birthday"=>null,
+                    "cccd"=>null,
+                    "phone"=>null,
+                    "order_id"=>null
+                ]);
+            }
+            for($i=0;$i<count($orderdelete);$i++){
+                $orderdelete[$i]->delete();
             }
         }
+
+
 
 
         $flight=Flight::orderBy("id","desc")

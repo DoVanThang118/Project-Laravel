@@ -371,21 +371,26 @@ class WelcomeController extends Controller
 
         $allticket=Ticket::where("expiredtime","<=",now())->where("status",1)->get();
 
-        for($i=0;$i<$allticket->count();$i++){
-            $order = Order::where("id",$allticket[$i]->order_id)->first();
-            $order->delete();
+        if(!isset($allticket)){
+            for($i=0;$i<$allticket->count();$i++){
+                $orderdelete[] = Order::where("id",$allticket[$i]->order_id)->first();
+            }
+
+            for($i=0;$i<$allticket->count();$i++){
+                $allticket[$i]->update([
+                    "status"=>0,
+                    "name"=>null,
+                    "birthday"=>null,
+                    "cccd"=>null,
+                    "phone"=>null,
+                    "order_id"=>null
+                ]);
+            }
+            for($i=0;$i<count($orderdelete);$i++){
+                $orderdelete[$i]->delete();
+            }
         }
 
-        for($i=0;$i<$allticket->count();$i++){
-            $allticket[$i]->update([
-                "status"=>0,
-                "name"=>null,
-                "birthday"=>null,
-                "cccd"=>null,
-                "phone"=>null,
-                "order_id"=>null
-            ]);
-        }
         $user=auth()->id();
         $order = Order::create([
             "order_date"=> now(),
