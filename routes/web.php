@@ -40,7 +40,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'index']);
+Route::get('/aboutus', [App\Http\Controllers\ContactController::class, 'index']);
 
 //Pusher
 Route::get("/sendNotification",[App\Http\Controllers\PusherController::class,"sendNotification"]);
