@@ -5,34 +5,6 @@
 
     <div class="db">
         <!--LEFT SECTION-->
-        <div class="db-l">
-            <div class="db-l-1">
-                <ul>
-                    @if($user->thumbnail == null)
-                    <li>
-                        <img src="/assets/images/db-profile.jpg" alt="" />
-                    </li>
-                    @else
-                    <li>
-                        <img src="{{$user->thumbnail}}" alt="" />
-                    </li>
-                    @endif
-                </ul>
-            </div>
-            <div class="db-l-2">
-                <ul>
-                    <li>
-                        <a href="{{url("/profile")}}"><img src="/assets/images/icon/dbl6.png" alt="" /> My Profile</a>
-                    </li>
-                    <li>
-                        <a href="{{url("/user/cart")}}"><img src="/assets/images/icon/dbl1.png" alt="" /> Your Bookings</a>
-                    </li>
-                    <li>
-                        <a href="{{url("/checkout")}}"><img src="/assets/images/icon/dbl9.png" alt="" /> Payments</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <!--CENTER SECTION-->
         <div class="db-2">
             <div class="db-2-com db-2-main">
@@ -45,25 +17,6 @@
                             <td>:</td>
                             <td>{{$user->name}}</td>
                         </tr>
-{{--                        <tr>--}}
-{{--                            <td>Date of birth</td>--}}
-{{--                            <td>:</td>--}}
-{{--                            @if($user->birthday == null)--}}
-{{--                            <td style="color: red">The information has not been updated</td>--}}
-{{--                            @else--}}
-{{--                            <td>{{$user->birthday}}</td>--}}
-{{--                            @endif--}}
-
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>Gender</td>--}}
-{{--                            <td>:</td>--}}
-{{--                            @if($user->sex == null)--}}
-{{--                            <td style="color: red">The information has not been updated</td>--}}
-{{--                            @else--}}
-{{--                            <td>{{$user->sex}}</td>--}}
-{{--                            @endif--}}
-{{--                        </tr>--}}
                         <tr>
                             <td>Eamil</td>
                             <td>:</td>
@@ -152,20 +105,7 @@
 
 
         <!--RIGHT SECTION-->
-        <div class="db-3">
-            <h4>Notifications</h4>
-            <ul>
-                <li>
-                    @if(session()->has("error"))
-                        <p>Update Ticket Success</p>
-                    @endif
-                    @if(session()->has("success"))
-                        <p>Update Ticket Failed</p>
-                    @endif
-                </li>
 
-            </ul>
-        </div>
     </div>
 </section>
 
