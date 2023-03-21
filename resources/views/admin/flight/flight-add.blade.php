@@ -27,7 +27,6 @@
 
                         </div>
 
-
                         <div class="bor">
                             <form method="post" action="{{url("/admin/flight/flight-add")}}" role="form" enctype="multipart/form-data">
                                 @csrf
