@@ -35,14 +35,14 @@
                             <div class="input-field col s12 m6">
                                 <h5>Phone Number</h5>
                                 <input name="payment_info[{{$i}}][phone]" type="text" class="validate">
-                                @if(session()->has('error') && session('error')['key'] == 'cccd' && session('error')['offset'] == $i)
+                                @if(session()->has('error') && session('error')['key'] == 'phone' && session('error')['offset'] == $i)
                                     <span class="text-danger">{{session('error')['message']}}</span>
                                 @endif
                             </div>
                             <div class="input-field col s12 m6">
                                 <h5>Date of birth</h5>
                                 <input name="payment_info[{{$i}}][birthday]" type="date" required>
-                                @if(session()->has('error') && session('error')['key'] == 'cccd' && session('error')['offset'] == $i)
+                                @if(session()->has('error') && session('error')['key'] == 'birthday' && session('error')['offset'] == $i)
                                     <span class="text-danger">{{session('error')['message']}}</span>
                                 @endif
                             </div>
