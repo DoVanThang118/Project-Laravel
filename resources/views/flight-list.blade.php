@@ -5,6 +5,13 @@
 @section("custom_js")
     <script src="/assets/js/jquery-ui.js"></script>
     <script src="/assets/js/mail.js"></script>
+    <script>
+        var x = document.getElementById('click1');
+        x.onclick = function (){
+            alert('You have selected the ticket of a flight. If your flight is round trip please select ticket for round trip.' +
+                'If your flight is one way please click on All booking to go to cart and pay')
+        }
+    </script>
 @endsection
 @section('content')
 
@@ -121,7 +128,8 @@
                                                     @csrf
                                                 <div class="col-md-4" >
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[0]->ticketinstock}}</span>
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">
+                                                            Available Tickets : {{$item->TypeOfTickets[0]->ticketinstock}}</span>
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[0]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
 
@@ -129,7 +137,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
                                                             @endif
 
                                                             </span>
@@ -142,7 +150,8 @@
                                                     @csrf
                                                 <div class="col-md-4">
                                                     <div class="hot-page2-alp-ri-p3 tour-alp-ri-p3">
-                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">Available Tickets : {{$item->TypeOfTickets[1]->ticketinstock}}</span>
+                                                        <span class="ticket" style="background: #a2dd2f; margin-bottom:25px; margin-top: -20px;border-radius: 3px">
+                                                            Available Tickets : {{$item->TypeOfTickets[1]->ticketinstock}}</span>
 
                                                         <span class="hot-list-p3-1">{{$item->TypeOfTickets[1]->name}} Class</span>
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[1]->price}}</span>
@@ -150,7 +159,7 @@
                                                                 @if($item->TypeOfTickets[1]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -169,7 +178,7 @@
                                                                 @if($item->TypeOfTickets[2]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>

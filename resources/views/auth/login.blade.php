@@ -3,8 +3,8 @@
 @section('content')
 <!--DASHBOARD-->
 <section>
-    <div class="tr-register">
-        <div class="tr-regi-form">
+    <div class="hot-page2-alp1">
+        <div class="tr-regi-form" style="padding-top: 50px">
             <h4>Sign In</h4>
             <p>It's free and always will be.</p>
             <form  method="post"action="{{ route('login') }}">
@@ -39,7 +39,7 @@
             </form>
             <p>Are you a new user ? <a href="{{route("register")}}" class="text-center">Register</a>
             </p>
-            <div class="soc-login">
+            <div class="soc-login" style="padding-bottom: 15px">
                 <h4>Sign in using</h4>
                 <ul>
                     <li><a href="#"><i class="fa fa-facebook fb1"></i> Facebook</a> </li>

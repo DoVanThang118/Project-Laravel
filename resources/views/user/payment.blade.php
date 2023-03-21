@@ -4,9 +4,9 @@
     <section>
         <div class="hot-page2-alp1">
             <div class="tr-regi-form v2-search-form">
-                    <h4 style="color: #fafafa">Enter Customers Information</h4>
-                    <p style="color: #fafafa">Please fill out all information.</p>
-                    <p style="color: #fafafa">This information will be displayed on your ticket</p>
+                    <h4 >Enter Customers Information</h4>
+                    <p >Please fill out all information.</p>
+                    <p >This information will be displayed on your ticket</p>
                 <br>
                 <form style="background-color: #fafafa"  class="col s12"  method="post" action="{{url('/checkout')}}">
                     @csrf

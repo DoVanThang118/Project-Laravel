@@ -4942,10 +4942,10 @@
  .tr-regi-form {
      margin: 0 auto;
      width: 50%;
-     /*background: #fff;*/
+     background: #fff;
      padding:  0px 50px ;
-
-     margin-bottom: 70px;
+     border: 2px solid black;
+     /*margin-bottom: 10px;*/
      /*border-radius: 5px;*/
      text-align: center;
      position: relative;
@@ -5061,11 +5061,11 @@
 }
  .v2-search-form {
      position: relative;
-     /*background: #ffffff;*/
-     padding: 50px 0px;
-     /*border-radius: 5px;*/
-     /*border-bottom: 2px solid #cccccc;*/
-     /*box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);*/
+     background: #ffffff;
+     padding: 50px;
+     border-radius: 5px;
+     border-bottom: 2px solid #cccccc;
+     box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);
 }
  .v2-search-form label {
      color: #727070;
