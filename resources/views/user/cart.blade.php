@@ -83,7 +83,7 @@
 
                                 <li>
                                     <form method="get" action="{{url("/checkout")}}">
-                                        <button href="{{url("/checkout")}}" style="width: 100px; margin-left: 65px" class="btn btn-warning">Done</button>
+                                        <button href="{{url("/checkout")}}" style="width: 100px; margin-left: 65px" class="btn btn-warning">CONTINUE</button>
                                     </form>
                                 </li>
                             </ul>
