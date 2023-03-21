@@ -5,7 +5,7 @@
             <li><img src="/admin/images/placeholder.jpg" alt="">
             </li>
             <li>
-                <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+                <h5>{{$admin->name}}</h5>
             </li>
 
 

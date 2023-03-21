@@ -13,13 +13,11 @@
                     'If your flight is one way please click on All booking to go to cart and pay')
             }
         }
-
     </script>
 @endsection
 @section('content')
 
     @include("admin.html.notification")
-
 
     <!--====== HOTELS LIST ==========-->
     <section class="hot-page2-alp hot-page2-pa-sp-top">
@@ -76,16 +74,17 @@
                                                         <span class="hot-list-p3-2">{{$item->TypeOfTickets[0]->price}}</span>
 
                                                         <span class="hot-list-p3-4">
-                                                                @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
+                                                            @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button  style="margin-left: 120px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
-                                                            @endif
+                                                                <button  style="margin-left: 120px" type="submit" class="hot-page2-alp-quot-btn click1">Book Now</button>
 
-                                                            </span>
+                                                            @endif
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </form>
+
                                                 <form method="post" action="{{route("add_to_cart",["flight"=>$item->id])}}"
                                                       role="form" enctype="multipart/form-data" >
 

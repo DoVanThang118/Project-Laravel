@@ -87,7 +87,7 @@ class DashboardController extends Controller
         for ($i=0;$i<$ticketinstock->count();$i++){
             $expected+=$ticketinstock[$i]->price;
         }
-
+            $admin = auth()->user();
 
         return view("admin.dashboard.dashboardhome",[
             "air" => $air,
@@ -96,8 +96,8 @@ class DashboardController extends Controller
             "ticketsold"=>$ticketsold,
             "revenue"=>$revenue,
             "expected"=>$expected,
-            "flight"=>$flight
-
+            "flight"=>$flight,
+            'admin'=>$admin
         ]);
     }
 
