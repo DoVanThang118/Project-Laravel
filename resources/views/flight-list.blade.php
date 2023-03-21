@@ -6,11 +6,14 @@
     <script src="/assets/js/jquery-ui.js"></script>
     <script src="/assets/js/mail.js"></script>
     <script>
-        var x = document.getElementById('click1');
-        x.onclick = function (){
-            alert('You have selected the ticket of a flight. If your flight is round trip please select ticket for round trip.' +
-                'If your flight is one way please click on All booking to go to cart and pay')
+        var x = document.getElementsByClassName('click1');
+        for (var i =0; i< x.length; i++){
+            x[i].onclick = function (){
+                alert('You have selected the ticket of a flight. If your flight is round trip please select ticket for round trip.' +
+                    'If your flight is one way please click on All booking to go to cart and pay')
+            }
         }
+
     </script>
 @endsection
 @section('content')
@@ -137,7 +140,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button  style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
 
                                                             </span>
@@ -159,7 +162,7 @@
                                                                 @if($item->TypeOfTickets[1]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button  style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -178,7 +181,7 @@
                                                                 @if($item->TypeOfTickets[2]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
-                                                                <button id="click1" style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button  style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -227,7 +230,7 @@
                                                                 @if($item->TypeOfTickets[0]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[0]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
                                                             </span>
                                                     </div>
@@ -247,7 +250,7 @@
                                                                 @if($item->TypeOfTickets[1]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[1]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>
@@ -266,7 +269,7 @@
                                                                 @if($item->TypeOfTickets[2]->ticketinstock>=$adults)
                                                                 <input type="hidden" name="qty" value="{{$adults}}">
                                                                 <input type="hidden" name="type" value="{{$item->TypeOfTickets[2]->id}}">
-                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn">Book Now</button>
+                                                                <button style="margin-left: 65px" type="submit"  class="hot-page2-alp-quot-btn click1">Book Now</button>
                                                             @endif
 											</span> </div>
                                                 </div>
