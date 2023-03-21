@@ -35,7 +35,7 @@ class ViewController extends Controller
     }
 
     public function newyork(){
-        return view("user.destinations.newyork");
+        return view("user.destinations.sanFrancisco");
     }
 
     public function bangkok(){

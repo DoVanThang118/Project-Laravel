@@ -236,8 +236,8 @@
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">
-                                <h5>New York City</h5>
-                                <a href="{{url('/newYork')}}" ><p>Discover</p></a>
+                                <h5>San Francisco</h5>
+                                <a href="{{url('/sanFrancisco')}}" ><p>Discover</p></a>
                             </div>
                         </div>
                     </a>
