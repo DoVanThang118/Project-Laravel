@@ -24,6 +24,6 @@ class PusherController extends Controller
         $data["order_id"] = 55;
         event(new \App\Events\PusherEvent($data['message']));
         $pusher->trigger('my-channel', 'my-event', $data);
-        dd("Có một đơn hàng mới");
+//        dd("Có một đơn hàng mới");
     }
 }

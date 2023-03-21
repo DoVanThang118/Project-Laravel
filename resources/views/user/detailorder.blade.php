@@ -18,7 +18,7 @@
                             <td>{{$user->name}}</td>
                         </tr>
                         <tr>
-                            <td>Eamil</td>
+                            <td>Email</td>
                             <td>:</td>
                             <td>{{$user->email}}</td>
                         </tr>
