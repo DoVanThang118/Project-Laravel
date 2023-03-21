@@ -3321,6 +3321,12 @@
      background-attachment: fixed;
      background-size: cover;
 }
+
+ .hot-page2-alp1{
+     background: url(../images/consul-bg.jpeg) no-repeat center top #e6e6e6;
+     background-attachment: fixed;
+     background-size: cover;
+ }
  .hot-page2-alp::before {
      content: '';
      position: fixed;
@@ -4797,8 +4803,8 @@
  .full-btn {
      height: 45px;
      line-height: 45px;
-     background: #f96c71;
-     background: linear-gradient(to bottom, #fa6d72, #f45d5d);
+     background: #f1ba16;
+     background: linear-gradient(to bottom, #f1ba16, #f6bd1c);
      outline: none;
      font-size: 16px;
      display: block !important;
@@ -4831,8 +4837,8 @@
 }
  .db-pay-amount {
      float: right;
-     color: #FFC107;
-     font-size: 22px;
+     color: #0D47A1;
+     font-size: 30px;
 }
  .db-down-pdf {
      border: 1px solid #c7c8c9;
@@ -4916,11 +4922,11 @@
 /* REGISTER AND LOGIN
 /*-------------------------------------------------------*/
  .tr-register {
-     background: url(../images/face.jpg) #e6e6e6;
+     background: url(../images/consul-bg-1.jpg) #e6e6e6;
      position: relative;
     /* overflow: hidden;
      */
-     display: inline-block;
+     /*display: inline-block;*/
      width: 100%;
 }
  .tr-register::before {
@@ -4936,14 +4942,14 @@
  .tr-regi-form {
      margin: 0 auto;
      width: 50%;
-     background: #fff;
-     padding: 45px 50px 50px 50px;
-     margin-top: 70px;
+     /*background: #fff;*/
+     padding:  0px 50px ;
+
      margin-bottom: 70px;
-     border-radius: 5px;
+     /*border-radius: 5px;*/
      text-align: center;
      position: relative;
-     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+     /*box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);*/
 }
  .tr-regi-form input {
      padding: 10px 10px 10px;
@@ -4982,6 +4988,7 @@
  .tr-regi-form p a {
 }
  .full-btn {
+     margin-top: 10px;
      width: 100%;
      display: block;
 }
@@ -5054,11 +5061,11 @@
 }
  .v2-search-form {
      position: relative;
-     background: #ffffff;
-     padding: 50px;
-     border-radius: 5px;
-     border-bottom: 2px solid #cccccc;
-     box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);
+     /*background: #ffffff;*/
+     padding: 50px 0px;
+     /*border-radius: 5px;*/
+     /*border-bottom: 2px solid #cccccc;*/
+     /*box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);*/
 }
  .v2-search-form label {
      color: #727070;

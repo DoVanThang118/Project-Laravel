@@ -88,9 +88,6 @@
                             </tr>
                             </tbody>
                         </table>
-                        <div class="db-mak-pay-bot">
-                            <a href="{{url('/profile-edit')}}" class="waves-effect waves-light btn-large">Edit my profile</a>
-                        </div>
                     </div>
                 </div>
 
