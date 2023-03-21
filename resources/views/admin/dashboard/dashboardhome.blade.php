@@ -15,7 +15,7 @@
         <!--== DASHBOARD INFO ==-->
         <div class="sb2-2-3">
                 <h1 class="m-0 text-dark">Dashboard</h1>
-                <button type="button" onclick="lockChair()">Lock</button>
+{{--                <button type="button" onclick="lockChair()">Lock</button>--}}
         </div>
         <div class="ad-v2-hom-info">
             <div class="ad-v2-hom-info-inn">

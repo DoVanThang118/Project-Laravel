@@ -139,6 +139,7 @@ class FlightController extends Controller
         ]);
 
     }
+
     public function flightcreate(Request $request){
         $request->validate([
             "takeoftime"=>"required",
@@ -231,6 +232,20 @@ class FlightController extends Controller
 //        catch (\Exception $e){
 //            return redirect()->back()->with("error",$e->getMessage());
 //        }
+    }
+
+    public function findAirplane(Request $request){
+        $airplane_id = $request->get("airplane_id");
+        $airplane= Airplane::where("id",$airplane_id)->first();
+        $typevip=TypeOfSeat::where("airplane_id",$airplane_id)->where("name","VIP")->first();
+        $typenormal=TypeOfSeat::where("airplane_id",$airplane_id)->where("name","NORMAL")->first();
+        $typecheap=TypeOfSeat::where("airplane_id",$airplane_id)->where("name","CHEAP")->first();
+
+            return response()->json(["qtyvip"=>$typevip->totalseat,
+                "qtynormal"=>$typenormal->totalseat,
+                "qtycheap"=>$typecheap->totalseat
+                ]);
+
     }
 
 
