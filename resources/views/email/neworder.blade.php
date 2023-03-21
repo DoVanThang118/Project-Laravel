@@ -115,7 +115,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" class="image_block block-2" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
                                         <tr>
                                             <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;padding-top:70px;">
-                                                <div align="center" class="alignment" style="line-height:10px"><img alt="Check Icon" src="images/check-icon.png" style="display: block; height: auto; border: 0; width: 93px; max-width: 100%;" title="Check Icon" width="93"/></div>
+{{--                                                <div align="center" class="alignment" style="line-height:10px"><img alt="Check Icon" src="images/check-icon.png" style="display: block; height: auto; border: 0; width: 93px; max-width: 100%;" title="Check Icon" width="93"/></div>--}}
                                             </td>
                                         </tr>
                                     </table>
@@ -124,7 +124,7 @@
                                             <td class="pad" style="padding-bottom:25px;padding-left:20px;padding-right:20px;padding-top:10px;">
                                                 <div style="font-family: Georgia, 'Times New Roman', serif">
                                                     <div class="" style="font-size: 14px; font-family: Georgia, Times, 'Times New Roman', serif; mso-line-height-alt: 16.8px; color: #2f2f2f; line-height: 1.2;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:42px;">Payment received</span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><span style="font-size:42px;">Payment Request</span></p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -135,13 +135,13 @@
                                             <td class="pad" style="padding-bottom:80px;padding-left:30px;padding-right:30px;padding-top:10px;">
                                                 <div style="font-family: sans-serif">
                                                     <div class="" style="font-size: 14px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 21px; color: #2f2f2f; line-height: 1.5;">
-                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">Hi <strong><u>{{$orderName}}</u></strong>,</span></p>
+{{--                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">Hi <strong><u>{{$orderName}}</u></strong>,</span></p>--}}
                                                         <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;"> </p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">Thank you for your payment of <strong><span style="">$ {{$orderTotalmoney}}</span></strong> on <strong><span style="">{{$orderDate}}</span></strong></span></p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">using <strong><span style="">Paypal</span></strong></span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">You have new Order :  <strong><span style="">$ {{$orderTotalmoney}}</span></strong> on <strong><span style="">{{$orderDate}}</span></strong></span></p>
+                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 24px;"><span style="font-size:16px;">Quantity Ticket <strong><span style="">{{$orderQty}}</span></strong></span></p>
                                                         <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;"> </p>
                                                         <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;"><span style="color:#000000;font-size:14px;">VAT included,</span></p>
-                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;"><span style="color:#000000;font-size:14px;">Eligible for 3 days refund.</span></p>
+{{--                                                        <p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;"><span style="color:#000000;font-size:14px;">Eligible for 3 days refund.</span></p>--}}
                                                     </div>
                                                 </div>
                                             </td>

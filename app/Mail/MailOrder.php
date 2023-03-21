@@ -30,11 +30,11 @@ class MailOrder extends Mailable
     {
         return $this->view('email.neworder')
             ->with([
-                'orderName' => $this->order->name,
+//                'orderName' => $this->order->name,
                 'orderTotalmoney' => $this->order->totalmoney,
                 'orderQty' => $this->order->qty,
                 'orderDate' =>$this->order->order_date,
-                'orderEmail'=> $this->order->email,
+//                'orderEmail'=> $this->order->email,
             ]);
     }
 }
