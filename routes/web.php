@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/profile-edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile-edit');
     Route::get('/detail-order/{order}', [App\Http\Controllers\ProfileController::class, 'detailorder'])->name('detail-order');
     Route::get('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketedit'])->name('ticket-edit');
-    Route::post('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketupdate'])->name('ticket-edit');
+    Route::post('/ticket-edit/{ticket}', [App\Http\Controllers\ProfileController::class, 'ticketupdate']);
     Route::post('/profile-edit', [App\Http\Controllers\ProfileController::class, 'update']);
     Route::get("/remove-cart/{typeOfTicket}",[App\Http\Controllers\WelcomeController::class,"remove"]);
     Route::get("/user/cart",[App\Http\Controllers\WelcomeController::class,"shopcart"]);
