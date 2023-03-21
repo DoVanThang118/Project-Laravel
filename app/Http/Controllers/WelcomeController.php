@@ -498,6 +498,21 @@ class WelcomeController extends Controller
 
 
     public function successTransaction(Order $order){
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher(
+            '265acd2b0b5380eef4d9',
+            '850864585d54284715cd',
+            '1567274',
+            $options
+        );
+
+        $data['message'] = 'Có một đơn hàng mới';
+        $data["order_id"] = $order->id;
+        event(new \App\Events\PusherEvent($data['message']));
+        $pusher->trigger('my-channel', 'my-event', $data);
 
         $ticket=Ticket::with("Order")->where("order_id",$order->id)->get();
         for($i=0;$i<$ticket->count();$i++){
@@ -511,6 +526,7 @@ class WelcomeController extends Controller
         $mes="Payment success! Order No ".$order->id;
         $user= auth()->user();
         $order=Order::where("user_id",$user->id)->orderBy("id","desc")->get();
+
 
 //        dd($order);
 //        dd($user);
