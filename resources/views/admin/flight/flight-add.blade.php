@@ -30,6 +30,30 @@
                             <form method="post" action="{{url("/admin/flight/flight-add")}}" role="form" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
+                                    <div class="input-field col s6">
+                                        <select name="airstrip_id"  required>
+                                            @foreach($airstrip as $item)
+                                                <option @if(old("airstrip_id")== $item->id) selected @endif  value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error("airstrip_id")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                        <label>Select AirStrip</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <select name="airplane_id"  required >
+                                            @foreach($airplane as $item)
+                                                <option @if(old("airplane_id")== $item->id) selected @endif  value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error("airplane_id")
+                                        <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                        <label>Select AirPlane</label>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     @include("admin.html.form.input",[
                                     "label"=>"",
                                     "title"=>"Choose Takeof Time",
@@ -76,30 +100,7 @@
 
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <select name="airstrip_id"  required>
-                                            @foreach($airstrip as $item)
-                                                <option @if(old("airstrip_id")== $item->id) selected @endif  value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error("airstrip_id")
-                                        <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                        <label>Select AirStrip</label>
-                                    </div>
-                                    <div class="input-field col s6">
-                                        <select name="airplane_id"  required >
-                                            @foreach($airplane as $item)
-                                                <option @if(old("airplane_id")== $item->id) selected @endif  value="{{$item->id}}">{{$item->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error("airplane_id")
-                                        <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                        <label>Select AirPlane</label>
-                                    </div>
-                                </div>
+
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <button type="submit" class="btn btn-primary">Submit</button>
