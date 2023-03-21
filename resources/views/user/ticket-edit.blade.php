@@ -45,25 +45,25 @@
                                 <td>:</td>
                                 <td>{{$user->name}}</td>
                             </tr>
-                            <tr>
-                                <td>Date of birth</td>
-                                <td>:</td>
-                                @if($user->birthday == null)
-                                    <td style="color: red">The information has not been updated</td>
-                                @else
-                                    <td>{{$user->birthday}}</td>
-                                @endif
+{{--                            <tr>--}}
+{{--                                <td>Date of birth</td>--}}
+{{--                                <td>:</td>--}}
+{{--                                @if($user->birthday == null)--}}
+{{--                                    <td style="color: red">The information has not been updated</td>--}}
+{{--                                @else--}}
+{{--                                    <td>{{$user->birthday}}</td>--}}
+{{--                                @endif--}}
 
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td>:</td>
-                                @if($user->sex == null)
-                                    <td style="color: red">The information has not been updated</td>
-                                @else
-                                    <td>{{$user->sex}}</td>
-                                @endif
-                            </tr>
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <td>Gender</td>--}}
+{{--                                <td>:</td>--}}
+{{--                                @if($user->sex == null)--}}
+{{--                                    <td style="color: red">The information has not been updated</td>--}}
+{{--                                @else--}}
+{{--                                    <td>{{$user->sex}}</td>--}}
+{{--                                @endif--}}
+{{--                            </tr>--}}
                             <tr>
                                 <td>Eamil</td>
                                 <td>:</td>
