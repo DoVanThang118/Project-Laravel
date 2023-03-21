@@ -57,7 +57,7 @@
                                 <a href="{{url('/')}}" class="mm-arr">Home</a>
                             </li>
                             <li class="admi-menu">
-                                <a href="{{url("/user/cart")}}" class="mm-arr">All booking</a>
+                                <a href="{{url("/user/cart")}}" class="mm-arr">All booking <span>{{session()->has("cart")&&is_array(session("cart"))?count(session("cart")):0}} </a>
                             </li>
                             <li>
                                 <a href="{{url("/profile")}}">Profile</a>

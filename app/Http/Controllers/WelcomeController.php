@@ -543,7 +543,12 @@ class WelcomeController extends Controller
         }
         $order->delete();
 
-        return view("cancelPay");
+        session()->forget("cart");
+        session()->forget('payment_info');
+        $city = City::all();
+        return view("/welcome", [
+            "city" => $city
+        ]);
     }
 
 
