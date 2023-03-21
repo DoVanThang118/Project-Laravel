@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                             <div class="input-field col s12 m6" >
-                                <h5>Address</h5>
+                                <h5>Số CCCD</h5>
                                 <input name="payment_info[{{$i}}][cccd]" type="text" class="validate">
                                 @if(session()->has('error') && session('error')['key'] == 'cccd' && session('error')['offset'] == $i)
                                     <span class="text-danger">{{session('error')['message']}}</span>
