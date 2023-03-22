@@ -89,7 +89,7 @@ class WelcomeController extends Controller
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
-                    ->orderBy("id", "desc")
+                    ->orderBy("takeoftime", "asc")
                     ->get();
 
 
@@ -123,7 +123,7 @@ class WelcomeController extends Controller
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",$takeoftime)
                         ->whereDate("takeoftime","<=",Carbon::parse($takeoftime)->addDays(3))
-                        ->orderBy("id", "desc")
+                        ->orderBy("takeoftime", "asc")
                         ->get();
                     for ($i = 0; $i < $flight->count(); $i++) {
                         $type = TypeOfTicket::with("Flight")
@@ -168,11 +168,11 @@ class WelcomeController extends Controller
 
                 $flight = Flight::FlightAirStripFilter($asflight)
                     ->TakeofTimeFilter($takeoftime)
-                    ->orderBy("id", "desc")
+                    ->orderBy("takeoftime", "asc")
                     ->get();
                 $flight2 = Flight::FlightAirStripFilter($asflight2)
                     ->TakeofTimeFilter($returnday)
-                    ->orderBy("id", "desc")
+                    ->orderBy("takeoftime", "asc")
                     ->get();
 
                 for ($i = 0; $i < $flight->count(); $i++) {
@@ -211,7 +211,7 @@ class WelcomeController extends Controller
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
                         ->whereDate("takeoftime",">=",$returnday)
                         ->whereDate("takeoftime","<=",Carbon::parse($returnday)->addDays(3))
-                        ->orderBy("id", "desc")
+                        ->orderBy("takeoftime", "asc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight2->count(); $i++) {
                         $type = TypeOfTicket::with("Flight")
@@ -233,7 +233,7 @@ class WelcomeController extends Controller
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",$takeoftime)
                         ->whereDate("takeoftime","<=",Carbon::parse($takeoftime)->addDays(3))
-                        ->orderBy("id", "desc")
+                        ->orderBy("takeoftime", "asc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight->count(); $i++) {
                         $type = TypeOfTicket::with("Flight")
