@@ -2,10 +2,10 @@
     <!--== USER INFO ==-->
     <div class="sb2-12" >
         <ul>
-            <li><img src="/admin/images/placeholder.jpg" alt="">
+            <li><img src="/assets/images/face.jpg" alt="">
             </li>
             <li>
-                <h5>{{$admin->name}}</h5>
+                <h5>ADMIN</h5>
             </li>
 
 
