@@ -20,8 +20,8 @@
                                 <li><a href="{{url("admin/discount/discount-add")}}">Add New</a>
                                 </li>
 
-                                <li><a href="#!">Update</a>
-                                </li>
+{{--                                <li><a href="#!">Update</a>--}}
+{{--                                </li>--}}
 
                             </ul>
 

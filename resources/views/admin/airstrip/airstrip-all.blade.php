@@ -20,7 +20,7 @@
                                 <li><a href="{{url("admin/airstrip/airstrip-add")}}">Add New</a>
                                 </li>
 
-                                <li><a href="#!">Update</a>
+                                <li><a href="{{url("admin/airstrip/airstrip-all")}}">Update</a>
                                 </li>
 
                             </ul>

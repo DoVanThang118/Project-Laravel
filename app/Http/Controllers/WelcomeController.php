@@ -118,8 +118,10 @@ class WelcomeController extends Controller
                     ])->with("success", "Success");
 
                 } else {
+
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",now())
+                        ->whereDate("takeoftime","<=",now()->addDays(3))
                         ->orderBy("id", "desc")
                         ->get();
                     for ($i = 0; $i < $flight->count(); $i++) {
@@ -207,6 +209,7 @@ class WelcomeController extends Controller
                 if(!isset($data2)){
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
                         ->whereDate("takeoftime",">=",now())
+                        ->whereDate("takeoftime","<=",now()->addDays(3))
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight2->count(); $i++) {
@@ -228,6 +231,7 @@ class WelcomeController extends Controller
                 if(!isset($data)){
                     $flight = Flight::FlightAirStripFilter($asflight)
                         ->whereDate("takeoftime",">=",now())
+                        ->whereDate("takeoftime","<=",now()->addDays(3))
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight->count(); $i++) {
