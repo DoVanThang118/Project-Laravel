@@ -74,20 +74,22 @@
                                     "type"=>"datetime-local",
                                     "required"=>false])
                                 </div>
-                                <div class="row" >
+                                <div class="row" style="margin-right: 80px" >
 
                                     <div class="col-md-4">
-                                        <p>Quantity Vip</p>
-                                        <input style="height: 20px" type="button" id="qtyvip" value="">
+                                        <p class="col-md-9" style="text-align: right;">Quantity Vip</p>
+                                        <input class="col-md-2" style="height: 20px; width: 50px" type="button" id="qtyvip" value="">
                                     </div>
                                     <div class="col-md-4">
-                                    <p>Quantity Normal</p>
-                                        <input style="height: 20px" type="button" id="qtynormal" value="">
+                                    <p class="col-md-9" style="text-align: right;" >Quantity Normal</p>
+                                        <input class="col-md-2" style="height: 20px; width: 50px ; " type="button" id="qtynormal" value="">
                                     </div>
                                     <div class="col-md-4">
-                                    <p>Quantity Cheap</p>
-                                        <input style="height: 20px" type="button" id="qtycheap" value="">
+                                    <p class="col-md-9" style="text-align: right;">Quantity Cheap</p>
+                                        <input class="col-md-2" style="height: 20px; width: 50px" type="button" id="qtycheap" value="">
                                     </div>
+                                </div>
+                                <div class="row">
 
                                     @include("admin.html.form.input",[
                                     "label"=>"",
