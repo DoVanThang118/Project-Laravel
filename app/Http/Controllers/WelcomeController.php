@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Pusher\Pusher;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
+use Carbon\Carbon;
 
 class WelcomeController extends Controller
 {
@@ -120,8 +121,8 @@ class WelcomeController extends Controller
                 } else {
 
                     $flight = Flight::FlightAirStripFilter($asflight)
-                        ->whereDate("takeoftime",">=",now())
-                        ->whereDate("takeoftime","<=",now()->addDays(3))
+                        ->whereDate("takeoftime",">=",$takeoftime)
+                        ->whereDate("takeoftime","<=",Carbon::parse($takeoftime)->addDays(3))
                         ->orderBy("id", "desc")
                         ->get();
                     for ($i = 0; $i < $flight->count(); $i++) {
@@ -208,8 +209,8 @@ class WelcomeController extends Controller
 
                 if(!isset($data2)){
                     $flight2 = Flight::FlightAirStripFilter($asflight2)
-                        ->whereDate("takeoftime",">=",now())
-                        ->whereDate("takeoftime","<=",now()->addDays(3))
+                        ->whereDate("takeoftime",">=",$returnday)
+                        ->whereDate("takeoftime","<=",Carbon::parse($returnday)->addDays(3))
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight2->count(); $i++) {
@@ -230,8 +231,8 @@ class WelcomeController extends Controller
 
                 if(!isset($data)){
                     $flight = Flight::FlightAirStripFilter($asflight)
-                        ->whereDate("takeoftime",">=",now())
-                        ->whereDate("takeoftime","<=",now()->addDays(3))
+                        ->whereDate("takeoftime",">=",$takeoftime)
+                        ->whereDate("takeoftime","<=",Carbon::parse($takeoftime)->addDays(3))
                         ->orderBy("id", "desc")
                         ->paginate(20);
                     for ($i = 0; $i < $flight->count(); $i++) {
