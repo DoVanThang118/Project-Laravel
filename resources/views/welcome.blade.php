@@ -232,7 +232,7 @@
                     </a>
                 </div>
                 <div class="col-md-3">
-                    <a href="{{url('/newYork')}}">
+                    <a href="{{url('/sanFrancisco')}}">
                         <div class="tour-mig-like-com">
                             <div class="tour-mig-lc-img"> <img src="/assets/images/t3.jpg" alt=""> </div>
                             <div class="tour-mig-lc-con tour-mig-lc-con2">

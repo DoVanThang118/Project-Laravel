@@ -58,7 +58,7 @@ Route::get("/daNang",[App\Http\Controllers\ViewController::class, 'danang']);
 Route::get("/daLat",[App\Http\Controllers\ViewController::class, 'dalat']);
 Route::get("/london",[App\Http\Controllers\ViewController::class, 'london']);
 Route::get("/paris",[App\Http\Controllers\ViewController::class, 'paris']);
-Route::get("/newYork",[App\Http\Controllers\ViewController::class, 'newyork']);
+Route::get("/sanFrancisco",[App\Http\Controllers\ViewController::class, 'newyork']);
 Route::get("/bangkok",[App\Http\Controllers\ViewController::class, 'bangkok']);
 Route::get("/singapore",[App\Http\Controllers\ViewController::class, 'singapore']);
 
