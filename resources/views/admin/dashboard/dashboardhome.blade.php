@@ -25,7 +25,7 @@
                             <span class="ad-hom-col-com ad-hom-col-1"><i class="fa fa-bar-chart"></i></span>
                             <div class="ad-hom-view-com">
                                 <p><i class="fa  fa-arrow-up up"></i> Total Ticket</p>
-                                <h3>{{$ticket->count()}}</h3>
+                                <h5>{{$ticket->count()}}</h5>
                             </div>
                         </div>
                     </li>
@@ -34,7 +34,7 @@
                             <span class="ad-hom-col-com ad-hom-col-2"><i class="fa fa-usd"></i></span>
                             <div class="ad-hom-view-com">
                                 <p><i class="fa  fa-arrow-down down"></i> Tickets sold</p>
-                                <h3>{{$ticketsold->count()}}</h3>
+                                <h5>{{$ticketsold->count()}}</h5>
                             </div>
                         </div>
                     </li>
@@ -43,7 +43,7 @@
                             <span class="ad-hom-col-com ad-hom-col-4"><i class="fa fa-envelope-open-o"></i></span>
                             <div class="ad-hom-view-com">
                                 <p><i class="fa  fa-arrow-up up"></i> Expected</p>
-                                <h3>{{$expected}}</h3>
+                                <h5>{{$expected}} $</h5>
                             </div>
                         </div>
                     </li>
@@ -52,7 +52,7 @@
                             <span class="ad-hom-col-com ad-hom-col-2"><i class="fa fa-usd"></i></span>
                             <div class="ad-hom-view-com">
                                 <p><i class="fa  fa-arrow-down down"></i> Revenue</p>
-                                <h3>{{$revenue}}</h3>
+                                <h5>{{$revenue}} $</h5>
                             </div>
                         </div>
                     </li>
